@@ -14,15 +14,10 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private TextMeshProUGUI cardTextText;
 
     private int originSiblingIndex;
-
-    public void Awake()
-    {
-        Init(card);
-    }
     
     public void Init(Card card)
     {
-        this.card = card;
+        this.card = card.Clone();
         cardNameText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         cardImage = transform.GetChild(1).GetComponent<Image>();
         cardTextText = transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -44,7 +39,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private void ToggleCard()
     {
-        transform.parent.GetComponent<Hand>().OrganizeCards();
+        //transform.parent.GetComponent<Hand>().OrganizeCards();
         originSiblingIndex = transform.GetSiblingIndex();
 
         StartCoroutine(ToggleCo());
@@ -59,7 +54,6 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         
         while (time < duration)
         {
-            Debug.Log(Time.deltaTime);
             time += Time.deltaTime;
             transform.localPosition = Vector3.Lerp(new Vector3(180 * (transform.GetSiblingIndex() -
                                                                       ((float)(transform.parent.childCount - 1) / 2)), 10, 0), new Vector3(210 * (transform.GetSiblingIndex() -
@@ -76,6 +70,8 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         StopAllCoroutines();
         
         transform.SetSiblingIndex(originSiblingIndex);
-        transform.parent.GetComponent<Hand>().OrganizeCards();
+        //transform.parent.GetComponent<Hand>().OrganizeCards();
+        transform.SetLocalPositionAndRotation(new Vector3(0, -150, 0), 
+            Quaternion.AngleAxis(-(originSiblingIndex - (transform.parent.childCount - 1) / 2) * transform.parent.GetComponent<Hand>().angleSpread, Vector3.forward));
     }
 }
