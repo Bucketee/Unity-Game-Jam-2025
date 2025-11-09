@@ -46,6 +46,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void SynchPosition()
     {
+        if (!_canPointer) return; 
         if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
         cardTransitionCo = null;
         originalPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
@@ -53,7 +54,6 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!_canPointer) return; 
         DeckManager.Instance.onCardClicked.Invoke(this);
     }
 
@@ -102,12 +102,17 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         if (isAppear) transform.SetAsLastSibling();
     }
+    
+    public void OnClick() {
+        DeckManager.Instance.onCardClicked.Invoke(this);
+    }
 
     #region Drag & Drop
     private bool isDragging = false;
     [SerializeField] private RectTransform cardSubmit;
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!_canPointer) return; 
         if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
         cardTransitionCo = null;
         transform.SetAsLastSibling();
@@ -116,6 +121,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     }
     public void OnDrag(PointerEventData eventData)
     {
+        if (!_canPointer) return; 
         Vector2 pos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             cardRect.parent as RectTransform,
@@ -126,6 +132,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!_canPointer) return; 
         if (DialogueManager.Instance.SubmitCheck(eventData))
         {
             DialogueManager.Instance.SubmitCard(card.id);

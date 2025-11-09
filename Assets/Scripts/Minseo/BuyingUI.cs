@@ -26,6 +26,10 @@ public class BuyingUI : MonoBehaviour
         focusPanel.DOFade(.8f, 0.4f);
         sourceRt = cardDisplay.GetComponent<RectTransform>();
         cardUI.GetComponent<RectTransform>().anchoredPosition = cardUI.transform.parent.GetComponent<RectTransform>().InverseTransformPoint(sourceRt.parent.TransformPoint(sourceRt.anchoredPosition));
+        cardUI.GetComponent<RectTransform>().sizeDelta = cardUI.transform.parent.GetComponent<RectTransform>().sizeDelta;
+        
+        cardUI.GetComponent<RectTransform>()
+            .DOScale(new Vector3(1f, 1f, 1f), 0.2f);
         cardUI.GetComponent<RectTransform>()
             .DOAnchorPos(Vector2.up * 85f, 0.5f);
         cardUI.Init(cardDisplay.card);
@@ -39,6 +43,8 @@ public class BuyingUI : MonoBehaviour
     public void FocusOut()
     {
         focusPanel.DOFade(0f, 0.4f);
+        cardUI.GetComponent<RectTransform>()
+            .DOScale(new Vector3(0.7f, 0.7f, 1f), 0.2f);
         cardUI.GetComponent<RectTransform>()
             .DOAnchorPos(cardUI.transform.parent.GetComponent<RectTransform>().InverseTransformPoint(sourceRt.parent.TransformPoint(sourceRt.anchoredPosition)), 0.2f)
             .OnComplete(() => buyingUI.SetActive(false));
