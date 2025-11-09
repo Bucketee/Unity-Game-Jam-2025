@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class BuyingUI : MonoBehaviour
     public Image focusPanel;
 
     public RectTransform sourceRt;
+
+    public TextMeshProUGUI gold;
     
     public DeckShopUI deckShopUI;
 
@@ -18,6 +21,8 @@ public class BuyingUI : MonoBehaviour
     private void Start()
     {
         DeckManager.Instance.onCardClicked.AddListener(FocusIn);
+        
+        gold.text = DeckManager.Instance.money.ToString() + " GOLD";
     }
     
     private void FocusIn(CardDisplay cardDisplay)
@@ -57,6 +62,7 @@ public class BuyingUI : MonoBehaviour
         if (cardinfo.price > DeckManager.Instance.money) return; 
         cardinfo.Count += 1;
         DeckManager.Instance.money -= cardinfo.price;
+        gold.text = DeckManager.Instance.money.ToString() + " GOLD";
         cardUI.SetCount(cardinfo.Count);
     }
 

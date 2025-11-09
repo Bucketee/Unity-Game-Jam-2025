@@ -20,6 +20,7 @@ public class Card : ScriptableObject
     public string cardName => this.name;
     public CardType cardType;
     public string cardText;
+    public Sprite cardSprite;
 
     public override string ToString()
     {
