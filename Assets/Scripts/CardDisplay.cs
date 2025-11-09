@@ -12,66 +12,74 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private TextMeshProUGUI cardNameText;
     private Image cardImage;
     private TextMeshProUGUI cardTextText;
+    private Vector3 originalPosition;
+    private int originalSiblingIndex;
+    private RectTransform cardRect;
 
-    private int originSiblingIndex;
-    
     public void Init(Card card)
     {
         this.card = card.Clone();
         cardNameText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         cardImage = transform.GetChild(1).GetComponent<Image>();
         cardTextText = transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
-        
+
         cardNameText.text = card.cardName;
         cardImage.sprite = card.cardImage;
         cardTextText.text = card.cardText;
+
+        originalPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
+        originalSiblingIndex = transform.GetSiblingIndex();
+
+        cardRect = gameObject.GetComponent<RectTransform>();
+        cardRect.localScale = new Vector3(0.7f, 0.7f, 0.7f);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void SynchPosition()
     {
-        ToggleCard();
+        if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
+        cardTransitionCo = null;
+        originalPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        UnToggleCard();
-    }
+    public void OnPointerEnter(PointerEventData eventData) => ToggleCard();
+    public void OnPointerExit(PointerEventData eventData) => UntoggleCard();
 
     private void ToggleCard()
     {
-        //transform.parent.GetComponent<Hand>().OrganizeCards();
-        originSiblingIndex = transform.GetSiblingIndex();
-
-        StartCoroutine(ToggleCo());
+        if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
+        cardTransitionCo = StartCoroutine(CardTransition(true));
     }
 
-    private IEnumerator ToggleCo()
+    private void UntoggleCard()
     {
-        float duration = 0.2f;
-        float time = 0;
+        transform.SetSiblingIndex(originalSiblingIndex);
 
-        transform.rotation = Quaternion.identity;
-        
-        while (time < duration)
+        if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
+        cardTransitionCo = StartCoroutine(CardTransition(false));
+    }
+
+    private Coroutine cardTransitionCo = null;
+    private IEnumerator CardTransition(bool isAppear = true)
+    {
+        cardRect = gameObject.GetComponent<RectTransform>();
+        Vector2 startPos = cardRect.anchoredPosition;
+        float originX = originalPosition.x, originY = originalPosition.y;
+        Vector2 endPos = isAppear ? new Vector2(originX, originY + 80f) : new Vector2(originX, originY);
+
+        float duration = 0.25f;
+        float elapsed = 0f;
+        while (elapsed < duration)
         {
-            time += Time.deltaTime;
-            transform.localPosition = Vector3.Lerp(new Vector3(180 * (transform.GetSiblingIndex() -
-                                                                      ((float)(transform.parent.childCount - 1) / 2)), 10, 0), new Vector3(210 * (transform.GetSiblingIndex() -
-                ((float)(transform.parent.childCount - 1) / 2)), 30, 0), time / duration);
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            cardRect.anchoredPosition = Vector2.Lerp(startPos, endPos, t);
             yield return null;
         }
 
-        transform.localPosition = new Vector3(210 * (transform.GetSiblingIndex() - ((float)(transform.parent.childCount - 1) / 2)), 30, 0);
-        transform.SetAsLastSibling();
-    }
+        cardRect.anchoredPosition = endPos;
+        cardTransitionCo = null;
 
-    private void UnToggleCard()
-    {
-        StopAllCoroutines();
-        
-        transform.SetSiblingIndex(originSiblingIndex);
-        //transform.parent.GetComponent<Hand>().OrganizeCards();
-        transform.SetLocalPositionAndRotation(new Vector3(0, -150, 0), 
-            Quaternion.AngleAxis(-(originSiblingIndex - (transform.parent.childCount - 1) / 2) * transform.parent.GetComponent<Hand>().angleSpread, Vector3.forward));
+        if (isAppear) transform.SetAsLastSibling();
     }
 }

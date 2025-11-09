@@ -65,11 +65,4 @@ public class DialogueManager : MonoBehaviour
             optionsText.text += option.text + "\n";
         }*/
     }
-
-    public void OnOptionSelected(int nextId)
-    {
-        // 선택한 옵션에 따라 다음 대화로 이동
-        currentId = nextId;
-        DisplayDialogue(currentId);
-    }
 }
