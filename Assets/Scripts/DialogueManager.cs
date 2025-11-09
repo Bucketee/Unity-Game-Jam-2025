@@ -24,6 +24,8 @@ public class Dialogue
 {
     public int id;
     public string text;
+    public bool submitted;
+    public Card whichCardSubmitted;
     public Dictionary<int, DialogueEffect> effects;
     public int cutimageIdx;
     public int questionType;
@@ -61,6 +63,8 @@ public class DialogueManager : MonoBehaviour
     public int totalDrawsWillbe;
 
     public Image fadeImage;
+    public Image submittedCardImage;
+    
     void Awake()
     {
         if (Instance != null) DestroyImmediate(this);
@@ -171,6 +175,16 @@ public class DialogueManager : MonoBehaviour
         currentDialogueId = dialogueId;
         currentDialogue = currentGroup.dialogues[currentDialogueId];
         
+        if (currentDialogue.submitted)
+        {
+            submittedCardImage.gameObject.SetActive(true);
+            submittedCardImage.sprite = DeckManager.Instance.GetCardSprite(currentDialogue.whichCardSubmitted.id);
+        }
+        else
+        {
+            submittedCardImage.gameObject.SetActive(false);
+        }
+        
         cutsceneImage.sprite = cutsceneSprites[currentDialogue.cutimageIdx];
         OnDialogueChanged?.Invoke();
     }
@@ -181,6 +195,16 @@ public class DialogueManager : MonoBehaviour
         
         // cutscene image change!
         cutsceneImage.sprite = cutsceneSprites[currentDialogue.cutimageIdx];
+
+        if (currentDialogue.submitted)
+        {
+            submittedCardImage.gameObject.SetActive(true);
+            submittedCardImage.sprite = DeckManager.Instance.GetCardSprite(currentDialogue.whichCardSubmitted.id);
+        }
+        else
+        {
+            submittedCardImage.gameObject.SetActive(false);
+        }
         
         OnDialogueChanged?.Invoke();
     }
@@ -268,30 +292,40 @@ public class DialogueManager : MonoBehaviour
     }
 
     // cardId에 해당하는 카드를 제출했을 때의 처리
-    public void SubmitCard(int cardId)
+    public bool SubmitCard(int cardId)
     {
         Debug.Log($"Submitted card {cardId}");
+        
+        Debug.Log("ASDG " + currentDialogue.submitted);
+        Debug.Log("a112ASDG " + currentDialogue.questionType);
+
+        if (currentDialogue.submitted) return false;
+        if (currentGroup.type != DialogueType.Normal) return false;
 
         if (!currentDialogue.effects.ContainsKey(cardId))
         {
             // 엉뚱한 대답을 제출한 상황
             // 용사 호감도 내려감, 실망 이펙트 등
             // 엉뚱한 대답에 대한 (미리 정의된) dialogue group으로 점프함
+
+            currentDialogue.submitted = true;
+            currentDialogue.whichCardSubmitted = GetCard(cardId);
             PushGroup(currentDialogue.wrongansHandler);
             Debug.Log("Wrong card");
-            return;
+            return true;
         }
 
         DialogueEffect effect = currentDialogue.effects[cardId];
         var card = GetCard(cardId);
+
+        if (card == null) return false;
         
-        if (card == null) return;
-        
-        Debug.Log("!!!ASDGASDG");
         HeroStat.Instance.AnswerQuestion(card, currentDialogue.questionType);
-        
+        currentDialogue.submitted = true;
+        currentDialogue.whichCardSubmitted = card;
         effect.ApplyEffect();
         PushGroup(effect.nextGroup);
+        return true;
     }
 
     // 다음 그룹으로 점프하기
