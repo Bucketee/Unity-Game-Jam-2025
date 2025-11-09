@@ -1,0 +1,45 @@
+<root>
+    <DialogueGroup id="1" type="1"> <!-- Day 1 -->
+        <Dialogue id="1" text="Day1, Dialogue 1"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+            <Card id="1" nextGroup="15"/>
+            <Card id="2" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="2" text="Day1, Dialogue 2"> 
+            <Card id="3" nextGroup="15"/>
+            <Card id="4" nextGroup="16"/>
+        </Dialogue>
+    </DialogueGroup>
+
+    <DialogueGroup id="2" type="1"> <!-- Day 2 -->
+        <Dialogue id="1" text="Day2, Dialogue 1"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+            <Card id="1" nextGroup="15"/>
+            <Card id="2" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="2" text="Day2, Dialogue 2"> 
+            <Card id="3" nextGroup="15"/>
+            <Card id="4" nextGroup="16"/>
+        </Dialogue>
+    </DialogueGroup>
+
+    <DialogueGroup id="15" type="2"> <!-- 분기 대사 -->
+        <Dialogue id="1" text="Branch 15, Dialogue 1"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+            <Card id="1" nextGroup="15"/>
+            <Card id="2" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="2" text="Branch 16, Dialogue 2"> 
+            <Card id="3" nextGroup="15"/>
+            <Card id="4" nextGroup="16"/>
+        </Dialogue>
+    </DialogueGroup>
+
+    <DialogueGroup id="16" type="2"> <!-- 분기 대사 -->
+        <Dialogue id="1" text="Branch 16, Dialogue 1"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+            <Card id="1" nextGroup="15"/>
+            <Card id="2" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="2" text="Branch 16, Dialogue 2"> 
+            <Card id="3" nextGroup="15"/>
+            <Card id="4" nextGroup="16"/>
+        </Dialogue>
+    </DialogueGroup>
+</root>
