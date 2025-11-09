@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class DialogueControl : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI dialogueTmp;
-    [SerializeField] private Button leftButton, rightButton, downButton;
+    [SerializeField] private Button leftButton, rightButton, downButton, nextDayButton;
 
     private void Start()
     {
@@ -26,8 +26,18 @@ public class DialogueControl : MonoBehaviour
         leftButton.gameObject.SetActive(isNormal);
         rightButton.gameObject.SetActive(isNormal);
         downButton.gameObject.SetActive(!isNormal);
+        nextDayButton.gameObject.SetActive(false);
     }
-    private void SetText() => dialogueTmp.text = DialogueManager.Instance.GetDialogue();
+    private void SetText()
+    {
+        dialogueTmp.text = DialogueManager.Instance.GetDialogue();
+
+        if (DialogueManager.Instance.IsLastDialogue())
+        {
+            nextDayButton.gameObject.SetActive(true);
+            rightButton.gameObject.SetActive(false);
+        }
+    }
 
     public void NextDialogue() => DialogueManager.Instance.NextDialogue();
     public void PrevDialogue() => DialogueManager.Instance.PrevDialogue();

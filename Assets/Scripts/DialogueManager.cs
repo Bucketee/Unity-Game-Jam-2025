@@ -129,6 +129,10 @@ public class DialogueManager : MonoBehaviour
         currentDialogue = currentGroup.dialogues[currentDialogueId];
         OnDialogueChanged?.Invoke();
     }
+    public bool IsLastDialogue()
+    {
+        return !currentGroup.dialogues.ContainsKey(currentDialogueId + 1);
+    }
 
     public string GetDialogue() => currentDialogue.text;
     public DialogueType GetDialogueType() => currentGroup.type;
