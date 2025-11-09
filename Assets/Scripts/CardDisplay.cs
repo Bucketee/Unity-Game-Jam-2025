@@ -19,6 +19,11 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     
     private bool _canPointer;
     
+    public void Init(Card card)
+    {
+        Init(card, true);
+    }
+    
     public void Init(Card card, bool canPointer)
     {
         this.card = card.Clone();
