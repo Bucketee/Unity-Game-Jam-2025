@@ -10,23 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
-  m_Name: Killed by Goblin
+  m_Name: Killed by Dragon 0
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingDescription: 
-  endPrice: 15
+  endingName: Flames of the Ancient Dragon
+  endingDescription: "Hero charged the dragon\u2019s breath and met eternity in flame."
+  endPrice: 40
   isClearedOnce: 0
+  endingSprite: {fileID: 0}
   condition:
     date: 0
     placeCard:
-    - {fileID: 11400000, guid: f366fb4f91280a04ea708de189333f07, type: 2}
-    monsterCard:
-    - {fileID: 11400000, guid: 8f6c68d584e4e7343a8bd40c78a85cb9, type: 2}
-    weaponCard:
-    - {fileID: 11400000, guid: 69227305d1f88f645b1bb11508a4e333, type: 2}
-    - {fileID: 11400000, guid: b937317e92d7bd644b23eb682dfdf470, type: 2}
+    - {fileID: 11400000, guid: 9886d95038f00594dab06bf8918580a4, type: 2}
+    monsterCard: []
+    weaponCard: []
     behaviorCard:
-    - {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
-    - {fileID: 11400000, guid: 90d9cda970f6fec43b88e9490c13e60f, type: 2}
+    - {fileID: 11400000, guid: 7aa980b2dee8b6445b307d5cb182032d, type: 2}
     emotionCard: []
     likabilityMin: 0
     likabilityMax: 10

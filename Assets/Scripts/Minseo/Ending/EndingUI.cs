@@ -10,7 +10,7 @@ public class EndingUI : MonoBehaviour, IPointerClickHandler
     {
         endingNameText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         ending = endinga; 
-        endingNameText.text = ending.name;
+        endingNameText.text = ending.endingName;
     }
 
     public void OnPointerClick(PointerEventData eventData)

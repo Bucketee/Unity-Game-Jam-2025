@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
-  m_Name: Kill the Diablo
+  m_Name: "Dragon\u2019s Oath The Last Dawn"
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingDescription: 
+  endingName: "Dragon\u2019s Oath: The Last Dawn"
+  endingDescription: "Side by side with the dragon, Hero ended the Dark Lord\u2019s
+    reign."
   endPrice: 100
   isClearedOnce: 0
+  endingSprite: {fileID: 0}
   condition:
     date: 5
     placeCard:
@@ -22,7 +25,8 @@ MonoBehaviour:
     monsterCard: []
     weaponCard: []
     behaviorCard: []
-    emotionCard: []
+    emotionCard:
+    - {fileID: 11400000, guid: 11fb7acf5cd09fb45ad1abc46bb736f8, type: 2}
     likabilityMin: 0
     likabilityMax: 10
     attackPowerMin: 5

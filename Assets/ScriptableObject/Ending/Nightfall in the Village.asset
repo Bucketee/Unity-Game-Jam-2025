@@ -10,20 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
-  m_Name: Bad Innkeeper
+  m_Name: Nightfall in the Village
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingDescription: 
-  endPrice: 200
+  endingName: Nightfall in the Village
+  endingDescription: Hero dreamed of peace while the Dark Lord passed his door.
+  endPrice: 30
   isClearedOnce: 0
+  endingSprite: {fileID: 0}
   condition:
     date: 5
-    placeCard: []
+    placeCard:
+    - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
     monsterCard: []
     weaponCard: []
     behaviorCard: []
-    emotionCard:
-    - {fileID: 0}
+    emotionCard: []
     likabilityMin: 0
     likabilityMax: 10
-    attackPowerMin: 5
+    attackPowerMin: 0
     attackPowerMax: 5

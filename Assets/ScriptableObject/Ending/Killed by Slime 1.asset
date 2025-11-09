@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
-  m_Name: Killed by Diablo 1
+  m_Name: Killed by Slime 1
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingDescription: 
-  endPrice: 40
+  endingName: "The Slime\u2019s Quiet Feast"
+  endingDescription: "Hero charged too boldly\u2014the Slime welcomed him whole."
+  endPrice: 15
   isClearedOnce: 0
+  endingSprite: {fileID: 0}
   condition:
-    date: 5
+    date: 0
     placeCard:
     - {fileID: 11400000, guid: f366fb4f91280a04ea708de189333f07, type: 2}
-    monsterCard: []
+    monsterCard:
+    - {fileID: 11400000, guid: 9548dc78930733b4b8a3aa3428a902a4, type: 2}
     weaponCard: []
-    behaviorCard: []
+    behaviorCard:
+    - {fileID: 11400000, guid: 7aa980b2dee8b6445b307d5cb182032d, type: 2}
     emotionCard: []
     likabilityMin: 0
     likabilityMax: 10
     attackPowerMin: 0
-    attackPowerMax: 4
+    attackPowerMax: 5

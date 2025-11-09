@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Ending", menuName = "Create Ending")]
 public class Ending : ScriptableObject
 {
-    public string EndingName => name;
+    public string endingName;
     public string endingDescription;
     public int endPrice;
     public bool isClearedOnce;

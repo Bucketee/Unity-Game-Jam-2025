@@ -28,7 +28,7 @@ public class EndingManager : MonoBehaviour
     private bool CheckEnd(Ending ending)
     {
         EndingCondition condition = ending.condition;
-        if (condition.date == 0 || condition.date == HeroStat.Instance.Date)
+        if (condition.date == 0 || condition.date == heroStat.Date)
         {
             if (condition.placeCard.Length == 0 || condition.placeCard.Contains(heroStat.GetAnswer(0)))
             {
@@ -44,22 +44,28 @@ public class EndingManager : MonoBehaviour
                                 if (condition.attackPowerMin <= heroStat.AttackPower &&
                                     heroStat.AttackPower <= condition.attackPowerMax)
                                 {
-                                    switch (ending.EndingName)
+                                    switch (ending.endingName)
                                     {
-                                        case "Killed by Dragon":
+                                        case "Flames of the Ancient Dragon":
                                             if (heroStat.dungeunCount == 3)
                                             {
                                                 return true;
                                             }
                                             return false;
-                                        case "Kill The Diablo With Dragon":
+                                        case "Dragon’s Oath: The Last Dawn":
                                             if (heroStat.dungeunCount == 4)
                                             {
                                                 return true;
                                             }
                                             return false;
-                                        case "Bad Innkeeper":
+                                        case "The Innkeeper of Shadows":
                                             if (heroStat.IsRandomPlace)
+                                            {
+                                                return true;
+                                            }
+                                            return false;
+                                        case "The Fallen Crown":
+                                            if (heroStat.forestCount == 4)
                                             {
                                                 return true;
                                             }
@@ -69,12 +75,6 @@ public class EndingManager : MonoBehaviour
                                 }
                             }
                         }
-                    }
-
-                    switch (ending.EndingName)
-                    {
-                        case "Killed by Slime":
-                            break;
                     }
                 }
             }

@@ -10,24 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
-  m_Name: Timeless Love
+  m_Name: Killed by Goblin 1
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingName: Timeless Love
-  endingDescription: Beneath the quiet village sky, two hearts defied the gods and
-    time itself.
-  endPrice: 250
+  endingName: "The Goblin\u2019s Ambush in the Thicket"
+  endingDescription: "Hero\u2019s morning star sang once, then fell silent in the
+    woods."
+  endPrice: 15
   isClearedOnce: 0
   endingSprite: {fileID: 0}
   condition:
-    date: 5
+    date: 0
     placeCard:
-    - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
-    monsterCard: []
-    weaponCard: []
+    - {fileID: 11400000, guid: f366fb4f91280a04ea708de189333f07, type: 2}
+    monsterCard:
+    - {fileID: 11400000, guid: 8f6c68d584e4e7343a8bd40c78a85cb9, type: 2}
+    weaponCard:
+    - {fileID: 11400000, guid: b937317e92d7bd644b23eb682dfdf470, type: 2}
     behaviorCard: []
-    emotionCard:
-    - {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
-    likabilityMin: 10
+    emotionCard: []
+    likabilityMin: 0
     likabilityMax: 10
     attackPowerMin: 0
     attackPowerMax: 5

@@ -11,7 +11,7 @@ public class HeroStat : MonoBehaviour
         get => date;
         set => date = Mathf.Clamp(value, 1, 5);
     }
-    private int date = 0;
+    private int date = 1;
 
     public int Likeability
     {
@@ -36,6 +36,7 @@ public class HeroStat : MonoBehaviour
     [SerializeField] private Card randomQuestion = null;
 
     public int dungeunCount;
+    public int forestCount;
 
     public bool IsRandomPlace
     {

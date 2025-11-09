@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
-  m_Name: Timeless Love
+  m_Name: "The Keeper\u2019s New Apprentice"
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingName: Timeless Love
-  endingDescription: Beneath the quiet village sky, two hearts defied the gods and
-    time itself.
-  endPrice: 250
+  endingName: "The Keeper\u2019s New Apprentice"
+  endingDescription: Hero hung up the sword and took the keys to the inn.
+  endPrice: 80
   isClearedOnce: 0
   endingSprite: {fileID: 0}
   condition:
@@ -25,9 +24,8 @@ MonoBehaviour:
     monsterCard: []
     weaponCard: []
     behaviorCard: []
-    emotionCard:
-    - {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
+    emotionCard: []
     likabilityMin: 10
     likabilityMax: 10
     attackPowerMin: 0
-    attackPowerMax: 5
+    attackPowerMax: 0

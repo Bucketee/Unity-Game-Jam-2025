@@ -9,25 +9,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Killed by Slime
+  m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
+  m_Name: Killed by Dragon 2
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingDescription: 
-  endPrice: 15
+  endingName: Flames of the Ancient Dragon
+  endingDescription: Hero rested where even the air burned.
+  endPrice: 40
   isClearedOnce: 0
+  endingSprite: {fileID: 0}
   condition:
-    date: 1
+    date: 0
     placeCard:
-    - {fileID: 11400000, guid: f366fb4f91280a04ea708de189333f07, type: 2}
-    monsterCard:
-    - {fileID: 11400000, guid: 9548dc78930733b4b8a3aa3428a902a4, type: 2}
-    weaponCard:
-    - {fileID: 11400000, guid: 91153e6312882ba4d9c331293eb56f1e, type: 2}
+    - {fileID: 11400000, guid: 9886d95038f00594dab06bf8918580a4, type: 2}
+    monsterCard: []
+    weaponCard: []
     behaviorCard:
-    - {fileID: 11400000, guid: 7aa980b2dee8b6445b307d5cb182032d, type: 2}
     - {fileID: 11400000, guid: eb758ddffd3d8de4da0d9af9e2d6aa13, type: 2}
     emotionCard: []
     likabilityMin: 0
     likabilityMax: 10
     attackPowerMin: 0
-    attackPowerMax: 10
+    attackPowerMax: 5

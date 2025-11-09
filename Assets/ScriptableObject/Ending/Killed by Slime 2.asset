@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
-  m_Name: Hero's New Job
+  m_Name: Killed by Slime 2
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingDescription: 
-  endPrice: 80
+  endingName: "The Slime\u2019s Quiet Feast"
+  endingDescription: "Hero tried to rest by the pond\u2026 and became part of it."
+  endPrice: 15
   isClearedOnce: 0
+  endingSprite: {fileID: 0}
   condition:
-    date: 5
+    date: 0
     placeCard:
-    - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
-    monsterCard: []
+    - {fileID: 11400000, guid: f366fb4f91280a04ea708de189333f07, type: 2}
+    monsterCard:
+    - {fileID: 11400000, guid: 9548dc78930733b4b8a3aa3428a902a4, type: 2}
     weaponCard: []
-    behaviorCard: []
+    behaviorCard:
+    - {fileID: 11400000, guid: eb758ddffd3d8de4da0d9af9e2d6aa13, type: 2}
     emotionCard: []
-    likabilityMin: 10
+    likabilityMin: 0
     likabilityMax: 10
     attackPowerMin: 0
-    attackPowerMax: 0
+    attackPowerMax: 5

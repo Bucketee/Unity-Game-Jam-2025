@@ -10,24 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
-  m_Name: Timeless Love
+  m_Name: The Fallen Crown
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingName: Timeless Love
-  endingDescription: Beneath the quiet village sky, two hearts defied the gods and
-    time itself.
-  endPrice: 250
+  endingName: The Fallen Crown
+  endingDescription: "The hero\u2019s heart darkened, and the crown chose a new master."
+  endPrice: 100
   isClearedOnce: 0
   endingSprite: {fileID: 0}
   condition:
     date: 5
     placeCard:
-    - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
+    - {fileID: 11400000, guid: f366fb4f91280a04ea708de189333f07, type: 2}
     monsterCard: []
     weaponCard: []
     behaviorCard: []
     emotionCard:
-    - {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
-    likabilityMin: 10
+    - {fileID: 11400000, guid: 11fb7acf5cd09fb45ad1abc46bb736f8, type: 2}
+    likabilityMin: 0
     likabilityMax: 10
     attackPowerMin: 0
-    attackPowerMax: 5
+    attackPowerMax: 4

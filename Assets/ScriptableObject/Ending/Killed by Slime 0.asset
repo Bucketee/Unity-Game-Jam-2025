@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
-  m_Name: Killed by Bat
+  m_Name: Killed by Slime 0
   m_EditorClassIdentifier: Assembly-CSharp::Ending
-  endingDescription: 
+  endingName: "The Slime\u2019s Quiet Feast"
+  endingDescription: "Hero swung a short dagger\u2026 and vanished into the Slime\u2019s
+    hiss."
   endPrice: 15
   isClearedOnce: 0
+  endingSprite: {fileID: 0}
   condition:
     date: 0
     placeCard:
-    - {fileID: 11400000, guid: 9886d95038f00594dab06bf8918580a4, type: 2}
+    - {fileID: 11400000, guid: f366fb4f91280a04ea708de189333f07, type: 2}
     monsterCard:
-    - {fileID: 11400000, guid: 334a25fe42c405847b2e34bf8c3c00a8, type: 2}
+    - {fileID: 11400000, guid: 9548dc78930733b4b8a3aa3428a902a4, type: 2}
     weaponCard:
     - {fileID: 11400000, guid: 91153e6312882ba4d9c331293eb56f1e, type: 2}
-    - {fileID: 11400000, guid: b937317e92d7bd644b23eb682dfdf470, type: 2}
-    behaviorCard:
-    - {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
-    - {fileID: 11400000, guid: 90d9cda970f6fec43b88e9490c13e60f, type: 2}
+    behaviorCard: []
     emotionCard: []
     likabilityMin: 0
     likabilityMax: 10
