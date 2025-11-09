@@ -52,6 +52,8 @@ public class DialogueEffect
 
     public void ApplyEffect()
     {
+        SoundManager.Instance.PlaySFX(ESfx.SFX_APPLY);
+        
         // Implement effect application logic here
         HeroStat.Instance.AttackPower += attackPower;
         HeroStat.Instance.Likeability += likablity;
@@ -390,6 +392,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextDialogue()
     {
+        SoundManager.Instance.PlaySFX(ESfx.SFX_DIALOGUE_MOVE_BUTTON);
         if (currentGroup.dialogues.ContainsKey(currentDialogueId + 1))
             SetDialogue(currentDialogueId + 1);
 
@@ -410,6 +413,7 @@ public class DialogueManager : MonoBehaviour
     public void PrevDialogue()
     {
         if (currentGroup.type != DialogueType.Normal) return;
+        SoundManager.Instance.PlaySFX(ESfx.SFX_DIALOGUE_MOVE_BUTTON);
         if (currentGroup.dialogues.ContainsKey(currentDialogueId - 1))
             SetDialogue(currentDialogueId - 1);
     }
@@ -452,6 +456,8 @@ public class DialogueManager : MonoBehaviour
         if (currentDialogue.submitted) return false;
         if (currentGroup.type != DialogueType.Normal) return false;
 
+        SoundManager.Instance.PlaySFX(ESfx.SFX_BUTTON);
+        
         if (!currentDialogue.effects.ContainsKey(cardId))
         {
             // 엉뚱한 대답을 제출한 상황

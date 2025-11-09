@@ -22,6 +22,7 @@ public class MiniCardUI : MonoBehaviour, IPointerClickHandler
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
+            SoundManager.Instance.PlaySFX(ESfx.SFX_GIVE_CARD);
             DeckManager.Instance.RemoveCard(card);
         }
     }

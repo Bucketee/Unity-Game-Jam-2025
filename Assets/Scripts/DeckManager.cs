@@ -55,6 +55,8 @@ public class DeckManager : MonoBehaviour
     public Card DrawCard()
     {
         if (deck.Count == 0) return null;
+        
+        SoundManager.Instance.PlaySFX(ESfx.SFX_DRAW_CARD);
         int r = Random.Range(0, deck.Count);
         
         Card card = deck[r];

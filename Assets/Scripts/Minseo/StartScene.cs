@@ -12,6 +12,8 @@ public class StartScene : MonoBehaviour
 
     public void StartGame()
     {
+        SoundManager.Instance.PlaySFX(ESfx.SFX_START_BUTTON);
+        
         DeckManager.Instance.runCount++;
         foreach (var button in buttons)
         {

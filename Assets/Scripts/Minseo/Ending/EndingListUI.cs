@@ -69,6 +69,8 @@ public class EndingListUI : MonoBehaviour
 
     public void ShowEndingInfo(Ending ending)
     {
+        SoundManager.Instance.PlaySFX(ESfx.SFX_ENDING_LIST_BUTTON);
+        
         endingFade.DOFade(1, 0f);
         endingFade.DOFade(0, 0.5f);
         

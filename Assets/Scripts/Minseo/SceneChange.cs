@@ -16,6 +16,8 @@ public class SceneChange : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         if (_changing) return;
+        
+        SoundManager.Instance.PlaySFX(ESfx.SFX_START_BUTTON);
         _changing = true;
         fadeImage.gameObject.SetActive(true);
         fadeImage.DOFade(1f, 1f)

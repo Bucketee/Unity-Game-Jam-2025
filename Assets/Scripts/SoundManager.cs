@@ -13,6 +13,10 @@ public enum ESfx
     SFX_START_BUTTON,
     SFX_DIALOGUE_MOVE_BUTTON,
     SFX_PURCHASE,
+    SFX_GIVE_CARD,
+    SFX_ENDING_LIST_BUTTON,
+    SFX_DRAW_CARD,
+    SFX_APPLY
 }
 
 public class SoundManager : MonoBehaviour

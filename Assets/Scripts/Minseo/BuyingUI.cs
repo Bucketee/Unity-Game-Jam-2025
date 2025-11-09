@@ -27,6 +27,8 @@ public class BuyingUI : MonoBehaviour
     
     private void FocusIn(CardDisplay cardDisplay)
     {
+        SoundManager.Instance.PlaySFX(ESfx.SFX_GIVE_CARD);
+        
         buyingUI.SetActive(true);
         focusPanel.DOFade(.8f, 0.4f);
         sourceRt = cardDisplay.GetComponent<RectTransform>();
@@ -47,6 +49,8 @@ public class BuyingUI : MonoBehaviour
     
     public void FocusOut()
     {
+        SoundManager.Instance.PlaySFX(ESfx.SFX_GIVE_CARD);
+        
         focusPanel.DOFade(0f, 0.4f);
         cardUI.GetComponent<RectTransform>()
             .DOScale(new Vector3(0.7f, 0.7f, 1f), 0.2f);
@@ -57,6 +61,8 @@ public class BuyingUI : MonoBehaviour
 
     public void BuyCard()
     {
+        SoundManager.Instance.PlaySFX(ESfx.SFX_PURCHASE);
+        
         var cardinfo = deckShopUI.GetCardInfo(currentSelectedCard);
 
         if (cardinfo.price > DeckManager.Instance.money) return; 
@@ -68,6 +74,8 @@ public class BuyingUI : MonoBehaviour
 
     public void EquipCard()
     {
+        SoundManager.Instance.PlaySFX(ESfx.SFX_DIALOGUE_MOVE_BUTTON);
+        
         var cardinfo = deckShopUI.GetCardInfo(currentSelectedCard);
         if (cardinfo.Count <= 0 || DeckManager.Instance.deck.Count >= 25) return;
         
