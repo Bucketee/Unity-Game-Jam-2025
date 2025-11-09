@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1642175673}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.5889172
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1631,17 +1631,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndingListUI
   endings:
-  - {fileID: 11400000, guid: f75b9114f6d9f764699d41f298e6aabc, type: 2}
-  - {fileID: 11400000, guid: feedc210f4ffc4849b3758fe7eb156e3, type: 2}
-  - {fileID: 11400000, guid: 16ce58f42021958409bba02f939c8fa0, type: 2}
-  - {fileID: 11400000, guid: 0087c2de10f4ec043824bcfd19ef303b, type: 2}
   - {fileID: 11400000, guid: b9e1daece41466747b824c71f7c805c2, type: 2}
   - {fileID: 11400000, guid: ff8e4d2d5f07f3f44804d9b1a2b14d0c, type: 2}
-  - {fileID: 11400000, guid: 587b1561fef28ca4e9cbe13495fe768c, type: 2}
-  - {fileID: 11400000, guid: 0c690faeca49f18438cfaab84af8fbd6, type: 2}
+  - {fileID: 11400000, guid: 38d8ef91faa30584fbd6182734986169, type: 2}
+  - {fileID: 11400000, guid: fff9a7f1065213445b0ac6ebb464214e, type: 2}
+  - {fileID: 11400000, guid: 4807163469ca8b4458c802d73841b6b0, type: 2}
   - {fileID: 11400000, guid: 162cfcf499efeb84b8e199bc889caf6f, type: 2}
+  - {fileID: 11400000, guid: 0f48b19acf8848945b5911c27ff90a9a, type: 2}
+  - {fileID: 11400000, guid: 96de3f6f3da86e447a967c42c7b030c3, type: 2}
   - {fileID: 11400000, guid: cb76f109ecfad0148af828a5bbe5ff11, type: 2}
+  - {fileID: 11400000, guid: 20692ae296185784687fa5557507166a, type: 2}
+  - {fileID: 11400000, guid: 572f7c91bde0ba9429ca7cdc65bb4403, type: 2}
+  - {fileID: 11400000, guid: f34200d618668474d8991563632e9f97, type: 2}
+  - {fileID: 11400000, guid: 19ba87f5617efec4f854297c4bff088f, type: 2}
+  - {fileID: 11400000, guid: 55f578e4d64d0274ebfcebb993580600, type: 2}
+  - {fileID: 11400000, guid: 2d7defff999b5c0478dcd18bd3a75913, type: 2}
   - {fileID: 11400000, guid: 3e20da396d56e88469b79dcfa9314cc7, type: 2}
+  - {fileID: 11400000, guid: 385e0540b807cf64987b72ac114ec689, type: 2}
+  - {fileID: 11400000, guid: 5ceb244eba160474c9d7c09973faf1c2, type: 2}
+  - {fileID: 11400000, guid: bdd95906ce0f9844db82a9764648cc88, type: 2}
+  - {fileID: 11400000, guid: f0a785de311041f4a99c75604ff1ea2e, type: 2}
+  - {fileID: 11400000, guid: 0c690faeca49f18438cfaab84af8fbd6, type: 2}
+  - {fileID: 11400000, guid: 7eff905fc9cd73745a0ab8e49686799c, type: 2}
+  - {fileID: 11400000, guid: 0087c2de10f4ec043824bcfd19ef303b, type: 2}
+  - {fileID: 11400000, guid: feedc210f4ffc4849b3758fe7eb156e3, type: 2}
+  - {fileID: 11400000, guid: 587b1561fef28ca4e9cbe13495fe768c, type: 2}
+  - {fileID: 11400000, guid: f75b9114f6d9f764699d41f298e6aabc, type: 2}
+  - {fileID: 11400000, guid: 16ce58f42021958409bba02f939c8fa0, type: 2}
   - {fileID: 11400000, guid: 0631179e486e76d4fab86263e4e5958d, type: 2}
   endingUI: {fileID: 8922183853776026937, guid: 719cd858ec1152341b2c85700ac3c76b, type: 3}
   endingListTransform: {fileID: 1206063989}
@@ -2548,6 +2564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DeckManager
   runCount: 1
   deck: []
+  usingDeck: []
   money: 15
   cardInfos:
   - Card: {fileID: 11400000, guid: 7aa980b2dee8b6445b307d5cb182032d, type: 2}
