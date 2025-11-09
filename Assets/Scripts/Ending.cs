@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Ending", menuName = "Create Ending")]
@@ -23,11 +24,11 @@ public class Ending : ScriptableObject
 public class EndingCondition
 {
     public int date = 1;
-    public Card[] placeCard;
-    public Card[] monsterCard;
-    public Card[] weaponCard;
-    public Card[] behaviorCard;
-    public Card[] emotionCard;
+    public List<Card> placeCard;
+    public List<Card> monsterCard;
+    public List<Card> weaponCard;
+    public List<Card> behaviorCard;
+    public List<Card> emotionCard;
     public int likabilityMin = 0; public int likabilityMax = 10;
     public int attackPowerMin = 0; public int attackPowerMax = 5;
 }

@@ -28,7 +28,7 @@ public class HeroStat : MonoBehaviour
     private int attackPower = 0;
 
     [Header("Question Answers")]
-    private List<Card> questionAnswers;
+    public List<Card> questionAnswers;
     [SerializeField] private Card placeRcm = null;
     [SerializeField] private Card monsterRcm = null;
     [SerializeField] private Card weaponRcm = null;

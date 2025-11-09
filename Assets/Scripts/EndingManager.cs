@@ -30,13 +30,13 @@ public class EndingManager : MonoBehaviour
         EndingCondition condition = ending.condition;
         if (condition.date == 0 || condition.date == heroStat.Date)
         {
-            if (condition.placeCard.Length == 0 || condition.placeCard.Contains(heroStat.GetAnswer(0)))
+            if (condition.placeCard.Count == 0 || condition.placeCard.Contains(heroStat.questionAnswers[0]))
             {
-                if (condition.monsterCard.Length == 0 || condition.monsterCard.Contains(heroStat.GetAnswer(1)))
+                if (condition.monsterCard.Count == 0 || condition.monsterCard.Contains(heroStat.questionAnswers[1]))
                 {
-                    if ((condition.weaponCard.Length == 0 || condition.weaponCard.Contains(heroStat.GetAnswer(2))) && (condition.behaviorCard.Length == 0 || condition.behaviorCard.Contains(heroStat.GetAnswer(3))))
+                    if ((condition.weaponCard.Count == 0 || condition.weaponCard.Contains(heroStat.questionAnswers[2])) && (condition.behaviorCard.Count == 0 || condition.behaviorCard.Contains(heroStat.questionAnswers[3])))
                     {
-                        if (condition.emotionCard.Length == 0 || condition.emotionCard.Contains(heroStat.GetAnswer(4)))
+                        if (condition.emotionCard.Count == 0 || condition.emotionCard.Contains(heroStat.questionAnswers[4]))
                         {
                             if (condition.likabilityMin <= heroStat.Likeability &&
                                 heroStat.Likeability <= condition.likabilityMax)
