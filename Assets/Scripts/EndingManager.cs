@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using NUnit.Framework.Internal;
 using TMPro;
 using UnityEngine;
@@ -25,7 +26,6 @@ public class EndingManager : MonoBehaviour
     private void Start()
     {
         heroStat = HeroStat.Instance;
-        StartEnding(endings[1]);
     }
 
     [ContextMenu("Check Ending")]
@@ -102,7 +102,7 @@ public class EndingManager : MonoBehaviour
         {
             s += endingText[i];
             text.text = s;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.06f);
         }
         
         yield return new WaitForSeconds(1f);
@@ -112,8 +112,16 @@ public class EndingManager : MonoBehaviour
         endingScene.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(CloseEnding);
     }
 
+    public Image fadeImage;
+    public StartScene startScene;
     private void CloseEnding()
     {
+        startScene.gameObject.SetActive(true);
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(1f, 0f);
+        fadeImage.DOFade(0f, 0.5f).OnComplete(()=>fadeImage.gameObject.SetActive(false));
+        HeroStat.Instance.InitHeroStat();
+        endingScene.transform.GetChild(2).GetComponent<Button>().onClick.RemoveListener(CloseEnding);
         endingScene.SetActive(false);
     }
 

@@ -82,7 +82,7 @@ public class HeroStat : MonoBehaviour
         if (likeability < 0) likeability = 0;
     }
 
-    private void InitHeroStat()
+    public void InitHeroStat()
     {
         date = 0;
         likeability = 0;
