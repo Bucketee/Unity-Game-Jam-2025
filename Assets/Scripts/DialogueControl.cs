@@ -6,6 +6,7 @@ public class DialogueControl : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI dialogueTmp;
     [SerializeField] private Button leftButton, rightButton, downButton, nextDayButton;
+    [SerializeField] private GameObject nextDayText;
 
     private void Start()
     {
@@ -56,5 +57,8 @@ public class DialogueControl : MonoBehaviour
 
     public void NextDialogue() => DialogueManager.Instance.NextDialogue();
     public void PrevDialogue() => DialogueManager.Instance.PrevDialogue();
+
+    public void HoverOnNextDay() => nextDayText.SetActive(true);
+    public void HoverOffNextDay() => nextDayText.SetActive(false);
 
 }
