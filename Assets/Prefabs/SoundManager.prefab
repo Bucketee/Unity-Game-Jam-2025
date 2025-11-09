@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   bgms: []
   sfxs:
-  - {fileID: 8300000, guid: a710a0cfdfda58249902f804d6c9ffb9, type: 3}
+  - {fileID: 8300000, guid: 6d6e644f0746e5d4e9b0e847a48024a2, type: 3}
+  - {fileID: 8300000, guid: bf02ec47ac3851e478dfd7136faa9742, type: 3}
   audioBgm: {fileID: 4249534874673949058}
   audioSfx: {fileID: 8229815877340646933}
 --- !u!1 &5159834330758409791
@@ -225,7 +226,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

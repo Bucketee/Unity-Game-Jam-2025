@@ -10,11 +10,9 @@ public enum EBgm
 public enum ESfx
 {
     SFX_BUTTON,
-    SFX_ENDING,
-    SFX_TOKEN,
-    SFX_BOTTLE,
-    SFX_OPENDOOR,
-    SFX_MissionClear
+    SFX_START_BUTTON,
+    SFX_DIALOGUE_MOVE_BUTTON,
+    SFX_PURCHASE,
 }
 
 public class SoundManager : MonoBehaviour

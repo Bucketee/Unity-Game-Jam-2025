@@ -492,6 +492,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ebb3f0bdf93f84698bbfcf5def751e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  drawAmounts: 0
+  draws: 0
+  totalDrawsWillbe: 0
+  fadeImage: {fileID: 0}
+  submittedCardImage: {fileID: 0}
   cutsceneImage: {fileID: 0}
   cutsceneSprites: []
   cardSubmit: {fileID: 0}
@@ -1095,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2320799578577474110, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
+      propertyPath: 'sfxs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 36f119d2fcd8d234da7956cc331cee9d, type: 3}
     - target: {fileID: 4730369334136656699, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
