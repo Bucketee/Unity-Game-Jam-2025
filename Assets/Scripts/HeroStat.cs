@@ -35,6 +35,13 @@ public class HeroStat : MonoBehaviour
     [SerializeField] private Card behaviorRcm = null;
     [SerializeField] private Card randomQuestion = null;
 
+    public int dungeunCount;
+
+    public bool IsRandomPlace
+    {
+        get => !placeRcm;
+    }
+
     private void Awake()
     {
         if (Instance != null) DestroyImmediate(this);
@@ -55,6 +62,12 @@ public class HeroStat : MonoBehaviour
         date = 0;
         likeability = 0;
         attackPower = 0;
+        
+        placeRcm = null;
+        monsterRcm = null;
+        weaponRcm = null;
+        behaviorRcm = null;
+        randomQuestion = null;
     }
     
     /// <param name="card"></param>
@@ -62,6 +75,11 @@ public class HeroStat : MonoBehaviour
     public void AnswerQuestion(Card card, int index)
     {
         questionAnswers[index] = card.Clone();
+    }
+
+    public Card GetAnswer(int index)
+    {
+        return questionAnswers[index];
     }
 }
 
