@@ -27,6 +27,10 @@ MonoBehaviour:
     behaviorCard:
     - {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
     emotionCard: []
+    heroPlace: 2
+    heroMonster: 2
+    heroWeapon: 0
+    behavior: 0
     likabilityMin: 0
     likabilityMax: 10
     attackPowerMin: 0

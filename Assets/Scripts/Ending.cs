@@ -29,6 +29,12 @@ public class EndingCondition
     public List<Card> weaponCard;
     public List<Card> behaviorCard;
     public List<Card> emotionCard;
+    
+    public HeroPlace heroPlace;
+    public HeroMonster heroMonster;
+    public HeroWeapon heroWeapon;
+    public HeroBehavior behavior;
+    
     public int likabilityMin = 0; public int likabilityMax = 10;
     public int attackPowerMin = 0; public int attackPowerMax = 5;
 }

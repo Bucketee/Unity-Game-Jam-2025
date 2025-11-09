@@ -122,50 +122,48 @@ public class EndingManager : MonoBehaviour
         EndingCondition condition = ending.condition;
         if (condition.date == 0 || condition.date == heroStat.Date)
         {
-            if (condition.placeCard.Count == 0 || condition.placeCard.Contains(heroStat.questionAnswers[0]))
+            if (condition.placeCard.Count == 0 || condition.heroPlace == HeroStat.Instance.today.place)
             {
-                if (condition.monsterCard.Count == 0 || condition.monsterCard.Contains(heroStat.questionAnswers[1]))
+                if (condition.monsterCard.Count == 0 || condition.heroMonster == HeroStat.Instance.today.monster)
                 {
-                    if ((condition.weaponCard.Count == 0 || condition.weaponCard.Contains(heroStat.questionAnswers[2])) && (condition.behaviorCard.Count == 0 || condition.behaviorCard.Contains(heroStat.questionAnswers[3])))
+                    if ((condition.weaponCard.Count == 0 || condition.heroWeapon == HeroStat.Instance.today.weapon) && (condition.behaviorCard.Count == 0 || condition.behavior == HeroStat.Instance.today.behavior))
                     {
-                        if (condition.emotionCard.Count == 0 || condition.emotionCard.Contains(heroStat.questionAnswers[4]))
+                        if (condition.likabilityMin <= heroStat.Likeability &&
+                            heroStat.Likeability <= condition.likabilityMax)
                         {
-                            if (condition.likabilityMin <= heroStat.Likeability &&
-                                heroStat.Likeability <= condition.likabilityMax)
+                            if (condition.attackPowerMin <= heroStat.AttackPower &&
+                                heroStat.AttackPower <= condition.attackPowerMax)
                             {
-                                if (condition.attackPowerMin <= heroStat.AttackPower &&
-                                    heroStat.AttackPower <= condition.attackPowerMax)
+                                switch (ending.endingName)
                                 {
-                                    switch (ending.endingName)
-                                    {
-                                        case "Flames of the Ancient Dragon":
-                                            if (heroStat.dungeunCount == 3)
-                                            {
-                                                return true;
-                                            }
-                                            return false;
-                                        case "Dragon’s Oath: The Last Dawn":
-                                            if (heroStat.dungeunCount == 4)
-                                            {
-                                                return true;
-                                            }
-                                            return false;
-                                        case "The Innkeeper of Shadows":
-                                            if (heroStat.IsRandomPlace)
-                                            {
-                                                return true;
-                                            }
-                                            return false;
-                                        case "The Fallen Crown":
-                                            if (heroStat.forestCount == 4)
-                                            {
-                                                return true;
-                                            }
-                                            return false;
-                                    }
-                                    return true;
+                                    case "Flames of the Ancient Dragon":
+                                        if (heroStat.dungeunCount == 3)
+                                        {
+                                            return true;
+                                        }
+                                        return false;
+                                    case "Dragon’s Oath: The Last Dawn":
+                                        if (heroStat.dungeunCount == 4)
+                                        {
+                                            return true;
+                                        }
+                                        return false;
+                                    case "The Innkeeper of Shadows":
+                                        if (heroStat.IsRandomPlace)
+                                        {
+                                            return true;
+                                        }
+                                        return false;
+                                    case "The Fallen Crown":
+                                        if (heroStat.forestCount == 4)
+                                        {
+                                            return true;
+                                        }
+                                        return false;
                                 }
+                                return true;
                             }
+                            
                         }
                     }
                 }

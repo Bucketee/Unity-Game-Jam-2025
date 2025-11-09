@@ -25,6 +25,10 @@ MonoBehaviour:
     weaponCard: []
     behaviorCard: []
     emotionCard: []
+    heroPlace: 2
+    heroMonster: 0
+    heroWeapon: 0
+    behavior: 0
     likabilityMin: 0
     likabilityMax: 10
     attackPowerMin: 0
