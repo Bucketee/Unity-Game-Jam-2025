@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class DeckManager : MonoBehaviour
@@ -9,6 +10,8 @@ public class DeckManager : MonoBehaviour
     public static DeckManager Instance;
     
     public List<Card> deck = new List<Card>();
+
+    public UnityEvent onDeckChange = new UnityEvent();
 
     private void Awake()
     {
@@ -24,5 +27,17 @@ public class DeckManager : MonoBehaviour
         Card card = deck[r];
         deck.RemoveAt(r);
         return card;
+    }
+
+    public void AddCard(Card card)
+    {
+        deck.Add(card);
+        onDeckChange.Invoke();
+    }
+
+    public void RemoveCard(Card card)
+    {
+        deck.Remove(card);
+        onDeckChange.Invoke();
     }
 }

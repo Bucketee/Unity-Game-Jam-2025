@@ -14,7 +14,7 @@ public class DeckShopUI : MonoBehaviour
     public RectTransform shopPagePanel;
     public CardInfo[] cardInfos;
 
-    public List<Transform> pages;
+    public List<Transform> pages = new List<Transform>();
     public Transform shopPages;
 
     public GameObject cardPrefab;
@@ -68,7 +68,7 @@ public class DeckShopUI : MonoBehaviour
                 cardIdx = i * 8 + j;
                 if (cardIdx >= cardInfos.Length) break; 
                 var go = Instantiate(cardPrefab, pagego).GetComponent<CardDisplay>();
-                go.Init(cardInfos[i * 8 + j].Card);
+                go.Init(cardInfos[i * 8 + j].Card, false);
                 cardGameObjectsInPage.Add(go.gameObject);
             }
         }
