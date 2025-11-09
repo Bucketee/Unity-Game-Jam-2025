@@ -157,6 +157,8 @@ public class DialogueManager : MonoBehaviour
 
         currentDialogueId = dialogueId;
         currentDialogue = currentGroup.dialogues[currentDialogueId];
+        
+        cutsceneImage.sprite = cutsceneSprites[currentDialogue.cutimageIdx];
         OnDialogueChanged?.Invoke();
     }
     private void SetDialogue(int dialogueId)

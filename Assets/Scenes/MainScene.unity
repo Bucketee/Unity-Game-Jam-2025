@@ -649,6 +649,21 @@ MonoBehaviour:
   - Card: {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
     Count: 0
     price: 0
+  - Card: {fileID: 11400000, guid: 4373766a29ed6eb4dadbb1d3b446c738, type: 2}
+    Count: 0
+    price: 0
+  - Card: {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
+    Count: 0
+    price: 0
+  - Card: {fileID: 11400000, guid: c50e2472748c98b44bd38d2f9c94c920, type: 2}
+    Count: 0
+    price: 0
+  - Card: {fileID: 11400000, guid: 776bc480146832349bc5c5d924231ab2, type: 2}
+    Count: 0
+    price: 0
+  - Card: {fileID: 11400000, guid: b937317e92d7bd644b23eb682dfdf470, type: 2}
+    Count: 0
+    price: 0
   - Card: {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
     Count: 0
     price: 0
@@ -2026,9 +2041,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   cutsceneImage: {fileID: 1814428672}
   cutsceneSprites:
-  - {fileID: 5775143000185782248, guid: a9c136f9dcfd3954fa0f3fab6260607f, type: 3}
-  - {fileID: 21300000, guid: 8120f573dcfe0db4ea4ed69bc2495a0f, type: 3}
-  - {fileID: 21300000, guid: d3a2bc992242246139bc03639a0db6d0, type: 3}
+  - {fileID: 21300000, guid: d7fd185d429646743b7ac2076bc99432, type: 3}
+  - {fileID: 21300000, guid: f40ba9a47b5e54948acdf0aecff9b0a0, type: 3}
+  - {fileID: 21300000, guid: 9108323712ec0a34fb8c4e456849fcc4, type: 3}
+  - {fileID: 21300000, guid: a701f2d52cd6e0a4cba88e7fecd40b5c, type: 3}
+  - {fileID: 21300000, guid: c3e17e23c7ce02843a5194acb0472935, type: 3}
+  - {fileID: 21300000, guid: 99bae56785f425140aa6c43da082fe41, type: 3}
+  - {fileID: 21300000, guid: 6c117d553efadc94dbfecd908f7bb39a, type: 3}
   cardSubmit: {fileID: 95588547}
 --- !u!1 &2089389973
 GameObject:
