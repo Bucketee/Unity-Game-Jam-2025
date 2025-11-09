@@ -66,7 +66,9 @@ public class DialogueManager : MonoBehaviour
 
     public Image fadeImage;
     public Image submittedCardImage;
-    
+
+    public TextMeshProUGUI dayText;
+    public TextMeshProUGUI likablityText;
     void Awake()
     {
         if (Instance != null) DestroyImmediate(this);
@@ -158,6 +160,9 @@ public class DialogueManager : MonoBehaviour
             SetDialogueGroup(0);
             test = true;
         }
+        
+        dayText.text       = "DAY:              " + HeroStat.Instance.Date;
+        likablityText.text = "LIKABILITY:       " + HeroStat.Instance.Likeability;
     }
 
     private int currentGroupId = -1;

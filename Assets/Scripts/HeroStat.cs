@@ -72,7 +72,7 @@ public class HeroStat : MonoBehaviour
     {
         date++;
 
-        if (questionAnswers[0].id == 12)
+        if (questionAnswers[0] != null && questionAnswers[0].id == 12)
         {
             dungeunCount++;
         }
