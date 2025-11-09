@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using NUnit.Framework.Internal;
 using TMPro;
 using UnityEngine;
@@ -25,7 +26,6 @@ public class EndingManager : MonoBehaviour
     private void Start()
     {
         heroStat = HeroStat.Instance;
-        StartEnding(endings[1]);
     }
 
     [ContextMenu("Check Ending")]
@@ -102,7 +102,7 @@ public class EndingManager : MonoBehaviour
         {
             s += endingText[i];
             text.text = s;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.06f);
         }
         
         yield return new WaitForSeconds(1f);
@@ -112,8 +112,16 @@ public class EndingManager : MonoBehaviour
         endingScene.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(CloseEnding);
     }
 
+    public Image fadeImage;
+    public StartScene startScene;
     private void CloseEnding()
     {
+        startScene.gameObject.SetActive(true);
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(1f, 0f);
+        fadeImage.DOFade(0f, 0.5f).OnComplete(()=>fadeImage.gameObject.SetActive(false));
+        HeroStat.Instance.InitHeroStat();
+        endingScene.transform.GetChild(2).GetComponent<Button>().onClick.RemoveListener(CloseEnding);
         endingScene.SetActive(false);
     }
 
@@ -122,50 +130,48 @@ public class EndingManager : MonoBehaviour
         EndingCondition condition = ending.condition;
         if (condition.date == 0 || condition.date == heroStat.Date)
         {
-            if (condition.placeCard.Count == 0 || condition.placeCard.Contains(heroStat.questionAnswers[0]))
+            if (condition.placeCard.Count == 0 || condition.heroPlace == HeroStat.Instance.today.place)
             {
-                if (condition.monsterCard.Count == 0 || condition.monsterCard.Contains(heroStat.questionAnswers[1]))
+                if (condition.monsterCard.Count == 0 || condition.heroMonster == HeroStat.Instance.today.monster)
                 {
-                    if ((condition.weaponCard.Count == 0 || condition.weaponCard.Contains(heroStat.questionAnswers[2])) && (condition.behaviorCard.Count == 0 || condition.behaviorCard.Contains(heroStat.questionAnswers[3])))
+                    if ((condition.weaponCard.Count == 0 || condition.heroWeapon == HeroStat.Instance.today.weapon) && (condition.behaviorCard.Count == 0 || condition.behavior == HeroStat.Instance.today.behavior))
                     {
-                        if (condition.emotionCard.Count == 0 || condition.emotionCard.Contains(heroStat.questionAnswers[4]))
+                        if (condition.likabilityMin <= heroStat.Likeability &&
+                            heroStat.Likeability <= condition.likabilityMax)
                         {
-                            if (condition.likabilityMin <= heroStat.Likeability &&
-                                heroStat.Likeability <= condition.likabilityMax)
+                            if (condition.attackPowerMin <= heroStat.AttackPower &&
+                                heroStat.AttackPower <= condition.attackPowerMax)
                             {
-                                if (condition.attackPowerMin <= heroStat.AttackPower &&
-                                    heroStat.AttackPower <= condition.attackPowerMax)
+                                switch (ending.endingName)
                                 {
-                                    switch (ending.endingName)
-                                    {
-                                        case "Flames of the Ancient Dragon":
-                                            if (heroStat.dungeunCount == 3)
-                                            {
-                                                return true;
-                                            }
-                                            return false;
-                                        case "Dragon’s Oath: The Last Dawn":
-                                            if (heroStat.dungeunCount == 4)
-                                            {
-                                                return true;
-                                            }
-                                            return false;
-                                        case "The Innkeeper of Shadows":
-                                            if (heroStat.IsRandomPlace)
-                                            {
-                                                return true;
-                                            }
-                                            return false;
-                                        case "The Fallen Crown":
-                                            if (heroStat.forestCount == 4)
-                                            {
-                                                return true;
-                                            }
-                                            return false;
-                                    }
-                                    return true;
+                                    case "Flames of the Ancient Dragon":
+                                        if (heroStat.dungeunCount == 3)
+                                        {
+                                            return true;
+                                        }
+                                        return false;
+                                    case "Dragon’s Oath: The Last Dawn":
+                                        if (heroStat.dungeunCount == 4)
+                                        {
+                                            return true;
+                                        }
+                                        return false;
+                                    case "The Innkeeper of Shadows":
+                                        if (heroStat.IsRandomPlace)
+                                        {
+                                            return true;
+                                        }
+                                        return false;
+                                    case "The Fallen Crown":
+                                        if (heroStat.forestCount == 4)
+                                        {
+                                            return true;
+                                        }
+                                        return false;
                                 }
+                                return true;
                             }
+                            
                         }
                     }
                 }
