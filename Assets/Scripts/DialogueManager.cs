@@ -157,6 +157,8 @@ public class DialogueManager : MonoBehaviour
 
         currentDialogueId = dialogueId;
         currentDialogue = currentGroup.dialogues[currentDialogueId];
+        
+        cutsceneImage.sprite = cutsceneSprites[currentDialogue.cutimageIdx];
         OnDialogueChanged?.Invoke();
     }
     private void SetDialogue(int dialogueId)
@@ -176,9 +178,9 @@ public class DialogueManager : MonoBehaviour
 
     public void GoToNextDay()
     {
-        HeroStat.Instance.InitRCMs();
-        
         EndingManager.Instance.CheckEnding();
+        
+        HeroStat.Instance.InitRCMs();
         SetDialogueGroup(HeroStat.Instance.Date);
     }
 
