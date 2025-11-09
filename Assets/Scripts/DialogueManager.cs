@@ -25,6 +25,8 @@ public class Dialogue
     public Dictionary<int, DialogueEffect> effects;
     public int cutimageIdx;
     public int questionType;
+
+    public int wrongansHandler = 8282;
 }
 
 public class DialogueEffect
@@ -88,6 +90,10 @@ public class DialogueManager : MonoBehaviour
                 dialogue.cutimageIdx = int.Parse(dialogueNode.Attributes["image"].Value);
                 int questionType = int.Parse(dialogueNode.Attributes["questionType"].Value);
                 dialogue.effects = new Dictionary<int, DialogueEffect>();
+                dialogue.wrongansHandler =
+                    dialogueNode.Attributes["wrongans"] != null ?
+                    int.Parse(dialogueNode.Attributes["wrongans"].Value) :
+                    8282;
 
                 XmlNodeList cardNodes = dialogueNode.SelectNodes("Card");
                 foreach (XmlNode cardNode in cardNodes)
@@ -242,7 +248,7 @@ public class DialogueManager : MonoBehaviour
             // 엉뚱한 대답을 제출한 상황
             // 용사 호감도 내려감, 실망 이펙트 등
             // 엉뚱한 대답에 대한 (미리 정의된) dialogue group으로 점프함
-            PushGroup(8282);
+            PushGroup(currentDialogue.wrongansHandler);
             Debug.Log("Wrong card");
             return;
         }
