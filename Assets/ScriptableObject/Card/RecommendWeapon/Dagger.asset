@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2c4639a6ce032f4b80614232a280f88, type: 3}
-  m_Name: Sword
+  m_Name: Dagger
   m_EditorClassIdentifier: Assembly-CSharp::Card
   cardImage: {fileID: 0}
   cardType: 4
-  cardText: 1000 Degree Sword
+  cardText: Sword

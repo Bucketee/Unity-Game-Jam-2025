@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
+  m_Name: Hero's New Job
+  m_EditorClassIdentifier: Assembly-CSharp::Ending
+  endingDescription: 
+  endPrice: 80
+  isClearedOnce: 0
+  condition:
+    date: 5
+    placeCard:
+    - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
+    monsterCard: []
+    weaponCard: []
+    behaviorCard: []
+    emotionCard: []
+    likabilityMin: 10
+    likabilityMax: 10
+    attackPowerMin: 0
+    attackPowerMax: 0

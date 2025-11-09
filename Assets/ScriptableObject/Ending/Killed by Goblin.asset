@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2de1721c9172945b921ec3cca2c093, type: 3}
+  m_Name: Killed by Goblin
+  m_EditorClassIdentifier: Assembly-CSharp::Ending
+  endingDescription: 
+  endPrice: 15
+  isClearedOnce: 0
+  condition:
+    date: 0
+    placeCard:
+    - {fileID: 11400000, guid: f366fb4f91280a04ea708de189333f07, type: 2}
+    monsterCard:
+    - {fileID: 11400000, guid: 8f6c68d584e4e7343a8bd40c78a85cb9, type: 2}
+    weaponCard:
+    - {fileID: 11400000, guid: 69227305d1f88f645b1bb11508a4e333, type: 2}
+    - {fileID: 11400000, guid: b937317e92d7bd644b23eb682dfdf470, type: 2}
+    behaviorCard:
+    - {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
+    - {fileID: 11400000, guid: 90d9cda970f6fec43b88e9490c13e60f, type: 2}
+    emotionCard: []
+    likabilityMin: 0
+    likabilityMax: 10
+    attackPowerMin: 0
+    attackPowerMax: 5
