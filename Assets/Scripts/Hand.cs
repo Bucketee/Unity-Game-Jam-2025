@@ -6,6 +6,8 @@ using UnityEngine;
 public class Hand : MonoBehaviour
 {
     public float angleSpread;
+
+    
     [SerializeField] private List<Card> cardsInHand;
 
     private GameObject cardDisplay;

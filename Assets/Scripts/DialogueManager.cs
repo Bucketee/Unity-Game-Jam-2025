@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public enum DialogueType
 {
@@ -22,15 +23,26 @@ public class Dialogue
     public int id;
     public string text;
     public Dictionary<int, DialogueEffect> effects;
+    public int cutimageIdx;
+    public int questionType;
 }
 
 public class DialogueEffect
 {
     public int nextGroup;
+    public int questionType;
+
+    public int likablity;
+    public int attackPower;
 
     public void ApplyEffect()
     {
         // Implement effect application logic here
+        HeroStat.Instance.AttackPower += attackPower;
+        HeroStat.Instance.Likeability += likablity;
+        
+        Debug.Log("ATTACK POWER INCREASED BY " + attackPower);
+        Debug.Log("LIKABILTY INCREASED BY " + likablity);
     }
 }
 
@@ -73,6 +85,8 @@ public class DialogueManager : MonoBehaviour
                 Dialogue dialogue = new Dialogue();
                 dialogue.id = int.Parse(dialogueNode.Attributes["id"].Value);
                 dialogue.text = dialogueNode.Attributes["text"].Value;
+                dialogue.cutimageIdx = int.Parse(dialogueNode.Attributes["image"].Value);
+                int questionType = int.Parse(dialogueNode.Attributes["questionType"].Value);
                 dialogue.effects = new Dictionary<int, DialogueEffect>();
 
                 XmlNodeList cardNodes = dialogueNode.SelectNodes("Card");
@@ -81,6 +95,14 @@ public class DialogueManager : MonoBehaviour
                     DialogueEffect effect = new DialogueEffect();
                     int cardId = int.Parse(cardNode.Attributes["id"].Value);
                     effect.nextGroup = int.Parse(cardNode.Attributes["nextGroup"].Value);
+                    effect.questionType = questionType;
+
+                    effect.likablity = cardNode.Attributes["likablity"] != null
+                        ? int.Parse(cardNode.Attributes["likablity"].Value)
+                        : 0;
+                    effect.attackPower = cardNode.Attributes["attackPower"] != null
+                        ? int.Parse(cardNode.Attributes["attackPower"].Value)
+                        : 0;
 
                     dialogue.effects.Add(cardId, effect);
                 }
@@ -116,6 +138,8 @@ public class DialogueManager : MonoBehaviour
     private DialogueGroup currentGroup = null;
     private int currentDialogueId = -1;
     private Dialogue currentDialogue = null;
+    public Image cutsceneImage;
+    public Sprite[] cutsceneSprites;
 
     public event Action OnGroupChanged, OnDialogueChanged;
     
@@ -133,11 +157,23 @@ public class DialogueManager : MonoBehaviour
     {
         currentDialogueId = dialogueId;
         currentDialogue = currentGroup.dialogues[currentDialogueId];
+        
+        // cutscene image change!
+        cutsceneImage.sprite = cutsceneSprites[currentDialogue.cutimageIdx];
+        
         OnDialogueChanged?.Invoke();
     }
     public bool IsLastDialogue()
     {
         return !currentGroup.dialogues.ContainsKey(currentDialogueId + 1);
+    }
+
+    public void GoToNextDay()
+    {
+        HeroStat.Instance.InitRCMs();
+        
+        EndingManager.Instance.CheckEnding();
+        SetDialogueGroup(HeroStat.Instance.Date);
     }
 
     public string GetDialogue() => currentDialogue.text;
@@ -157,6 +193,7 @@ public class DialogueManager : MonoBehaviour
             else if (currentGroup.type == DialogueType.Normal)
             {
                 // 다음 날로 넘어가기
+                GoToNextDay();
             }
         }
     }
@@ -185,6 +222,16 @@ public class DialogueManager : MonoBehaviour
         return false;
     }
 
+    public Card GetCard(int idx)
+    {
+        foreach (var cardInfo in DeckManager.Instance.cardInfos)
+        {
+            if (cardInfo.Card.id == idx) return cardInfo.Card;
+        }
+
+        return null;
+    }
+
     // cardId에 해당하는 카드를 제출했을 때의 처리
     public void SubmitCard(int cardId)
     {
@@ -195,12 +242,19 @@ public class DialogueManager : MonoBehaviour
             // 엉뚱한 대답을 제출한 상황
             // 용사 호감도 내려감, 실망 이펙트 등
             // 엉뚱한 대답에 대한 (미리 정의된) dialogue group으로 점프함
-
+            PushGroup(8282);
             Debug.Log("Wrong card");
             return;
         }
 
         DialogueEffect effect = currentDialogue.effects[cardId];
+        var card = GetCard(cardId);
+        
+        if (card == null) return;
+        
+        Debug.Log("!!!ASDGASDG");
+        HeroStat.Instance.AnswerQuestion(card, currentDialogue.questionType);
+        
         effect.ApplyEffect();
         PushGroup(effect.nextGroup);
     }
@@ -210,7 +264,10 @@ public class DialogueManager : MonoBehaviour
     public void PushGroup(int nextGroup)
     {
         Debug.Log($"Jump to {nextGroup}");
-        groupHistory.Push((currentGroupId, currentDialogueId));
+        int returnAddr;
+        if (IsLastDialogue()) returnAddr = currentDialogueId;
+        else returnAddr = currentDialogueId + 1;
+        groupHistory.Push((currentGroupId, returnAddr));
         SetDialogueGroup(nextGroup);
     }
 

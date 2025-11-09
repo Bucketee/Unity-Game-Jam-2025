@@ -5,8 +5,16 @@ using UnityEngine;
 
 public class EndingManager : MonoBehaviour
 {
+    public static EndingManager Instance;
+    
     public List<Ending> endings;
     private HeroStat heroStat;
+
+    private void Awake()
+    {
+        if (Instance != null) Destroy(this);
+        Instance = this;
+    }
 
     private void Start()
     {
