@@ -6,13 +6,6 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public class Ending
-{
-    public Sprite cutscene;
-    public string name;
-    public string description;
-}
 
 public class EndingListUI : MonoBehaviour
 {
@@ -38,13 +31,18 @@ public class EndingListUI : MonoBehaviour
 
     private void Start()
     {
+        int cnt = 0;
         foreach (Ending ending in endings)
         {
+            if (!ending.isClearedOnce) continue;
+            
             var go = Instantiate(endingUI, endingListTransform);
             go.GetComponent<EndingUI>().Init(ending);
+
+            cnt++;
         }
-        
-        int chcnt = endings.Count;
+
+        int chcnt = cnt;
         float height =     listLayoutGroup.padding.top 
                            + listLayoutGroup.padding.bottom 
                            + minideckHeight * chcnt
@@ -62,7 +60,7 @@ public class EndingListUI : MonoBehaviour
         endingFade.DOFade(1, 0f);
         endingFade.DOFade(0, 0.5f);
         
-        endingCutscene.sprite = ending.cutscene;
-        endingDescription.text = ending.description;
+        endingCutscene.sprite = ending.endingSprite;
+        endingDescription.text = ending.endingDescription;
     }
 }

@@ -9,6 +9,8 @@ public class Ending : ScriptableObject
     public int endPrice;
     public bool isClearedOnce;
     
+    public Sprite endingSprite;
+    
     public EndingCondition condition;
 }
 
