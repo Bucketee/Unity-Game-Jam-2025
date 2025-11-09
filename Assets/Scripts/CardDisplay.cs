@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
 public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Card card;
@@ -15,23 +16,27 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private Vector3 originalPosition;
     private int originalSiblingIndex;
     private RectTransform cardRect;
-
-    public void Init(Card card)
+    
+    private bool _canPointer;
+    
+    public void Init(Card card, bool canPointer)
     {
         this.card = card.Clone();
         cardNameText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         cardImage = transform.GetChild(1).GetComponent<Image>();
         cardTextText = transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
-
+        
         cardNameText.text = card.cardName;
         cardImage.sprite = card.cardImage;
         cardTextText.text = card.cardText;
-
+        
+        _canPointer = canPointer;
+        
         originalPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
         originalSiblingIndex = transform.GetSiblingIndex();
-
+        
         cardRect = gameObject.GetComponent<RectTransform>();
-        cardRect.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+        if (!_canPointer) cardRect.localScale = new Vector3(0.7f, 0.7f, 0.7f); // main scene에서는 카드 좀 작게 씀
     }
 
     public void SynchPosition()
@@ -40,6 +45,12 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         cardTransitionCo = null;
         originalPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
     }
+    
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!_canPointer) return; 
+        DeckManager.Instance.onCardClicked.Invoke(this);
+    }
 
     public void OnPointerEnter(PointerEventData eventData) => ToggleCard();
     public void OnPointerExit(PointerEventData eventData) => UntoggleCard();
@@ -47,6 +58,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private void ToggleCard()
     {
         if (isDragging) return;
+        if (!_canPointer) return;
         if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
         cardTransitionCo = StartCoroutine(CardTransition(true));
     }
@@ -54,6 +66,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private void UntoggleCard()
     {
         if (isDragging) return; 
+        if (!_canPointer) return;
         transform.SetSiblingIndex(originalSiblingIndex);
 
         if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
