@@ -78,15 +78,16 @@ public class EndingManager : MonoBehaviour
         time = 0;
         duration = 5f;
         image = endingScene.transform.GetChild(0).GetComponent<Image>();
+        Color target = HeroStat.Instance.currentColor;
 
         while (time < duration)
         {
-            image.color = Color.Lerp(image.color, Color.white, time / duration);
+            image.color = Color.Lerp(image.color, target, time / duration);
             time += Time.deltaTime;
             yield return null;
         }
 
-        image.color = Color.white;
+        image.color = target;
 
         string endingText = ending.endingDescription;
         string s = "";

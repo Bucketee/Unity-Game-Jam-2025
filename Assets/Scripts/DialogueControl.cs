@@ -6,6 +6,7 @@ public class DialogueControl : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI dialogueTmp;
     [SerializeField] private Button leftButton, rightButton, downButton, nextDayButton;
+    [SerializeField] private GameObject nextDayText;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class DialogueControl : MonoBehaviour
         rightButton.gameObject.SetActive(isNormal);
         downButton.gameObject.SetActive(!isNormal);
         nextDayButton.gameObject.SetActive(false);
+        nextDayText.SetActive(false);
     }
     private void SetText()
     {
@@ -41,6 +43,7 @@ public class DialogueControl : MonoBehaviour
         else
         {
             nextDayButton.gameObject.SetActive(false);
+            nextDayText.SetActive(false);
             rightButton.gameObject.SetActive(true);
         }
 
@@ -56,5 +59,8 @@ public class DialogueControl : MonoBehaviour
 
     public void NextDialogue() => DialogueManager.Instance.NextDialogue();
     public void PrevDialogue() => DialogueManager.Instance.PrevDialogue();
+
+    public void HoverOnNextDay() => nextDayText.SetActive(true);
+    public void HoverOffNextDay() => nextDayText.SetActive(false);
 
 }
