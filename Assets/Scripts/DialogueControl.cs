@@ -28,6 +28,7 @@ public class DialogueControl : MonoBehaviour
         rightButton.gameObject.SetActive(isNormal);
         downButton.gameObject.SetActive(!isNormal);
         nextDayButton.gameObject.SetActive(false);
+        nextDayText.SetActive(false);
     }
     private void SetText()
     {
@@ -42,6 +43,7 @@ public class DialogueControl : MonoBehaviour
         else
         {
             nextDayButton.gameObject.SetActive(false);
+            nextDayText.SetActive(false);
             rightButton.gameObject.SetActive(true);
         }
 
