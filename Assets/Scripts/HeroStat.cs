@@ -41,6 +41,8 @@ public class HeroStat : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        
+        questionAnswers = new List<Card>();
     }
 
     private void InitHeroStat()

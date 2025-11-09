@@ -176,9 +176,9 @@ public class DialogueManager : MonoBehaviour
 
     public void GoToNextDay()
     {
-        HeroStat.Instance.InitRCMs();
-        
         EndingManager.Instance.CheckEnding();
+        
+        HeroStat.Instance.InitRCMs();
         SetDialogueGroup(HeroStat.Instance.Date);
     }
 
