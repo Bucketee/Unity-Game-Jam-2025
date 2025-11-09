@@ -84,7 +84,7 @@ public class HeroStat : MonoBehaviour
 
     public void InitHeroStat()
     {
-        date = 0;
+        date = 1;
         likeability = 0;
         attackPower = 0;
         currentColor = DeckManager.Instance.colors[(DeckManager.Instance.runCount + DeckManager.Instance.colors.Length - 1) % DeckManager.Instance.colors.Length];

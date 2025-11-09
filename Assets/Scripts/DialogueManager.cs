@@ -191,6 +191,20 @@ public class DialogueManager : MonoBehaviour
         draws += drawAmounts;
     }
 
+    public void ResetDialog()
+    {
+        foreach (var group in dialogueGroups)
+        {
+            foreach (var a in group.Value.dialogues)
+            {
+                a.Value.submitted = false;
+            }
+        }
+        SetDialogueGroup(0);
+        Hand.Instance.DrawCards(drawAmounts);
+        draws += drawAmounts;
+    }
+
     void Update()
     {
         bool test = false;
