@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.54509807}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -91,5 +91,5 @@ MonoBehaviour:
   index: 0
   image: {fileID: 0}
   sprites:
-  - {fileID: 571730767, guid: ce3ff38e6341b4646aab3b932e7b4a68, type: 3}
+  - {fileID: -1208873056, guid: 569752788f6a87d4e8538e7152b44979, type: 3}
   - {fileID: -400844646, guid: ce3ff38e6341b4646aab3b932e7b4a68, type: 3}

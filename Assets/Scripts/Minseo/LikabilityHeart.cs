@@ -18,7 +18,15 @@ public class LikabilityHeart : MonoBehaviour
 
     private void Update()
     {
-        if (HeroStat.Instance.Likeability >= index) image.sprite = sprites[0];
-        else image.sprite = sprites[1];
+        if (HeroStat.Instance.Likeability >= index)
+        {
+            image.sprite = sprites[0];
+            image.color = Color.white;
+        }
+        else
+        {
+            image.sprite = sprites[1];
+            image.color = Color.grey;
+        }
     }
 }
