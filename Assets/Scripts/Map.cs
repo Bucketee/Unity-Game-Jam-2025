@@ -9,6 +9,7 @@ public class Map : MonoBehaviour, IPointerClickHandler
     
     public void OnPointerClick(PointerEventData eventData)
     {
+        SoundManager.Instance.PlaySFX(ESfx.SFX_BUTTON);
         isShowingMap = !isShowingMap;
         transform.parent.GetChild(0).gameObject.SetActive(isShowingMap);
     }
