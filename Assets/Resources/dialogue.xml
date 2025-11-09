@@ -46,37 +46,39 @@
         </Dialogue>
         <Dialogue id="2" text="By the way, what do you think of my weapon? I just got a new sword!"
         image="6" questionType="2" wrongans="9914">
-            <Card id="0" nextGroup="25" likability="1"/>
-            <Card id="2" nextGroup="25" likability="1"/>
-            <Card id="4" nextGroup="25" likability="1"/>
+            <Card id="0" nextGroup="25" likability="1" heroWeapon="0"/>
+            <Card id="2" nextGroup="25" likability="1" heroWeapon="0"/>
+            <Card id="4" nextGroup="25" likability="1" heroWeapon="0"/>
             <Card id="1" nextGroup="26" likability="1"/>
             <Card id="3" nextGroup="26" likability="1"/>
             <Card id="5" nextGroup="26" likability="1"/>
-            <Card id="6" nextGroup="25" likability="2"/>
-            <Card id="7" nextGroup="28" likability="2"/>
-            <Card id="8" nextGroup="29" likability="2"/>
-            <Card id="9" nextGroup="30" likability="2"/>
-            <Card id="22" nextGroup="31" likability="2"/>
+
+            <Card id="6" nextGroup="25" likability="2" heroWeapon="0"/>
+            <Card id="7" nextGroup="28" likability="2" heroWeapon="1"/>
+            <Card id="8" nextGroup="29" likability="2" heroWeapon="2"/>
+            <Card id="9" nextGroup="30" likability="2" heroWeapon="3"/>
+
+            <Card id="22" nextGroup="31" likability="2" heroWeapon="0"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
         <Dialogue id="3" text="I heard there’ve been a lot of slimes around lately… is that true?"
         image="1" questionType="1" wrongans="7777">
-            <Card id="0" nextGroup="51" likability="1"/>
-            <Card id="2" nextGroup="51" likability="1"/>
-            <Card id="4" nextGroup="51" likability="1"/>
-            <Card id="13" nextGroup="51" likability="1"/>
+            <Card id="0" nextGroup="51" likability="1" heroMonster="0"/>
+            <Card id="2" nextGroup="51" likability="1" heroMonster="0"/>
+            <Card id="4" nextGroup="51" likability="1" heroMonster="0"/>
+            <Card id="13" nextGroup="51" likability="1" heroMonster="0"/>
 
             <Card id="1" nextGroup="53" likability="1"/>
             <Card id="3" nextGroup="53" likability="1"/>
             <Card id="5" nextGroup="53" likability="1"/>
 
-            <Card id="14" nextGroup="57" likability="1"/>
-            <Card id="15" nextGroup="58" likability="1"/>
-            <Card id="16" nextGroup="59" likability="1"/>
+            <Card id="14" nextGroup="57" likability="1" heroMonster="1"/>
+            <Card id="15" nextGroup="58" likability="1" heroMonster="2"/>
+            <Card id="16" nextGroup="59" likability="1" heroMonster="3"/>
 
-            <Card id="17" nextGroup="60" likability="1"/>
-            <Card id="18" nextGroup="60" likability="1"/>
-            <Card id="20" nextGroup="60" likability="1"/>
+            <Card id="17" nextGroup="60" likability="1" heroMonster="0"/>
+            <Card id="18" nextGroup="60" likability="1" heroMonster="0"/>
+            <Card id="20" nextGroup="60" likability="1" heroMonster="0"/>
 
             <Card id="22" nextGroup="61" likability="2"/>
             <Card id="23" nextGroup="62" likability="-1"/>
@@ -84,17 +86,20 @@
 
         <Dialogue id="4" text="What should I do when I’m out there? Should I be much more careful?" 
         image="1" questionType="3" wrongans="9912">
-            <Card id="0" nextGroup="33" likability="1"/>
-            <Card id="2" nextGroup="33" likability="1"/>
-            <Card id="4" nextGroup="33" likability="1"/>
+            <Card id="0" nextGroup="33" likability="1" heroBehavior="1"/>
+            <Card id="2" nextGroup="33" likability="1" heroBehavior="1"/>
+            <Card id="4" nextGroup="33" likability="1" heroBehavior="1"/>
+
             <Card id="1" nextGroup="34" likability="1"/>
             <Card id="3" nextGroup="34" likability="1"/>
             <Card id="5" nextGroup="34" likability="1"/>
-            <Card id="17" nextGroup="35" likability="2"/>
-            <Card id="18" nextGroup="33" likability="2"/>
-            <Card id="19" nextGroup="37" likability="2"/>
-            <Card id="20" nextGroup="38" likability="2"/>
-            <Card id="21" nextGroup="39" likability="2"/>
+
+            <Card id="17" nextGroup="35" likability="2" heroBehavior="0"/>
+            <Card id="18" nextGroup="33" likability="2" heroBehavior="1"/>
+            <Card id="19" nextGroup="37" likability="2" heroBehavior="2"/>
+            <Card id="20" nextGroup="38" likability="2" heroBehavior="3"/>
+            <Card id="21" nextGroup="39" likability="2" heroBehavior="4"/>
+
             <Card id="22" nextGroup="40" likability="2"/>
             <Card id="23" nextGroup="41" likability="-1"/>
         </Dialogue>
@@ -130,54 +135,59 @@
         </Dialogue>
         <Dialogue id="2" text="What do you think of my weapon? This Dagger! Looks pretty good, doesn’t it?" 
         image="6" questionType="2" wrongans="9914">
-            <Card id="0" nextGroup="25" likability="1"/>
-            <Card id="2" nextGroup="25" likability="1"/>
-            <Card id="4" nextGroup="25" likability="1"/>
+            <Card id="0" nextGroup="25" likability="1" heroWeapon="3"/>
+            <Card id="2" nextGroup="25" likability="1" heroWeapon="3"/>
+            <Card id="4" nextGroup="25" likability="1" heroWeapon="3"/>
+
             <Card id="1" nextGroup="26" likability="1"/>
             <Card id="3" nextGroup="26" likability="1"/>
             <Card id="5" nextGroup="26" likability="1"/>
-            <Card id="6" nextGroup="27" likability="2"/>
-            <Card id="7" nextGroup="28" likability="2"/>
-            <Card id="8" nextGroup="29" likability="2"/>
-            <Card id="9" nextGroup="25" likability="2"/>
-            <Card id="22" nextGroup="31" likability="2"/>
+
+            <Card id="6" nextGroup="27" likability="2" heroWeapon="0"/>
+            <Card id="7" nextGroup="28" likability="2" heroWeapon="1"/>
+            <Card id="8" nextGroup="29" likability="2" heroWeapon="2"/>
+            <Card id="9" nextGroup="25" likability="2" heroWeapon="3"/>
+            <Card id="22" nextGroup="31" likability="2" heroWeapon="3"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
         <Dialogue id="3" text="I heard there’ve been a lot of goblins around lately… is that true?"
         image="0" questionType="1" wrongans="7777">
-            <Card id="0" nextGroup="51" likability="1"/>
-            <Card id="2" nextGroup="51" likability="1"/>
-            <Card id="4" nextGroup="51" likability="1"/>
-            <Card id="14" nextGroup="51" likability="1"/>
+            <Card id="0" nextGroup="51" likability="1" heroMonster="1"/>
+            <Card id="2" nextGroup="51" likability="1" heroMonster="1"/>
+            <Card id="4" nextGroup="51" likability="1" heroMonster="1"/>
+            <Card id="14" nextGroup="51" likability="1" heroMonster="1"/>
 
             <Card id="1" nextGroup="55" likability="1"/>
             <Card id="3" nextGroup="55" likability="1"/>
             <Card id="5" nextGroup="55" likability="1"/>
 
-            <Card id="13" nextGroup="56" likability="1"/>
-            <Card id="15" nextGroup="58" likability="1"/>
-            <Card id="16" nextGroup="59" likability="1"/>
+            <Card id="13" nextGroup="56" likability="1" heroMonster="0"/>
+            <Card id="15" nextGroup="58" likability="1" heroMonster="2"/>
+            <Card id="16" nextGroup="59" likability="1" heroMonster="3"/>
 
-            <Card id="17" nextGroup="60" likability="1"/>
-            <Card id="18" nextGroup="60" likability="1"/>
-            <Card id="20" nextGroup="60" likability="1"/>
+            <Card id="17" nextGroup="60" likability="1" heroMonster="1"/>
+            <Card id="18" nextGroup="60" likability="1" heroMonster="1"/>
+            <Card id="20" nextGroup="60" likability="1" heroMonster="1"/>
 
             <Card id="22" nextGroup="61" likability="2"/>
             <Card id="23" nextGroup="62" likability="-1"/>
         </Dialogue>
-        <Dialogue id="4" text="What should I do when I’m out there?" 
+        <Dialogue id="4" text="What should I do when I’m out there? Should I be much more careful?" 
         image="1" questionType="3" wrongans="9912">
-            <Card id="0" nextGroup="33" likability="1"/>
-            <Card id="2" nextGroup="33" likability="1"/>
-            <Card id="4" nextGroup="33" likability="1"/>
+            <Card id="0" nextGroup="33" likability="1" heroBehavior="1"/>
+            <Card id="2" nextGroup="33" likability="1" heroBehavior="1"/>
+            <Card id="4" nextGroup="33" likability="1" heroBehavior="1"/>
+
             <Card id="1" nextGroup="34" likability="1"/>
             <Card id="3" nextGroup="34" likability="1"/>
             <Card id="5" nextGroup="34" likability="1"/>
-            <Card id="17" nextGroup="35" likability="2"/>
-            <Card id="18" nextGroup="36" likability="2"/>
-            <Card id="19" nextGroup="37" likability="2"/>
-            <Card id="20" nextGroup="38" likability="2"/>
-            <Card id="21" nextGroup="39" likability="2"/>
+
+            <Card id="17" nextGroup="35" likability="2" heroBehavior="0"/>
+            <Card id="18" nextGroup="33" likability="2" heroBehavior="1"/>
+            <Card id="19" nextGroup="37" likability="2" heroBehavior="2"/>
+            <Card id="20" nextGroup="38" likability="2" heroBehavior="3"/>
+            <Card id="21" nextGroup="39" likability="2" heroBehavior="4"/>
+
             <Card id="22" nextGroup="40" likability="2"/>
             <Card id="23" nextGroup="41" likability="-1"/>
         </Dialogue>
@@ -213,54 +223,58 @@
         </Dialogue>
         <Dialogue id="2" text="What do you think of my weapon? This MorningStar! Looks pretty good, doesn’t it?" 
         image="6" questionType="2" wrongans="9914">
-            <Card id="0" nextGroup="25" likability="1"/>
-            <Card id="2" nextGroup="25" likability="1"/>
-            <Card id="4" nextGroup="25" likability="1"/>
+            <Card id="0" nextGroup="25" likability="1" heroWeapon="2"/>
+            <Card id="2" nextGroup="25" likability="1" heroWeapon="2"/>
+            <Card id="4" nextGroup="25" likability="1" heroWeapon="2"/>
             <Card id="1" nextGroup="26" likability="1"/>
             <Card id="3" nextGroup="26" likability="1"/>
             <Card id="5" nextGroup="26" likability="1"/>
-            <Card id="6" nextGroup="27" likability="2"/>
-            <Card id="7" nextGroup="28" likability="2"/>
-            <Card id="8" nextGroup="25" likability="2"/>
-            <Card id="9" nextGroup="30" likability="2"/>
-            <Card id="22" nextGroup="31" likability="2"/>
+
+            <Card id="6" nextGroup="27" likability="2" heroWeapon="0"/>
+            <Card id="7" nextGroup="28" likability="2" heroWeapon="1"/>
+            <Card id="8" nextGroup="25" likability="2" heroWeapon="2"/>
+            <Card id="9" nextGroup="30" likability="2" heroWeapon="3"/>
+            <Card id="22" nextGroup="31" likability="2" heroWeapon="2"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
         <Dialogue id="3" text="I heard there’ve been a lot of zombies around lately… is that true?"
         image="1" questionType="1" wrongans="7777">
-            <Card id="0" nextGroup="51" likability="1"/>
-            <Card id="2" nextGroup="51" likability="1"/>
-            <Card id="4" nextGroup="51" likability="1"/>
-            <Card id="15" nextGroup="51" likability="1"/>
+            <Card id="0" nextGroup="51" likability="1" heroMonster="2"/>
+            <Card id="2" nextGroup="51" likability="1" heroMonster="2"/>
+            <Card id="4" nextGroup="51" likability="1" heroMonster="2"/>
+            <Card id="15" nextGroup="51" likability="1" heroMonster="2"/>
 
             <Card id="1" nextGroup="52" likability="1"/>
             <Card id="3" nextGroup="52" likability="1"/>
             <Card id="5" nextGroup="52" likability="1"/>
 
-            <Card id="13" nextGroup="56" likability="1"/>
-            <Card id="14" nextGroup="57" likability="1"/>
-            <Card id="16" nextGroup="59" likability="1"/>
+            <Card id="13" nextGroup="56" likability="1" heroMonster="0"/>
+            <Card id="14" nextGroup="57" likability="1" heroMonster="1"/>
+            <Card id="16" nextGroup="59" likability="1" heroMonster="3"/>
 
-            <Card id="17" nextGroup="60" likability="1"/>
-            <Card id="18" nextGroup="60" likability="1"/>
-            <Card id="20" nextGroup="60" likability="1"/>
+            <Card id="17" nextGroup="60" likability="1" heroMonster="2"/>
+            <Card id="18" nextGroup="60" likability="1" heroMonster="2"/>
+            <Card id="20" nextGroup="60" likability="1" heroMonster="2"/>
 
             <Card id="22" nextGroup="61" likability="2"/>
             <Card id="23" nextGroup="62" likability="-1"/>
         </Dialogue>
-        <Dialogue id="4" text="What should I do when I’m out there?" 
+        <Dialogue id="4" text="What should I do when I’m out there? Should I be much more careful?" 
         image="4" questionType="3" wrongans="9912">
-            <Card id="0" nextGroup="33" likability="1"/>
-            <Card id="2" nextGroup="33" likability="1"/>
-            <Card id="4" nextGroup="33" likability="1"/>
+            <Card id="0" nextGroup="33" likability="1" heroBehavior="1"/>
+            <Card id="2" nextGroup="33" likability="1" heroBehavior="1"/>
+            <Card id="4" nextGroup="33" likability="1" heroBehavior="1"/>
+
             <Card id="1" nextGroup="34" likability="1"/>
             <Card id="3" nextGroup="34" likability="1"/>
             <Card id="5" nextGroup="34" likability="1"/>
-            <Card id="17" nextGroup="35" likability="2"/>
-            <Card id="18" nextGroup="36" likability="2"/>
-            <Card id="19" nextGroup="37" likability="2"/>
-            <Card id="20" nextGroup="38" likability="2"/>
-            <Card id="21" nextGroup="39" likability="2"/>
+
+            <Card id="17" nextGroup="35" likability="2" heroBehavior="0"/>
+            <Card id="18" nextGroup="33" likability="2" heroBehavior="1"/>
+            <Card id="19" nextGroup="37" likability="2" heroBehavior="2"/>
+            <Card id="20" nextGroup="38" likability="2" heroBehavior="3"/>
+            <Card id="21" nextGroup="39" likability="2" heroBehavior="4"/>
+
             <Card id="22" nextGroup="40" likability="2"/>
             <Card id="23" nextGroup="41" likability="-1"/>
         </Dialogue>
@@ -296,54 +310,58 @@
         </Dialogue>
         <Dialogue id="2" text="What do you think of my weapon? This Bow! Looks pretty good, doesn’t it?" 
         image="6" questionType="2" wrongans="9914">
-            <Card id="0" nextGroup="25" likability="1"/>
-            <Card id="2" nextGroup="25" likability="1"/>
-            <Card id="4" nextGroup="25" likability="1"/>
+            <Card id="0" nextGroup="25" likability="1" heroWeapon="1"/>
+            <Card id="2" nextGroup="25" likability="1" heroWeapon="1"/>
+            <Card id="4" nextGroup="25" likability="1" heroWeapon="1"/>
             <Card id="1" nextGroup="26" likability="1"/>
             <Card id="3" nextGroup="26" likability="1"/>
             <Card id="5" nextGroup="26" likability="1"/>
-            <Card id="6" nextGroup="27" likability="2"/>
-            <Card id="7" nextGroup="25" likability="2"/>
-            <Card id="8" nextGroup="29" likability="2"/>
-            <Card id="9" nextGroup="30" likability="2"/>
-            <Card id="22" nextGroup="31" likability="2"/>
+
+            <Card id="6" nextGroup="27" likability="2" heroWeapon="0"/>
+            <Card id="7" nextGroup="25" likability="2" heroWeapon="1"/>
+            <Card id="8" nextGroup="29" likability="2" heroWeapon="2"/>
+            <Card id="9" nextGroup="30" likability="2" heroWeapon="3"/>
+            <Card id="22" nextGroup="31" likability="2" heroWeapon="1"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
         <Dialogue id="3" text="I heard there’ve been a lot of bats around lately… is that true?"
         image="1" questionType="1" wrongans="7777">
-            <Card id="0" nextGroup="51" likability="1"/>
-            <Card id="2" nextGroup="51" likability="1"/>
-            <Card id="4" nextGroup="51" likability="1"/>
-            <Card id="16" nextGroup="51" likability="1"/>
+            <Card id="0" nextGroup="51" likability="1" heroMonster="3"/>
+            <Card id="2" nextGroup="51" likability="1" heroMonster="3"/>
+            <Card id="4" nextGroup="51" likability="1" heroMonster="3"/>
+            <Card id="16" nextGroup="51" likability="1" heroMonster="3"/>
 
             <Card id="1" nextGroup="54" likability="1"/>
             <Card id="3" nextGroup="54" likability="1"/>
             <Card id="5" nextGroup="54" likability="1"/>
 
-            <Card id="13" nextGroup="56" likability="1"/>
-            <Card id="14" nextGroup="57" likability="1"/>
-            <Card id="15" nextGroup="58" likability="1"/>
+            <Card id="13" nextGroup="56" likability="1" heroMonster="0"/>
+            <Card id="14" nextGroup="57" likability="1" heroMonster="1"/>
+            <Card id="15" nextGroup="58" likability="1" heroMonster="2"/>
 
-            <Card id="17" nextGroup="60" likability="1"/>
-            <Card id="18" nextGroup="60" likability="1"/>
-            <Card id="20" nextGroup="60" likability="1"/>
+            <Card id="17" nextGroup="60" likability="1" heroMonster="3"/>
+            <Card id="18" nextGroup="60" likability="1" heroMonster="3"/>
+            <Card id="20" nextGroup="60" likability="1" heroMonster="3"/>
 
             <Card id="22" nextGroup="61" likability="2"/>
             <Card id="23" nextGroup="62" likability="-1"/>
         </Dialogue>
-        <Dialogue id="4" text="What should I do when I’m out there?" 
+        <Dialogue id="4" text="What should I do when I’m out there? Should I be much more careful?" 
         image="4" questionType="3" wrongans="9912">
-            <Card id="0" nextGroup="33" likability="1"/>
-            <Card id="2" nextGroup="33" likability="1"/>
-            <Card id="4" nextGroup="33" likability="1"/>
+            <Card id="0" nextGroup="33" likability="1" heroBehavior="1"/>
+            <Card id="2" nextGroup="33" likability="1" heroBehavior="1"/>
+            <Card id="4" nextGroup="33" likability="1" heroBehavior="1"/>
+
             <Card id="1" nextGroup="34" likability="1"/>
             <Card id="3" nextGroup="34" likability="1"/>
             <Card id="5" nextGroup="34" likability="1"/>
-            <Card id="17" nextGroup="35" likability="2"/>
-            <Card id="18" nextGroup="36" likability="2"/>
-            <Card id="19" nextGroup="37" likability="2"/>
-            <Card id="20" nextGroup="38" likability="2"/>
-            <Card id="21" nextGroup="39" likability="2"/>
+
+            <Card id="17" nextGroup="35" likability="2" heroBehavior="0"/>
+            <Card id="18" nextGroup="33" likability="2" heroBehavior="1"/>
+            <Card id="19" nextGroup="37" likability="2" heroBehavior="2"/>
+            <Card id="20" nextGroup="38" likability="2" heroBehavior="3"/>
+            <Card id="21" nextGroup="39" likability="2" heroBehavior="4"/>
+
             <Card id="22" nextGroup="40" likability="2"/>
             <Card id="23" nextGroup="41" likability="-1"/>
         </Dialogue>
