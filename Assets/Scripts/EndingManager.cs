@@ -25,7 +25,7 @@ public class EndingManager : MonoBehaviour
     private void Start()
     {
         heroStat = HeroStat.Instance;
-        //StartEnding(endings[1]);
+        StartEnding(endings[1]);
     }
 
     [ContextMenu("Check Ending")]
@@ -66,6 +66,7 @@ public class EndingManager : MonoBehaviour
         endingScene.transform.GetChild(0).GetComponent<Image>().sprite = ending.endingSprite;
         
         endingScene.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+        endingScene.transform.GetChild(2).gameObject.SetActive(false);
         
         while (time < duration)
         {
@@ -100,6 +101,17 @@ public class EndingManager : MonoBehaviour
             text.text = s;
             yield return new WaitForSeconds(0.1f);
         }
+        
+        yield return new WaitForSeconds(1f);
+        
+        endingScene.transform.GetChild(2).gameObject.SetActive(true);
+        endingScene.transform.GetChild(2).GetComponent<Button>().onClick.RemoveAllListeners();
+        endingScene.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(CloseEnding);
+    }
+
+    private void CloseEnding()
+    {
+        endingScene.SetActive(false);
     }
 
     private bool CheckEnd(Ending ending)
