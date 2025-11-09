@@ -39,11 +39,20 @@ public class DeckManagerUI : MonoBehaviour
             miniDeckGameObjects.Add(go.gameObject);
             go.Init(card);
         }
-        
-        float height =     deckLayoutGroup.padding.top + deckLayoutGroup.padding.bottom + minideckHeight * myDeckContainer.childCount +
-                           deckLayoutGroup.spacing * (myDeckContainer.childCount - 1);
 
-        Rect rect = myDeckContainer.GetComponent<RectTransform>().rect;
-        myDeckContainer.GetComponent<RectTransform>().rect.Set(rect.x, rect.y, rect.width, height);
+        int chcnt = (myDeckContainer.childCount + 1) / 2; 
+        float height =     deckLayoutGroup.padding.top 
+                           + deckLayoutGroup.padding.bottom 
+                           + minideckHeight * chcnt
+                           + deckLayoutGroup.spacing * (chcnt - 1);
+
+        Debug.Log( myDeckContainer.childCount );
+        Debug.Log(deckLayoutGroup.spacing);
+
+        RectTransform rectTransform = myDeckContainer.GetComponent<RectTransform>();
+
+        Vector2 size = rectTransform.sizeDelta;
+        size.y = height;            // 높이 변경
+        rectTransform.sizeDelta = size;
     }
 }

@@ -10,8 +10,11 @@ public class DeckManager : MonoBehaviour
     public static DeckManager Instance;
     
     public List<Card> deck = new List<Card>();
+    
+    public CardInfo[] cardInfos;
 
     public UnityEvent onDeckChange = new UnityEvent();
+    public UnityEvent<CardDisplay> onCardClicked;
 
     private void Awake()
     {
@@ -28,16 +31,36 @@ public class DeckManager : MonoBehaviour
         deck.RemoveAt(r);
         return card;
     }
+    
+    public CardInfo GetCardInfo(Card card)
+    {
+        foreach (var cardinfo in cardInfos)
+        {
+            if (cardinfo.Card.cardName.Equals(card.cardName)) return cardinfo;
+        }
+
+        return null;
+    }
 
     public void AddCard(Card card)
     {
+        if (deck.Count >= 25) return;
         deck.Add(card);
         onDeckChange.Invoke();
     }
+    
 
     public void RemoveCard(Card card)
     {
-        deck.Remove(card);
-        onDeckChange.Invoke();
+        for (int i = 0; i < deck.Count; i++)
+        {
+            if (deck[i].cardName == card.cardName)
+            {
+                deck.RemoveAt(i);
+                onDeckChange.Invoke();
+                GetCardInfo(card).Count += 1;
+                break;
+            }
+        }
     }
 }

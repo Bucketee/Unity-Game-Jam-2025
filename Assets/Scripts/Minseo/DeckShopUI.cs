@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-[Serializable]
-public class CardInfo
-{
-    public Card Card;
-    public int Count;
-}
+
 public class DeckShopUI : MonoBehaviour
 {
     public RectTransform shopPagePanel;
@@ -32,6 +27,8 @@ public class DeckShopUI : MonoBehaviour
     {
         _maxPageCount = (cardInfos.Length + 7) / 8;
         _pageCount = 0;
+
+        cardInfos = DeckManager.Instance.cardInfos;
         
         CreatePages();
     }
@@ -48,6 +45,17 @@ public class DeckShopUI : MonoBehaviour
         if (_pageCount == 0) return;
         _pageCount--;
         shopPagePanel.DOLocalMoveX(-PageGap * _pageCount, pageMoveDuration);
+    }
+    
+
+    public CardInfo GetCardInfo(Card card)
+    {
+        foreach (var cardinfo in cardInfos)
+        {
+            if (cardinfo.Card.cardName.Equals(card.cardName)) return cardinfo;
+        }
+
+        return null;
     }
 
     public void CreatePages()

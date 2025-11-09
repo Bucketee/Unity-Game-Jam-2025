@@ -1,12 +1,13 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class MiniCardUI : MonoBehaviour, IPointerClickHandler
+public class BuyingCardUI : MonoBehaviour
 {
     public Card card;
 
     private TextMeshProUGUI cardNameText;
+    private TextMeshProUGUI countText;
+
     
     private bool _canPointer;
     
@@ -14,15 +15,13 @@ public class MiniCardUI : MonoBehaviour, IPointerClickHandler
     {
         this.card = card.Clone();
         cardNameText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        countText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
 
         cardNameText.text = card.cardName;
     }
-
-    public void OnPointerClick(PointerEventData eventData)
+    
+    public void SetCount(int count)
     {
-        if (eventData.button == PointerEventData.InputButton.Right)
-        {
-            DeckManager.Instance.RemoveCard(card);
-        }
+        countText.text = "You got " + count + " cards";
     }
 }

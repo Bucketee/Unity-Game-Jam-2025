@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public Card card;
 
@@ -42,7 +42,12 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         _canPointer = canPointer;
     }
-
+    
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (_canPointer) return; 
+        DeckManager.Instance.onCardClicked.Invoke(this);
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!_canPointer) return; 
