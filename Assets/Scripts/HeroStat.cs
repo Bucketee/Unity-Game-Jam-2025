@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeroStat : MonoBehaviour
 {
     public static HeroStat Instance;
+    
+    public Color currentColor = Color.white;
 
     public int Date
     {
@@ -33,6 +36,10 @@ public class HeroStat : MonoBehaviour
     public int dungeunCount;
     public int forestCount;
 
+    public Image screenImage;
+    public Image characterImage;
+    public Image backgroundImage;
+
     public bool IsRandomPlace
     {
         get => !questionAnswers[0];
@@ -49,6 +56,11 @@ public class HeroStat : MonoBehaviour
         date = 0;
         likeability = 0;
         attackPower = 0;
+        currentColor = DeckManager.Instance.colors[(DeckManager.Instance.runCount + DeckManager.Instance.colors.Length - 1) % DeckManager.Instance.colors.Length];
+
+        screenImage.color = currentColor;
+        characterImage.color = currentColor;
+        backgroundImage.color = currentColor;
 
         for (int i = 0; i < questionAnswers.Count; i++)
         {
@@ -60,7 +72,10 @@ public class HeroStat : MonoBehaviour
     {
         date++;
 
-        questionAnswers = new List<Card>(5);
+        for (int i = 0; i < questionAnswers.Count; i++)
+        {
+            questionAnswers[i] = null;
+        }
     }
     
     /// <param name="card"></param>

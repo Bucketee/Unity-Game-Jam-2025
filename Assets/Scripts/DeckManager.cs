@@ -8,7 +8,8 @@ using Random = UnityEngine.Random;
 public class DeckManager : MonoBehaviour
 {
     public static DeckManager Instance;
-    
+
+    public int runCount = 1;
     public List<Card> deck = new List<Card>();
 
     public int money = 0;
@@ -17,6 +18,8 @@ public class DeckManager : MonoBehaviour
 
     public UnityEvent onDeckChange = new UnityEvent();
     public UnityEvent<CardDisplay> onCardClicked;
+
+    public Color[] colors;
 
     private void Awake()
     {
