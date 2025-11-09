@@ -1,12 +1,18 @@
+using System;
 using System.Collections.Generic;
 using System.Xml;
-using Unity.VisualScripting;
 using UnityEngine;
+
+public enum DialogueType
+{
+    Normal = 1,
+    Branching = 2,
+}
 
 public class DialogueGroup
 {
     public int id;
-    public int type;
+    public DialogueType type;
     public Dictionary<int, Dialogue> dialogues;
 }
 
@@ -52,12 +58,12 @@ public class DialogueManager : MonoBehaviour
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.LoadXml(xmlAsset.text);
 
-        XmlNodeList groupNodes = xmlDoc.SelectNodes("DialogueGroup");
+        XmlNodeList groupNodes = xmlDoc.SelectNodes("/root/DialogueGroup");
         foreach (XmlNode groupNode in groupNodes)
         {
             DialogueGroup group = new DialogueGroup();
             group.id = int.Parse(groupNode.Attributes["id"].Value);
-            group.type = int.Parse(groupNode.Attributes["type"].Value);
+            group.type = (DialogueType)int.Parse(groupNode.Attributes["type"].Value);
             group.dialogues = new Dictionary<int, Dialogue>();
 
             XmlNodeList dialogueNodes = groupNode.SelectNodes("Dialogue");
@@ -82,32 +88,59 @@ public class DialogueManager : MonoBehaviour
             }
 
             dialogueGroups.Add(group.id, group);
+            Debug.Log($"group id: {group.id}");
         }
     }
     #endregion
+
+    void Update()
+    {
+        bool test = false;
+
+        // for test
+        if (!test && Input.GetKeyDown(KeyCode.B))
+        {
+            SetDialogueGroup(0);
+            SetDialogue(0);
+            test = true;
+        }
+    }
 
     private int currentGroupId = -1;
     private DialogueGroup currentGroup = null;
     private int currentDialogueId = -1;
     private Dialogue currentDialogue = null;
 
+    public event Action OnGroupChanged, OnDialogueChanged;
+    
+    private void SetDialogueGroup(int groupId)
+    {
+        currentGroupId = groupId;
+        currentGroup = dialogueGroups[currentGroupId];
+        OnGroupChanged?.Invoke();
+    }
+    private void SetDialogue(int dialogueId)
+    {
+        currentDialogueId = dialogueId;
+        currentDialogue = currentGroup.dialogues[currentDialogueId];
+        OnDialogueChanged?.Invoke();
+    }
+
     public string GetDialogue() => currentDialogue.text;
+    public DialogueType GetDialogueType() => currentGroup.type;
 
     public void NextDialogue()
     {
         if (currentGroup.dialogues.ContainsKey(currentDialogueId + 1))
-        {
-            currentDialogueId++;
-            currentDialogue = currentGroup.dialogues[currentDialogueId];
-        }
+            SetDialogue(currentDialogueId + 1);
 
         // 현재 그룹의 마지막 dialogue라면
         // 분기 텍스트 (type = 2) 일 때는 이전의 그룹으로 돌아간다
         // 일반 텍스트 (type = 1) 일 때는 다음 날로 넘어간다
         else 
         {
-            if (currentGroup.type == 2) PopGroup();
-            else if (currentGroup.type == 1)
+            if (currentGroup.type == DialogueType.Branching) PopGroup();
+            else if (currentGroup.type == DialogueType.Normal)
             {
                 // 다음 날로 넘어가기
             }
@@ -116,12 +149,9 @@ public class DialogueManager : MonoBehaviour
 
     public void PrevDialogue()
     {
-        if (currentGroup.type != 1) return;
+        if (currentGroup.type != DialogueType.Normal) return;
         if (currentGroup.dialogues.ContainsKey(currentDialogueId - 1))
-        {
-            currentDialogueId--;
-            currentDialogue = currentGroup.dialogues[currentDialogueId];
-        }
+            SetDialogue(currentDialogueId - 1);
     }
 
     // For backtracking, dialogue group 점프와 돌아오기 처리
@@ -149,10 +179,8 @@ public class DialogueManager : MonoBehaviour
     public void PushGroup(int nextGroup)
     {
         groupHistory.Push((currentGroupId, currentDialogueId));
-        currentGroupId = nextGroup;
-        currentGroup = dialogueGroups[currentGroupId];
-        currentDialogueId = 0;
-        currentDialogue = currentGroup.dialogues[currentDialogueId];
+        SetDialogueGroup(nextGroup);
+        SetDialogue(0);
     }
 
     // 이전의 그룹으로 돌아오기
@@ -160,9 +188,7 @@ public class DialogueManager : MonoBehaviour
     public void PopGroup() 
     {
         (int groupId, int dialogueId) = groupHistory.Pop();
-        currentGroupId = groupId;
-        currentGroup = dialogueGroups[currentGroupId];
-        currentDialogueId = dialogueId;
-        currentDialogue = currentGroup.dialogues[currentDialogueId];
+        SetDialogueGroup(groupId);
+        SetDialogue(dialogueId);
     }
 }
