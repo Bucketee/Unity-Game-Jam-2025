@@ -52,7 +52,7 @@
             <Card id="1" nextGroup="26" likability="1"/>
             <Card id="3" nextGroup="26" likability="1"/>
             <Card id="5" nextGroup="26" likability="1"/>
-            <Card id="6" nextGroup="27" likability="2"/>
+            <Card id="6" nextGroup="25" likability="2"/>
             <Card id="7" nextGroup="28" likability="2"/>
             <Card id="8" nextGroup="29" likability="2"/>
             <Card id="9" nextGroup="30" likability="2"/>
