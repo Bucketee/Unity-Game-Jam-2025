@@ -59,7 +59,7 @@
             <Card id="22" nextGroup="31" likability="2"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
-        </Dialogue id="3" text="I heard there’ve been a lot of slimes around lately… is that true?"
+        <Dialogue id="3" text="I heard there’ve been a lot of slimes around lately… is that true?"
         image="1" questionType="1" wrongans="7777">
             <Card id="0" nextGroup="51" likability="1"/>
             <Card id="2" nextGroup="51" likability="1"/>
@@ -143,7 +143,7 @@
             <Card id="22" nextGroup="31" likability="2"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
-        </Dialogue id="3" text="I heard there’ve been a lot of goblins around lately… is that true?"
+        <Dialogue id="3" text="I heard there’ve been a lot of goblins around lately… is that true?"
         image="0" questionType="1" wrongans="7777">
             <Card id="0" nextGroup="51" likability="1"/>
             <Card id="2" nextGroup="51" likability="1"/>
@@ -226,7 +226,7 @@
             <Card id="22" nextGroup="31" likability="2"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
-        </Dialogue id="3" text="I heard there’ve been a lot of zombies around lately… is that true?"
+        <Dialogue id="3" text="I heard there’ve been a lot of zombies around lately… is that true?"
         image="1" questionType="1" wrongans="7777">
             <Card id="0" nextGroup="51" likability="1"/>
             <Card id="2" nextGroup="51" likability="1"/>
@@ -309,7 +309,7 @@
             <Card id="22" nextGroup="31" likability="2"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
-        </Dialogue id="3" text="I heard there’ve been a lot of bats around lately… is that true?"
+        <Dialogue id="3" text="I heard there’ve been a lot of bats around lately… is that true?"
         image="1" questionType="1" wrongans="7777">
             <Card id="0" nextGroup="51" likability="1"/>
             <Card id="2" nextGroup="51" likability="1"/>
