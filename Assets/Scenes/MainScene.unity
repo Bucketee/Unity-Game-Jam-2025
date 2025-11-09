@@ -480,9 +480,9 @@ MonoBehaviour:
   questionAnswers: []
   dungeunCount: 0
   forestCount: 0
-  screenImage: {fileID: 0}
-  characterImage: {fileID: 0}
-  backgroundImage: {fileID: 0}
+  screenImage: {fileID: 349305856}
+  characterImage: {fileID: 1814428672}
+  backgroundImage: {fileID: 786756650}
 --- !u!1 &136785152
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartScene
   startSceneImage: {fileID: 136785154}
+  fadeImage: {fileID: 427337245}
   buttons: []
 --- !u!1 &227925986
 GameObject:
@@ -1502,29 +1503,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4af2accc6ec8ddc479fa8f46044ee236, type: 2}
   - {fileID: 11400000, guid: 4af2accc6ec8ddc479fa8f46044ee236, type: 2}
   - {fileID: 11400000, guid: 4af2accc6ec8ddc479fa8f46044ee236, type: 2}
-  - {fileID: 11400000, guid: 4af2accc6ec8ddc479fa8f46044ee236, type: 2}
-  - {fileID: 11400000, guid: 4af2accc6ec8ddc479fa8f46044ee236, type: 2}
-  - {fileID: 11400000, guid: 776bc480146832349bc5c5d924231ab2, type: 2}
-  - {fileID: 11400000, guid: 776bc480146832349bc5c5d924231ab2, type: 2}
   - {fileID: 11400000, guid: 776bc480146832349bc5c5d924231ab2, type: 2}
   - {fileID: 11400000, guid: 776bc480146832349bc5c5d924231ab2, type: 2}
   - {fileID: 11400000, guid: 776bc480146832349bc5c5d924231ab2, type: 2}
   - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
   - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
   - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
-  - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
-  - {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
-  - {fileID: 11400000, guid: 9d77fa4ce9634b94282540649d0b55e9, type: 2}
-  - {fileID: 11400000, guid: 9d77fa4ce9634b94282540649d0b55e9, type: 2}
   - {fileID: 11400000, guid: 9d77fa4ce9634b94282540649d0b55e9, type: 2}
   - {fileID: 11400000, guid: 9d77fa4ce9634b94282540649d0b55e9, type: 2}
   - {fileID: 11400000, guid: 9d77fa4ce9634b94282540649d0b55e9, type: 2}
   - {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
   - {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
   - {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
-  - {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
-  - {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
-  money: 150
+  money: 0
   cardInfos:
   - Card: {fileID: 11400000, guid: 4af2accc6ec8ddc479fa8f46044ee236, type: 2}
     Count: 0
@@ -1605,11 +1596,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   colors:
-  - {r: 1, g: 1, b: 1, a: 0}
-  - {r: 1, g: 0.7688679, b: 0.7688679, a: 0}
-  - {r: 0.9835156, g: 1, b: 0.8160377, a: 0}
-  - {r: 0.7216981, g: 1, b: 0.7692574, a: 0}
-  - {r: 0.8254717, g: 0.9378721, b: 1, a: 0}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.7688679, b: 0.7688679, a: 1}
+  - {r: 0.9835156, g: 1, b: 0.8160377, a: 1}
+  - {r: 0.7216981, g: 1, b: 0.7692574, a: 1}
+  - {r: 0.8254717, g: 0.9378721, b: 1, a: 1}
 --- !u!1 &716895683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,6 +4246,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c690faeca49f18438cfaab84af8fbd6, type: 2}
   - {fileID: 11400000, guid: cb76f109ecfad0148af828a5bbe5ff11, type: 2}
   - {fileID: 11400000, guid: 3e20da396d56e88469b79dcfa9314cc7, type: 2}
+  - {fileID: 11400000, guid: 7eff905fc9cd73745a0ab8e49686799c, type: 2}
   fadeImage: {fileID: 427337245}
   startScene: {fileID: 136785157}
 --- !u!1 &2102711458
