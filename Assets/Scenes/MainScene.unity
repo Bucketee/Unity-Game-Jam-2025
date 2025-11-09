@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7721f1cf925542145966f6d01b44a004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeroStat
+  questionAnswers: []
   placeRcm: {fileID: 0}
   monsterRcm: {fileID: 0}
   weaponRcm: {fileID: 0}
@@ -636,7 +637,7 @@ MonoBehaviour:
   - Card: {fileID: 11400000, guid: 8f6c68d584e4e7343a8bd40c78a85cb9, type: 2}
     Count: 0
     price: 0
-  - Card: {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
+  - Card: {fileID: 11400000, guid: 9d77fa4ce9634b94282540649d0b55e9, type: 2}
     Count: 0
     price: 0
   - Card: {fileID: 11400000, guid: 4af2accc6ec8ddc479fa8f46044ee236, type: 2}
