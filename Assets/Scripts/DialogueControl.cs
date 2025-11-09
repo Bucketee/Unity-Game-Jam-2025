@@ -38,6 +38,11 @@ public class DialogueControl : MonoBehaviour
             nextDayButton.gameObject.SetActive(true);
             rightButton.gameObject.SetActive(false);
         }
+        else
+        {
+            nextDayButton.gameObject.SetActive(false);
+            rightButton.gameObject.SetActive(true);
+        }
     }
 
     public void NextDialogue() => DialogueManager.Instance.NextDialogue();
