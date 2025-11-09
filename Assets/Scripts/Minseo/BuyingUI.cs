@@ -47,8 +47,10 @@ public class BuyingUI : MonoBehaviour
     public void BuyCard()
     {
         var cardinfo = deckShopUI.GetCardInfo(currentSelectedCard);
-        
+
+        if (cardinfo.price > DeckManager.Instance.money) return; 
         cardinfo.Count += 1;
+        DeckManager.Instance.money -= cardinfo.price;
         cardUI.SetCount(cardinfo.Count);
     }
 

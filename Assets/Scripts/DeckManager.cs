@@ -10,6 +10,8 @@ public class DeckManager : MonoBehaviour
     public static DeckManager Instance;
     
     public List<Card> deck = new List<Card>();
+
+    public int money = 150;
     
     public CardInfo[] cardInfos;
 
@@ -21,6 +23,7 @@ public class DeckManager : MonoBehaviour
         if (Instance != null) DestroyImmediate(this);
         Instance = this;
     }
+    
 
     public Card DrawCard()
     {

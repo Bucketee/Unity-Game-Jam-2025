@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 
 public class DeckShopUI : MonoBehaviour
@@ -15,6 +16,8 @@ public class DeckShopUI : MonoBehaviour
     public GameObject cardPrefab;
     public GameObject pagePrefab;
     public List<GameObject> cardGameObjectsInPage;
+
+    public TMP_Text moneyText;
 
     private int _pageCount;
     private int _maxPageCount;
@@ -31,6 +34,11 @@ public class DeckShopUI : MonoBehaviour
         cardInfos = DeckManager.Instance.cardInfos;
         
         CreatePages();
+    }
+
+    private void Update()
+    {
+        moneyText.text = DeckManager.Instance.money.ToString() + " GOLD";
     }
 
     public void GoToNextPage()

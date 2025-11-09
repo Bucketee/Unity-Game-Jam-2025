@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,8 @@ public class DeckManagerUI : MonoBehaviour
     public VerticalLayoutGroup deckLayoutGroup;
 
     public float minideckHeight;
+
+    public TMP_Text countText;
     
     private void Start()
     {
@@ -54,5 +57,7 @@ public class DeckManagerUI : MonoBehaviour
         Vector2 size = rectTransform.sizeDelta;
         size.y = height;            // 높이 변경
         rectTransform.sizeDelta = size;
+
+        countText.text = DeckManager.Instance.deck.Count + " / " + 25;
     }
 }
