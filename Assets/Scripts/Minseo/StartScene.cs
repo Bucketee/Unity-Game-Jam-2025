@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StartScene : MonoBehaviour
 {
     public Image startSceneImage;
+    public Image fadeImage;
     public GameObject[] buttons;
 
     private void OnEnable()
@@ -23,9 +24,14 @@ public class StartScene : MonoBehaviour
         {
             button.SetActive(false);
         }
-        
-        startSceneImage.DOFade(0f, 0.5f)
-            .OnComplete(() => startSceneImage.gameObject.SetActive(false));
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(1f, 0.5f)
+            .OnComplete(() =>
+            {
+                startSceneImage.gameObject.SetActive(false);
+                fadeImage.DOFade(0f, 0.5f)
+                    .OnComplete(() => { fadeImage.gameObject.SetActive(false); });
+            });
         
     }
 }
