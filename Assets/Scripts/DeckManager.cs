@@ -23,7 +23,11 @@ public class DeckManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null) DestroyImmediate(this);
+        if (Instance != null)
+        {
+            DestroyImmediate(this);
+            return;
+        }
         Instance = this;
         DontDestroyOnLoad(gameObject);
 

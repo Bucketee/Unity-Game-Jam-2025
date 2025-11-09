@@ -128,8 +128,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         if (!_canPointer) return; 
         if (DialogueManager.Instance.SubmitCheck(eventData))
         {
-            DialogueManager.Instance.SubmitCard(card.id);
-            Destroy(gameObject);
+            if (DialogueManager.Instance.SubmitCard(card.id)) Destroy(gameObject);
         }
         transform.SetSiblingIndex(originalSiblingIndex);
         cardRect.anchoredPosition = originalPosition;

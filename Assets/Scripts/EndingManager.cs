@@ -28,16 +28,18 @@ public class EndingManager : MonoBehaviour
     }
 
     [ContextMenu("Check Ending")]
-    public void CheckEnding()
+    public bool CheckEnding()
     {
         foreach (Ending ending in endings)
         {
             if (CheckEnd(ending))
             {
                 StartEnding(ending);
-                return;
+                return true;
             }
         }
+
+        return false;
     }
     
     private void StartEnding(Ending ending)
