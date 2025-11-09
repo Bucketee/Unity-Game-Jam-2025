@@ -45,6 +45,9 @@ public class EndingManager : MonoBehaviour
     
     private void StartEnding(Ending ending)
     {
+        SoundManager.Instance.StopBGM();
+        SoundManager.Instance.PlayBGM(EBgm.BGM_END);
+        
         Debug.Log(ending.name);
         DeckManager.Instance.money += ending.endPrice / (ending.isClearedOnce ? 2 : 1);
         ending.isClearedOnce = true;
