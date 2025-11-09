@@ -497,8 +497,11 @@ MonoBehaviour:
   totalDrawsWillbe: 0
   fadeImage: {fileID: 0}
   submittedCardImage: {fileID: 0}
+  dayText: {fileID: 0}
+  likablityText: {fileID: 0}
   cutsceneImage: {fileID: 0}
   cutsceneSprites: []
+  eventText: {fileID: 0}
   cardSubmit: {fileID: 0}
 --- !u!1 &631917618
 GameObject:
@@ -1101,9 +1104,29 @@ PrefabInstance:
       value: SoundManager
       objectReference: {fileID: 0}
     - target: {fileID: 2320799578577474110, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
+      propertyPath: bgms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320799578577474110, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
+      propertyPath: 'bgms.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 41c52cd6f846b6f4888956ee099726f9, type: 3}
+    - target: {fileID: 2320799578577474110, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
+      propertyPath: 'bgms.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 4812987bdfb115c44b15cfe2c77e1e4f, type: 3}
+    - target: {fileID: 2320799578577474110, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
       propertyPath: 'sfxs.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 36f119d2fcd8d234da7956cc331cee9d, type: 3}
+    - target: {fileID: 4249534874673949058, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249534874673949058, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4730369334136656699, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1143,6 +1166,10 @@ PrefabInstance:
     - target: {fileID: 4730369334136656699, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229815877340646933, guid: 5c821bbfef2ea314096069b278cc29e5, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

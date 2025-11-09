@@ -2,8 +2,8 @@ using UnityEngine;
 
 public enum EBgm
 {
-    BGM_HEAVY,
-    BGM_LIGHT
+    BGM_MAIN,
+    BGM_END,
 }
     
 //SFX 종류들

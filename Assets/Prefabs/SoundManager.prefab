@@ -46,9 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6557ddd75e24e4a8a3949701021a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  bgms: []
+  bgms:
+  - {fileID: 8300000, guid: 41c52cd6f846b6f4888956ee099726f9, type: 3}
+  - {fileID: 8300000, guid: 4812987bdfb115c44b15cfe2c77e1e4f, type: 3}
   sfxs:
-  - {fileID: 8300000, guid: 6d6e644f0746e5d4e9b0e847a48024a2, type: 3}
+  - {fileID: 8300000, guid: 36f119d2fcd8d234da7956cc331cee9d, type: 3}
   - {fileID: 8300000, guid: bf02ec47ac3851e478dfd7136faa9742, type: 3}
   audioBgm: {fileID: 4249534874673949058}
   audioSfx: {fileID: 8229815877340646933}
@@ -97,9 +99,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -226,7 +228,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
