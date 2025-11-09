@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using DG.Tweening;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -104,6 +106,7 @@ public class DialogueManager : MonoBehaviour
                 dialogue.text = dialogueNode.Attributes["text"].Value;
                 dialogue.cutimageIdx = int.Parse(dialogueNode.Attributes["image"].Value);
                 int questionType = int.Parse(dialogueNode.Attributes["questionType"].Value);
+                dialogue.questionType = questionType;
                 dialogue.effects = new Dictionary<int, DialogueEffect>();
                 dialogue.wrongansHandler =
                     dialogueNode.Attributes["wrongans"] != null ?
@@ -216,15 +219,104 @@ public class DialogueManager : MonoBehaviour
     {
         return currentDialogueId == 0;
     }
+    // place/monster/weapon/behavior/random
 
-    public void GoToNextDay()
+    public TextMeshProUGUI eventText;
+    public IEnumerator EventCheck()
     {
-        if (EndingManager.Instance.CheckEnding()) return;
+        int whichEvent = -1;
+        try
+        {
+            if (HeroStat.Instance.dungeunCount == 3 &&
+                HeroStat.Instance.questionAnswers[0].id == 12 &&
+                HeroStat.Instance.questionAnswers[1].id == 15 &&
+                HeroStat.Instance.questionAnswers[2].id == 8 &&
+                HeroStat.Instance.questionAnswers[3].id == 18)
+            {
+                whichEvent = 0;
+            }
+            else if (HeroStat.Instance.questionAnswers[0].id == 11 &&
+                     HeroStat.Instance.questionAnswers[1].id == 13)
+            {
+                whichEvent = 1;
+            }
+            else if (HeroStat.Instance.questionAnswers[0].id == 11 &&
+                     HeroStat.Instance.questionAnswers[1].id == 14)
+            {
+                whichEvent = 2;
+            }
+            else if (HeroStat.Instance.questionAnswers[0].id == 12 &&
+                     HeroStat.Instance.questionAnswers[1].id == 16)
+            {
+                whichEvent = 3;
+            }
+            else if (HeroStat.Instance.questionAnswers[0].id == 10 &&
+                     HeroStat.Instance.questionAnswers[3].id == 19)
+            {
+                whichEvent = 4;
+            }
+            else if (HeroStat.Instance.questionAnswers[0].id == 10 &&
+                     HeroStat.Instance.questionAnswers[3].id == 21)
+            {
+                whichEvent = 5;
+            }
+            else if (HeroStat.Instance.questionAnswers[0].id == 10 &&
+                     HeroStat.Instance.questionAnswers[3].id == 20)
+            {
+                whichEvent = 6;
+            }
+            else if (HeroStat.Instance.questionAnswers[0].id == 12 &&
+                     HeroStat.Instance.questionAnswers[1].id == 15)
+            {
+                whichEvent = 7;
+            }
+        }
+        catch (NullReferenceException)
+        {
+            eventText.text = "";
+        }
 
-        fadeImage.gameObject.SetActive(true);
-        fadeImage.DOFade(1, 0);
-        fadeImage.DOFade(0, 0.5f)
-            .OnComplete(()=>fadeImage.gameObject.SetActive(false));
+        if (whichEvent != -1)
+        {
+            eventText.gameObject.SetActive(true);
+            switch (whichEvent)
+            {
+                case 0:
+                    eventText.text = "BeFriend with Dragon! ❤️";
+                    break;
+        
+                case 1:
+                    eventText.text = "Slay the Slime!";
+                    break;
+        
+                case 2:
+                    eventText.text = "Defeat the Goblin!";
+                    break;
+        
+                case 3:
+                    eventText.text = "Hunt the Bat!";
+                    break;
+        
+                case 4:
+                    eventText.text = "Defeat the Zombie!";
+                    break;
+        
+                case 5:
+                    eventText.text = "Help the Village with Farming.";
+                    break;
+        
+                case 6:
+                    eventText.text = "Take a Rest in the Village.";
+                    break;
+                
+                case 7:
+                    eventText.text = "Kill the ZOMBIE!";
+                    break;
+            }
+            
+            yield return new WaitForSeconds(2f);
+            eventText.gameObject.SetActive(false);
+        }
         
         HeroStat.Instance.InitRCMs();
         SetDialogueGroup(HeroStat.Instance.Date - 1);
@@ -233,6 +325,24 @@ public class DialogueManager : MonoBehaviour
             Hand.Instance.DrawCards(drawAmounts);
         else
             Hand.Instance.DrawCards(totalDrawsWillbe - draws);
+        
+        fadeImage.DOFade(0, 1f)
+            .OnComplete(()=>fadeImage.gameObject.SetActive(false));
+        
+        yield return null;
+    }
+
+    public void GoToNextDay()
+    {
+        if (EndingManager.Instance.CheckEnding()) return;
+
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(0.8f, 2f)
+            .OnComplete(()=>
+            {
+                StartCoroutine(EventCheck());
+            });
+        
     }
 
     public string GetDialogue() => currentDialogue.text;
@@ -320,6 +430,7 @@ public class DialogueManager : MonoBehaviour
 
         if (card == null) return false;
         
+        Debug.Log("!@!$!@$" + currentDialogue.questionType);
         HeroStat.Instance.AnswerQuestion(card, currentDialogue.questionType);
         currentDialogue.submitted = true;
         currentDialogue.whichCardSubmitted = card;

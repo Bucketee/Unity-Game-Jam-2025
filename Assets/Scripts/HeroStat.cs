@@ -72,6 +72,11 @@ public class HeroStat : MonoBehaviour
     {
         date++;
 
+        if (questionAnswers[0].id == 12)
+        {
+            dungeunCount++;
+        }
+
         for (int i = 0; i < questionAnswers.Count; i++)
         {
             questionAnswers[i] = null;
