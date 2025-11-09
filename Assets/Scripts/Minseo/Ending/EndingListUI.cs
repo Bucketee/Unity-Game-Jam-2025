@@ -4,6 +4,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -22,6 +23,8 @@ public class EndingListUI : MonoBehaviour
     public Image endingFade;
     public Image endingCutscene;
     public TMP_Text endingDescription;
+
+    public Image fadeImage;
     
     private void Awake()
     {
@@ -32,6 +35,8 @@ public class EndingListUI : MonoBehaviour
     private void Start()
     {
         int cnt = 0;
+        fadeImage.DOFade(1, 0);
+        fadeImage.DOFade(0,0.5f).OnComplete(()=>fadeImage.gameObject.SetActive(false));
         foreach (Ending ending in endings)
         {
             if (!ending.isClearedOnce) continue;
@@ -53,6 +58,13 @@ public class EndingListUI : MonoBehaviour
         Vector2 size = rectTransform.sizeDelta;
         size.y = height;            // 높이 변경
         rectTransform.sizeDelta = size;
+    }
+
+    public void BackToMain()
+    {
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(0, 0);
+        fadeImage.DOFade(1, 1f).OnComplete(() => SceneManager.LoadScene("Scenes/MainScene"));
     }
 
     public void ShowEndingInfo(Ending ending)

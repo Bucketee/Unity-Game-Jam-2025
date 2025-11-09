@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
+    public static Hand Instance;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private List<Card> cardsInHand;
 
@@ -12,6 +13,13 @@ public class Hand : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        
         DrawAction += () =>
         {
             DrawCardFromDeck();
@@ -28,6 +36,14 @@ public class Hand : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A)) Draw();
+    }
+
+    public void DrawCards(int amount = 5)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            Draw();
+        }
     }
 
     [ContextMenu("Draw")]

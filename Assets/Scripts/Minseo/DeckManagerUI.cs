@@ -21,6 +21,7 @@ public class DeckManagerUI : MonoBehaviour
     private void Start()
     {
         DeckManager.Instance.onDeckChange.AddListener(OnDeckChange);
+        OnDeckChange();
     }
     
     private void OnDisable()

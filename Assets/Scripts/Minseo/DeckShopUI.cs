@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class DeckShopUI : MonoBehaviour
@@ -19,6 +21,8 @@ public class DeckShopUI : MonoBehaviour
 
     public TMP_Text moneyText;
 
+    public Image fadeImage;
+
     private int _pageCount;
     private int _maxPageCount;
     
@@ -28,7 +32,9 @@ public class DeckShopUI : MonoBehaviour
 
     private void Start()
     {
-        _maxPageCount = (cardInfos.Length + 7) / 8;
+        fadeImage.DOFade(1, 0);
+        fadeImage.DOFade(0,0.5f).OnComplete(()=>fadeImage.gameObject.SetActive(false));
+        _maxPageCount = (DeckManager.Instance.cardInfos.Length + 7) / 8;
         _pageCount = 0;
 
         cardInfos = DeckManager.Instance.cardInfos;
@@ -39,6 +45,13 @@ public class DeckShopUI : MonoBehaviour
     private void Update()
     {
         moneyText.text = DeckManager.Instance.money.ToString() + " GOLD";
+    }
+
+    public void BackToMain()
+    {
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(0, 0);
+        fadeImage.DOFade(1, 1f).OnComplete(() => SceneManager.LoadScene("Scenes/MainScene"));
     }
 
     public void GoToNextPage()
@@ -76,6 +89,7 @@ public class DeckShopUI : MonoBehaviour
 
         cardGameObjectsInPage.Clear();
         int cardIdx = 0;
+        Debug.Log(_maxPageCount);
         for (int i = 0; i < _maxPageCount + 8; i++)
         {
             var pagego = Instantiate(pagePrefab, shopPages).transform;
