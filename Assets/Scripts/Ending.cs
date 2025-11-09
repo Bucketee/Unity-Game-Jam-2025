@@ -8,6 +8,9 @@ public class Ending : ScriptableObject
     public string endingDescription;
     public int endPrice;
     public bool isClearedOnce;
+    
+    public Sprite endingSprite;
+    
 
     public EndingCondition condition;
 }

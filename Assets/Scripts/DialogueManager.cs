@@ -94,6 +94,11 @@ public class DialogueManager : MonoBehaviour
     }
     #endregion
 
+    private void Start()
+    {
+        SetDialogueGroup(0);
+    }
+
     void Update()
     {
         bool test = false;
@@ -101,6 +106,7 @@ public class DialogueManager : MonoBehaviour
         // for test
         if (!test && Input.GetKeyDown(KeyCode.B))
         {
+            Debug.Log("B TEST START");
             SetDialogueGroup(0);
             test = true;
         }
