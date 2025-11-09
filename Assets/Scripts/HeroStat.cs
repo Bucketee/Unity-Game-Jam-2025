@@ -28,33 +28,19 @@ public class HeroStat : MonoBehaviour
     private int attackPower = 0;
 
     [Header("Question Answers")]
-    public List<Card> questionAnswers;
-    [SerializeField] private Card placeRcm = null;
-    [SerializeField] private Card monsterRcm = null;
-    [SerializeField] private Card weaponRcm = null;
-    [SerializeField] private Card behaviorRcm = null;
-    [SerializeField] private Card randomQuestion = null;
+    public List<Card> questionAnswers = new List<Card>(5);
 
     public int dungeunCount;
     public int forestCount;
 
     public bool IsRandomPlace
     {
-        get => !placeRcm;
+        get => !questionAnswers[0];
     }
 
     private void Awake()
     {
         Instance = this;
-        
-        questionAnswers = new List<Card>()
-        {
-            placeRcm,
-            monsterRcm,
-            weaponRcm,
-            behaviorRcm,
-            randomQuestion
-        };
     }
 
     private void InitHeroStat()
@@ -62,32 +48,18 @@ public class HeroStat : MonoBehaviour
         date = 0;
         likeability = 0;
         attackPower = 0;
-        
-        placeRcm = null;
-        monsterRcm = null;
-        weaponRcm = null;
-        behaviorRcm = null;
-        randomQuestion = null;
+
+        for (int i = 0; i < questionAnswers.Count; i++)
+        {
+            questionAnswers[i] = null;
+        }
     }
     
     public void InitRCMs()
     {
-        date++; 
-        
-        placeRcm = null;
-        monsterRcm = null;
-        weaponRcm = null;
-        behaviorRcm = null;
-        randomQuestion = null;
-        
-        questionAnswers = new List<Card>()
-        {
-            placeRcm,
-            monsterRcm,
-            weaponRcm,
-            behaviorRcm,
-            randomQuestion
-        };
+        date++;
+
+        questionAnswers = new List<Card>(5);
     }
     
     /// <param name="card"></param>
@@ -95,11 +67,6 @@ public class HeroStat : MonoBehaviour
     public void AnswerQuestion(Card card, int index)
     {
         questionAnswers[index] = card.Clone();
-    }
-
-    public Card GetAnswer(int index)
-    {
-        return questionAnswers[index];
     }
 }
 
