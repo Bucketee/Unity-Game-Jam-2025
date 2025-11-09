@@ -16,7 +16,7 @@ MonoBehaviour:
   endingDescription: Hero crept softly; the Goblins crept softer.
   endPrice: 15
   isClearedOnce: 0
-  endingSprite: {fileID: 0}
+  endingSprite: {fileID: 21300000, guid: c1d23971a269a0945b2d96dfebee4198, type: 3}
   condition:
     date: 0
     placeCard:

@@ -17,7 +17,7 @@ MonoBehaviour:
     shadow."
   endPrice: 40
   isClearedOnce: 0
-  endingSprite: {fileID: 0}
+  endingSprite: {fileID: 21300000, guid: ef8386cb4ac76e04ead9c233e3aa8af9, type: 3}
   condition:
     date: 5
     placeCard:

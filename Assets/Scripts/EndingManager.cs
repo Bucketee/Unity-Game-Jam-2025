@@ -1,13 +1,19 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using NUnit.Framework.Internal;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndingManager : MonoBehaviour
 {
     public static EndingManager Instance;
     
+    [SerializeField] private GameObject endingScene;
     public List<Ending> endings;
+    
     private HeroStat heroStat;
 
     private void Awake()
@@ -19,6 +25,7 @@ public class EndingManager : MonoBehaviour
     private void Start()
     {
         heroStat = HeroStat.Instance;
+        StartEnding(endings[9]);
     }
 
     [ContextMenu("Check Ending")]
@@ -28,18 +35,68 @@ public class EndingManager : MonoBehaviour
         {
             if (CheckEnd(ending))
             {
-                Debug.Log(ending.name);
-                DeckManager.Instance.money += ending.endPrice / (ending.isClearedOnce ? 2 : 1);
-                ending.isClearedOnce = true;
-                StartEnding();
+                StartEnding(ending);
                 return;
             }
         }
     }
-
-    private void StartEnding()
+    
+    private void StartEnding(Ending ending)
     {
+        Debug.Log(ending.name);
+        DeckManager.Instance.money += ending.endPrice / (ending.isClearedOnce ? 2 : 1);
+        ending.isClearedOnce = true;
         
+        StartCoroutine(EndingSceneCo(ending));
+    }
+
+    private IEnumerator EndingSceneCo(Ending ending)
+    {
+        endingScene.SetActive(true);
+        
+        float time = 0;
+        float duration = 3f;
+        
+        Image image = endingScene.GetComponent<Image>();
+        image.color = new Color(0, 0, 0, 0);
+        
+        endingScene.transform.GetChild(0).GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        endingScene.transform.GetChild(0).GetComponent<Image>().sprite = ending.endingSprite;
+        
+        endingScene.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+        
+        while (time < duration)
+        {
+            image.color = Color.Lerp(image.color, Color.black, time / duration / 30);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        
+        image.color = Color.black;
+
+        time = 0;
+        duration = 5f;
+        image = endingScene.transform.GetChild(0).GetComponent<Image>();
+
+        while (time < duration)
+        {
+            image.color = Color.Lerp(image.color, Color.white, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        image.color = Color.white;
+
+        string endingText = ending.endingDescription;
+        string s = "";
+        TextMeshProUGUI text = endingScene.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+
+        for (int i = 0; i < endingText.Length; i++)
+        {
+            s += endingText[i];
+            text.text = s;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     private bool CheckEnd(Ending ending)

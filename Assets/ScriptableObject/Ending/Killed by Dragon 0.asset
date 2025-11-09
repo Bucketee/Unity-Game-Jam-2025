@@ -15,8 +15,8 @@ MonoBehaviour:
   endingName: Flames of the Ancient Dragon
   endingDescription: "Hero charged the dragon\u2019s breath and met eternity in flame."
   endPrice: 40
-  isClearedOnce: 0
-  endingSprite: {fileID: 0}
+  isClearedOnce: 1
+  endingSprite: {fileID: 21300000, guid: 3430a79e55c199f488225af93014673f, type: 3}
   condition:
     date: 0
     placeCard:

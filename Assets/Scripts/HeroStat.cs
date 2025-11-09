@@ -28,7 +28,7 @@ public class HeroStat : MonoBehaviour
     private int attackPower = 0;
 
     [Header("Question Answers")]
-    public List<Card> questionAnswers = new List<Card>(5);
+    public List<Card> questionAnswers;
 
     public int dungeunCount;
     public int forestCount;
@@ -41,6 +41,7 @@ public class HeroStat : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        questionAnswers = new List<Card>(5){null, null, null, null, null};
     }
 
     private void InitHeroStat()
