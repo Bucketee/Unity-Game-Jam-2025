@@ -69,7 +69,7 @@ public class MapIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         foreach (string s in newInfos)
         {
             GameObject g = Instantiate(infoBox, transform);
-            g.GetComponent<RectTransform>().localPosition = pos;
+            g.GetComponent<RectTransform>().position = pos;
             g.GetComponentInChildren<TextMeshProUGUI>().text = s;
             yield return null;
             pos -= new Vector3(0, g.GetComponent<RectTransform>().rect.height, 0);
