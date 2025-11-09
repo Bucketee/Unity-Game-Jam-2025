@@ -3,10 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum HeroPlace { Village, Forest, Dungeon }
+public enum HeroMonster { Slime, Goblin, Bat, Zombie }
+public enum HeroWeapon { Sword, Bow, MorningStar, Dagger }
+public enum HeroBehavior { Aggressive, Careful, Farming, TeamMaking, Rest }
+public class HeroToday
+{
+    public HeroPlace place;
+    public HeroMonster monster;
+    public HeroWeapon weapon;
+    public HeroBehavior behavior;
+}
+
 public class HeroStat : MonoBehaviour
 {
     public static HeroStat Instance;
-    
+    public HeroToday today = new HeroToday();
+    public void ResetToday() => today = new HeroToday();
+    public void SetTodayPlace(HeroPlace place) => today.place = place;
+    public void SetTodayMonster(HeroMonster monster) => today.monster = monster;
+    public void SetTodayWeapon(HeroWeapon weapon) => today.weapon = weapon;
+    public void SetTodayBehavior(HeroBehavior behavior) => today.behavior = behavior;
+
+    public HeroPlace RandomPlace() => (HeroPlace)UnityEngine.Random.Range(0, 3);
+    public HeroMonster RandomMonster() => (HeroMonster)UnityEngine.Random.Range(0, 4);
+    public HeroWeapon RandomWeapon() => (HeroWeapon)UnityEngine.Random.Range(0, 4);
+    public HeroBehavior RandomBehavior() => (HeroBehavior)UnityEngine.Random.Range(0, 5);
+
     public Color currentColor = Color.white;
 
     public int Date
@@ -48,7 +71,7 @@ public class HeroStat : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        questionAnswers = new List<Card>(5){null, null, null, null, null};
+        questionAnswers = new List<Card>(5) { null, null, null, null, null };
     }
 
     private void InitHeroStat()
@@ -67,7 +90,7 @@ public class HeroStat : MonoBehaviour
             questionAnswers[i] = null;
         }
     }
-    
+
     public void InitRCMs()
     {
         date++;
@@ -82,7 +105,7 @@ public class HeroStat : MonoBehaviour
             questionAnswers[i] = null;
         }
     }
-    
+
     /// <param name="card"></param>
     /// <param name="index">0~4, place/monster/weapon/behavior/random</param>
     public void AnswerQuestion(Card card, int index)

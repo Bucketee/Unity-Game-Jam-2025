@@ -32,16 +32,16 @@
         </Dialogue>
         <Dialogue id="1" text="Perhaps it would be good to visit the village today... maybe take a look around for a bit. What do you think about that?"
         image="0" questionType="0" wrongans="999">
-            <Card id="0" nextGroup="18" likability="1"/>
-            <Card id="2" nextGroup="18" likability="1"/>
-            <Card id="4" nextGroup="18" likability="1"/>
-            <Card id="1" nextGroup="19" likability="1"/>
+            <Card id="0" nextGroup="18" likability="1" heroPlace="0"/>
+            <Card id="2" nextGroup="18" likability="1" heroPlace="0"/>
+            <Card id="4" nextGroup="18" likability="1" heroPlace="0"/>
+            <Card id="1" nextGroup="19" likability="1"/> 
             <Card id="3" nextGroup="19" likability="1"/>
             <Card id="5" nextGroup="19" likability="1"/>
-            <Card id="10" nextGroup="222" likability="2"/>
-            <Card id="11" nextGroup="21" likability="2"/>
-            <Card id="12" nextGroup="22" likability="2"/>
-            <Card id="22" nextGroup="23" likability="2"/>
+            <Card id="10" nextGroup="222" likability="2" heroPlace="0"/>
+            <Card id="11" nextGroup="21" likability="2" heroPlace="1"/>
+            <Card id="12" nextGroup="22" likability="2" heroPlace="2"/>
+            <Card id="22" nextGroup="23" likability="2" heroPlace="0"/>
             <Card id="23" nextGroup="24" likability="-1"/>
         </Dialogue>
         <Dialogue id="2" text="By the way, what do you think of my weapon? I just got a new sword!"
@@ -114,18 +114,18 @@
         </Dialogue>
         <Dialogue id="1" text="Where do you think I should go today? Perhaps Forest?" 
         image="0" questionType="0" wrongans="999">
-            <Card id="0" nextGroup="18" likability="1"/>
-            <Card id="2" nextGroup="18" likability="1"/>
-            <Card id="4" nextGroup="18" likability="1"/>
+            <Card id="0" nextGroup="18" likability="1" heroPlace="1"/>
+            <Card id="2" nextGroup="18" likability="1" heroPlace="1"/>
+            <Card id="4" nextGroup="18" likability="1" heroPlace="1"/>
 
             <Card id="1" nextGroup="19" likability="1"/>
             <Card id="3" nextGroup="19" likability="1"/>
             <Card id="5" nextGroup="19" likability="1"/>
 
-            <Card id="10" nextGroup="20" likability="2"/>
-            <Card id="11" nextGroup="222" likability="2"/>
-            <Card id="12" nextGroup="22" likability="2"/>
-            <Card id="22" nextGroup="23" likability="2"/>
+            <Card id="10" nextGroup="20" likability="2" heroPlace="0"/>
+            <Card id="11" nextGroup="222" likability="2" heroPlace="1"/>
+            <Card id="12" nextGroup="22" likability="2" heroPlace="2"/>
+            <Card id="22" nextGroup="23" likability="2" heroPlace="0"/>
             <Card id="23" nextGroup="24" likability="-1"/>
         </Dialogue>
         <Dialogue id="2" text="What do you think of my weapon? This Dagger! Looks pretty good, doesn’t it?" 
@@ -197,18 +197,18 @@
         </Dialogue>
         <Dialogue id="1" text="Where do you think I should go today? Perhaps Forest?" 
         image="0" questionType="0" wrongans="999">
-            <Card id="0" nextGroup="18" likability="1"/>
-            <Card id="2" nextGroup="18" likability="1"/>
-            <Card id="4" nextGroup="18" likability="1"/>
+            <Card id="0" nextGroup="18" likability="1" heroPlace="1"/>
+            <Card id="2" nextGroup="18" likability="1" heroPlace="1"/>
+            <Card id="4" nextGroup="18" likability="1" heroPlace="1"/>
 
             <Card id="1" nextGroup="19" likability="1"/>
             <Card id="3" nextGroup="19" likability="1"/>
             <Card id="5" nextGroup="19" likability="1"/>
 
-            <Card id="10" nextGroup="20" likability="2"/>
-            <Card id="11" nextGroup="222" likability="2"/>
-            <Card id="12" nextGroup="22" likability="2"/>
-            <Card id="22" nextGroup="23" likability="2"/>
+            <Card id="10" nextGroup="20" likability="2" heroPlace="0"/>
+            <Card id="11" nextGroup="222" likability="2" heroPlace="1"/>
+            <Card id="12" nextGroup="22" likability="2" heroPlace="2"/>
+            <Card id="22" nextGroup="23" likability="2" heroPlace="0"/>
             <Card id="23" nextGroup="24" likability="-1"/>
         </Dialogue>
         <Dialogue id="2" text="What do you think of my weapon? This MorningStar! Looks pretty good, doesn’t it?" 
@@ -280,18 +280,18 @@
         </Dialogue>
         <Dialogue id="1" text="Where do you think I should go today? Perhaps Dungeon?" 
         image="0" questionType="0" wrongans="999">
-            <Card id="0" nextGroup="18" likability="1"/>
-            <Card id="2" nextGroup="18" likability="1"/>
-            <Card id="4" nextGroup="18" likability="1"/>
+            <Card id="0" nextGroup="18" likability="1" heroPlace="2"/>
+            <Card id="2" nextGroup="18" likability="1" heroPlace="2"/>
+            <Card id="4" nextGroup="18" likability="1" heroPlace="2"/>
 
             <Card id="1" nextGroup="19" likability="1"/>
             <Card id="3" nextGroup="19" likability="1"/>
             <Card id="5" nextGroup="19" likability="1"/>
 
-            <Card id="10" nextGroup="20" likability="2"/>
-            <Card id="11" nextGroup="21" likability="2"/>
-            <Card id="12" nextGroup="222" likability="2"/>
-            <Card id="22" nextGroup="23" likability="2"/>
+            <Card id="10" nextGroup="20" likability="2" heroPlace="0"/>
+            <Card id="11" nextGroup="21" likability="2" heroPlace="1"/>
+            <Card id="12" nextGroup="222" likability="2" heroPlace="2"/>
+            <Card id="22" nextGroup="23" likability="2" heroPlace="2"/>
             <Card id="23" nextGroup="24" likability="-1"/>
         </Dialogue>
         <Dialogue id="2" text="What do you think of my weapon? This Bow! Looks pretty good, doesn’t it?" 
