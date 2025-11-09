@@ -8,7 +8,11 @@ public class StartScene : MonoBehaviour
     public Image startSceneImage;
     public GameObject[] buttons;
 
-    
+    private void OnEnable()
+    {
+        SoundManager.Instance.StopBGM();
+        SoundManager.Instance.PlayBGM(EBgm.BGM_MAIN);
+    }
 
     public void StartGame()
     {

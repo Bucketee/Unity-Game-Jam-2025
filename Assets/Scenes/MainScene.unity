@@ -1604,7 +1604,12 @@ MonoBehaviour:
   onCardClicked:
     m_PersistentCalls:
       m_Calls: []
-  colors: []
+  colors:
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 1, g: 0.7688679, b: 0.7688679, a: 0}
+  - {r: 0.9835156, g: 1, b: 0.8160377, a: 0}
+  - {r: 0.7216981, g: 1, b: 0.7692574, a: 0}
+  - {r: 0.8254717, g: 0.9378721, b: 1, a: 0}
 --- !u!1 &716895683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4250,6 +4255,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c690faeca49f18438cfaab84af8fbd6, type: 2}
   - {fileID: 11400000, guid: cb76f109ecfad0148af828a5bbe5ff11, type: 2}
   - {fileID: 11400000, guid: 3e20da396d56e88469b79dcfa9314cc7, type: 2}
+  fadeImage: {fileID: 427337245}
+  startScene: {fileID: 136785157}
 --- !u!1 &2102711458
 GameObject:
   m_ObjectHideFlags: 0

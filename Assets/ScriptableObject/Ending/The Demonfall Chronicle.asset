@@ -31,5 +31,5 @@ MonoBehaviour:
     behavior: 0
     likabilityMin: 0
     likabilityMax: 10
-    attackPowerMin: 5
+    attackPowerMin: 0
     attackPowerMax: 5
