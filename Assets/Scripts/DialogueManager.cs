@@ -234,41 +234,49 @@ public class DialogueManager : MonoBehaviour
                 HeroStat.Instance.questionAnswers[3].id == 18)
             {
                 whichEvent = 0;
+                HeroStat.Instance.AttackPower += 3;
             }
             else if (HeroStat.Instance.questionAnswers[0].id == 11 &&
                      HeroStat.Instance.questionAnswers[1].id == 13)
             {
                 whichEvent = 1;
+                HeroStat.Instance.AttackPower += 1;
             }
             else if (HeroStat.Instance.questionAnswers[0].id == 11 &&
                      HeroStat.Instance.questionAnswers[1].id == 14)
             {
                 whichEvent = 2;
+                HeroStat.Instance.AttackPower += 1;
             }
             else if (HeroStat.Instance.questionAnswers[0].id == 12 &&
                      HeroStat.Instance.questionAnswers[1].id == 16)
             {
                 whichEvent = 3;
+                HeroStat.Instance.AttackPower += 1;
             }
             else if (HeroStat.Instance.questionAnswers[0].id == 10 &&
                      HeroStat.Instance.questionAnswers[3].id == 19)
             {
                 whichEvent = 4;
+                HeroStat.Instance.Likeability += 1;
             }
             else if (HeroStat.Instance.questionAnswers[0].id == 10 &&
                      HeroStat.Instance.questionAnswers[3].id == 21)
             {
                 whichEvent = 5;
+                HeroStat.Instance.Likeability += 1;
             }
             else if (HeroStat.Instance.questionAnswers[0].id == 10 &&
                      HeroStat.Instance.questionAnswers[3].id == 20)
             {
                 whichEvent = 6;
+                HeroStat.Instance.Likeability += 1;
             }
             else if (HeroStat.Instance.questionAnswers[0].id == 12 &&
                      HeroStat.Instance.questionAnswers[1].id == 15)
             {
                 whichEvent = 7;
+                HeroStat.Instance.AttackPower += 1;
             }
         }
         catch (NullReferenceException)
