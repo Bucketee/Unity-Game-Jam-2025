@@ -2,19 +2,17 @@ using UnityEngine;
 
 public enum EBgm
 {
-    BGM_HEAVY,
-    BGM_LIGHT
+    BGM_MAIN,
+    BGM_END,
 }
     
 //SFX 종류들
 public enum ESfx
 {
     SFX_BUTTON,
-    SFX_ENDING,
-    SFX_TOKEN,
-    SFX_BOTTLE,
-    SFX_OPENDOOR,
-    SFX_MissionClear
+    SFX_START_BUTTON,
+    SFX_DIALOGUE_MOVE_BUTTON,
+    SFX_PURCHASE,
 }
 
 public class SoundManager : MonoBehaviour
