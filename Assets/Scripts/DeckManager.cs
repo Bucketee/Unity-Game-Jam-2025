@@ -23,6 +23,25 @@ public class DeckManager : MonoBehaviour
         if (Instance != null) DestroyImmediate(this);
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        LoadCardSprites();
+    }
+
+    private Dictionary<int, Sprite> cardSprites = new();
+    private void LoadCardSprites()
+    {
+        Sprite[] sprites = Resources.LoadAll<Sprite>("Card");
+        foreach (Sprite sprite in sprites)
+        {
+            int id = int.Parse(sprite.name[4..]);
+            cardSprites[id] = sprite;
+        }
+    }
+
+    public Sprite GetCardSprite(int id)
+    {
+        if (cardSprites.ContainsKey(id)) return cardSprites[id];
+        return null;
     }
     
 

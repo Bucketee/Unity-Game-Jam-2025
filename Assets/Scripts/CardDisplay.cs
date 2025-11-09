@@ -10,9 +10,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     public Card card;
 
-    private TextMeshProUGUI cardNameText;
     private Image cardImage;
-    private TextMeshProUGUI cardTextText;
     private Vector3 originalPosition;
     private int originalSiblingIndex;
     private RectTransform cardRect;
@@ -27,13 +25,9 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void Init(Card card, bool canPointer)
     {
         this.card = card.Clone();
-        cardNameText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        cardImage = transform.GetChild(1).GetComponent<Image>();
-        cardTextText = transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
+        cardImage = transform.GetComponent<Image>();
         
-        cardNameText.text = card.cardName;
-        cardImage.sprite = card.cardImage;
-        cardTextText.text = card.cardText;
+        cardImage.sprite = DeckManager.Instance.GetCardSprite(card.id);
         
         _canPointer = canPointer;
         
@@ -84,7 +78,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         cardRect = gameObject.GetComponent<RectTransform>();
         Vector2 startPos = cardRect.anchoredPosition;
         float originX = originalPosition.x, originY = originalPosition.y;
-        Vector2 endPos = isAppear ? new Vector2(originX, originY + 80f) : new Vector2(originX, originY);
+        Vector2 endPos = isAppear ? new Vector2(originX, originY + 150f) : new Vector2(originX, originY);
 
         float duration = 0.25f;
         float elapsed = 0f;
@@ -109,7 +103,6 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     #region Drag & Drop
     private bool isDragging = false;
-    [SerializeField] private RectTransform cardSubmit;
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (!_canPointer) return; 
