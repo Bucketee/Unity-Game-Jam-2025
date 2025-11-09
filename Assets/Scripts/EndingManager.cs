@@ -25,7 +25,6 @@ public class EndingManager : MonoBehaviour
     private void Start()
     {
         heroStat = HeroStat.Instance;
-        StartEnding(endings[9]);
     }
 
     [ContextMenu("Check Ending")]
