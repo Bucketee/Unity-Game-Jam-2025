@@ -188,8 +188,8 @@ public class DialogueManager : MonoBehaviour
             test = true;
         }
         
-        dayText.text       = "DAY:              " + HeroStat.Instance.Date;
-        likablityText.text = "LIKABILITY:       " + HeroStat.Instance.Likeability;
+        dayText.text = HeroStat.Instance.Date.ToString();
+
     }
 
     private int currentGroupId = -1;
