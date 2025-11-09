@@ -3236,7 +3236,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 2
   m_Viewport: {fileID: 709687648}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1263037680}
@@ -4033,6 +4033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DeckManager
   runCount: 1
   deck: []
+  usingDeck: []
   money: 15
   cardInfos:
   - Card: {fileID: 11400000, guid: 7aa980b2dee8b6445b307d5cb182032d, type: 2}
