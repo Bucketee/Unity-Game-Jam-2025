@@ -29,8 +29,17 @@ public class EndingManager : MonoBehaviour
             if (CheckEnd(ending))
             {
                 Debug.Log(ending.name);
+                DeckManager.Instance.money += ending.endPrice / (ending.isClearedOnce ? 2 : 1);
+                ending.isClearedOnce = true;
+                StartEnding();
+                return;
             }
         }
+    }
+
+    private void StartEnding()
+    {
+        
     }
 
     private bool CheckEnd(Ending ending)
