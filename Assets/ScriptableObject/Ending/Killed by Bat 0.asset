@@ -16,7 +16,7 @@ MonoBehaviour:
   endingDescription: "The dagger flashed, the bats screamed\u2014and Hero was gone."
   endPrice: 15
   isClearedOnce: 0
-  endingSprite: {fileID: 0}
+  endingSprite: {fileID: 21300000, guid: 3ec7ac1982a383747a17ac49d6b17f28, type: 3}
   condition:
     date: 0
     placeCard:

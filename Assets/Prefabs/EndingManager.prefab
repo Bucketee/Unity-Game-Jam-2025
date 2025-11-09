@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55cf5bc042a98044cb53133fa57c8a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndingManager
+  endingScene: {fileID: 0}
   endings: []

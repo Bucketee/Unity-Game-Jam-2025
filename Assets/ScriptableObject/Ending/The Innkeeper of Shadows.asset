@@ -18,7 +18,7 @@ MonoBehaviour:
     again, but her hands will tremble."
   endPrice: 200
   isClearedOnce: 0
-  endingSprite: {fileID: 0}
+  endingSprite: {fileID: 21300000, guid: 8c2b6c4b4c9aec442a16215faddb43f6, type: 3}
   condition:
     date: 5
     placeCard: []

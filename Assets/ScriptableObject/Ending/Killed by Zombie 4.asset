@@ -16,7 +16,7 @@ MonoBehaviour:
   endingDescription: "Hero rushed ahead\u2014the darkness rushed faster."
   endPrice: 15
   isClearedOnce: 0
-  endingSprite: {fileID: 0}
+  endingSprite: {fileID: 21300000, guid: 4deb289ab46350540b83afb273ca6d94, type: 3}
   condition:
     date: 0
     placeCard:

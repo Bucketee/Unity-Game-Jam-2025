@@ -175,6 +175,10 @@ public class DialogueManager : MonoBehaviour
     {
         return !currentGroup.dialogues.ContainsKey(currentDialogueId + 1);
     }
+    public bool IsFirstDialogue()
+    {
+        return currentDialogueId == 0;
+    }
 
     public void GoToNextDay()
     {
