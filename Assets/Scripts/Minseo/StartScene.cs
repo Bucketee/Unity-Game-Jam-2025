@@ -23,6 +23,7 @@ public class StartScene : MonoBehaviour
         {
             button.SetActive(false);
         }
+        
         startSceneImage.DOFade(0f, 0.5f)
             .OnComplete(() => startSceneImage.gameObject.SetActive(false));
         
