@@ -33,7 +33,7 @@
             <Card id="22" nextGroup="31" likability="2"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
-        <Dialogue id="4" text="What should I do when I’m out there? Should I be much more careful?" image="3" questionType="3" wrongans="9912">
+        <Dialogue id="4" text="What should I do when I’m out there? Should I be much more careful?" image="5" questionType="3" wrongans="9912">
             <Card id="0" nextGroup="33" likability="1"/>
             <Card id="2" nextGroup="33" likability="1"/>
             <Card id="4" nextGroup="33" likability="1"/>
@@ -135,10 +135,10 @@
         <Dialogue id="0" text="Dagger? Huh, maybe I'll try that next time." image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="31" type="2">
-        <Dialogue id="0" text="You like this weapon too, huh? Guess my eye for gear isn’t so bad." image="2" questionType="4"/>
+        <Dialogue id="0" text="You like this weapon too, huh? Guess my eye for gear isn’t so bad." image="3" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="32" type="2">
-        <Dialogue id="0" text="That’s a bit harsh, don’t you think?" image="2" questionType="4"/>
+        <Dialogue id="0" text="That’s a bit harsh, don’t you think?" image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="9914" type="2">
         <Dialogue id="0" text="Wait, we’re not talking about my weapon?" image="3" questionType="4"/>
@@ -150,19 +150,19 @@
         <Dialogue id="0" text="Hmm… maybe I should think it through first." image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="35" type="2">
-        <Dialogue id="0" text="Aggressive? Okay, I’ll try that." image="1" questionType="4"/>
+        <Dialogue id="0" text="Aggressive? Okay, I’ll try that." image="4" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="36" type="2">
         <Dialogue id="0" text="Careful? Okay, I’ll try that." image="5" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="37" type="2">
-        <Dialogue id="0" text="Farming? Okay, I’ll try that." image="1" questionType="4"/>
+        <Dialogue id="0" text="Farming? Okay, I’ll try that." image="4" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="38" type="2">
-        <Dialogue id="0" text="Team-making? Okay, I’ll try that." image="1" questionType="4"/>
+        <Dialogue id="0" text="Team-making? Okay, I’ll try that." image="4" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="39" type="2">
-        <Dialogue id="0" text="Rest? Okay, I’ll try that." image="1" questionType="4"/>
+        <Dialogue id="0" text="Rest? Okay, I’ll try that." image="4" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="40" type="2">
         <Dialogue id="0" text="You make it sound simple. I’ll take your word for it." image="1" questionType="4"/>
@@ -171,7 +171,7 @@
         <Dialogue id="0" text="You always act like it’s easy for you." image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="9912" type="2">
-        <Dialogue id="0" text="I’m asking what I should do, not what you are saying right now." image="3" questionType="4"/>
+        <Dialogue id="0" text="I’m asking what I should do, not what you are saying right now." image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="42" type="2">
         <Dialogue id="0" text="Morning! You look alive for once." image="0" questionType="4"/>
@@ -180,13 +180,13 @@
         <Dialogue id="0" text="You’re grumpier than usual today." image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="44" type="2">
-        <Dialogue id="0" text="...Not even a 'morning' back? Rude." image="3" questionType="4"/>
+        <Dialogue id="0" text="...Not even a 'morning' back? Rude." image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="45" type="2">
         <Dialogue id="0" text="Clear skies, good mood. Let’s keep it that way." image="6" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="46" type="2">
-        <Dialogue id="0" text="Nice weather usually means trouble later." image="1" questionType="4"/>
+        <Dialogue id="0" text="Nice weather usually means trouble later." image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="47" type="2">
         <Dialogue id="0" text="Were you even listening to me?" image="1" questionType="4"/>
