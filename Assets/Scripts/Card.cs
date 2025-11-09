@@ -18,7 +18,6 @@ public class Card : ScriptableObject
 {
     public int id;
     public string cardName => this.name;
-    public Sprite cardImage;
     public CardType cardType;
     public string cardText;
 
@@ -32,7 +31,6 @@ public class Card : ScriptableObject
         Card card = ScriptableObject.CreateInstance<Card>();
         card.id = this.id;
         card.name = this.cardName;
-        card.cardImage = this.cardImage;
         card.cardType = this.cardType;
         card.cardText = this.cardText;
         

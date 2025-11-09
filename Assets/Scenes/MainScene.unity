@@ -336,12 +336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeroStat
   questionAnswers: []
-  placeRcm: {fileID: 0}
-  monsterRcm: {fileID: 0}
-  weaponRcm: {fileID: 0}
-  behaviorRcm: {fileID: 0}
-  randomQuestion: {fileID: 0}
   dungeunCount: 0
+  forestCount: 0
 --- !u!1 &346311390
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb320546464ae048b857b2ae8d6b588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hand
-  angleSpread: 0
+  cardPrefab: {fileID: 8684722269176168103, guid: e4a875c9ee7c4ad4e950693efd138d7a, type: 3}
   cardsInHand: []
 --- !u!1 &349305854
 GameObject:
@@ -422,13 +418,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 786756649}
   - {fileID: 1814428671}
   m_Father: {fileID: 1011279103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -350}
-  m_SizeDelta: {x: 1000, y: 550}
+  m_SizeDelta: {x: 1000, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349305856
 MonoBehaviour:
@@ -443,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.882353, g: 0.93725497, b: 0.91372555, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -542,6 +539,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571963264}
+  m_CullTransparentMesh: 1
+--- !u!1 &656939117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 656939118}
+  - component: {fileID: 656939120}
+  - component: {fileID: 656939119}
+  m_Layer: 5
+  m_Name: TextBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &656939118
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656939117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1011279103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 960, y: 540}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &656939119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656939117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7c51089d349e5d941a8db825f130ab61, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &656939120
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656939117}
   m_CullTransparentMesh: 1
 --- !u!1 &696114541
 GameObject:
@@ -650,6 +722,21 @@ MonoBehaviour:
     Count: 0
     price: 0
   - Card: {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
+    Count: 0
+    price: 0
+  - Card: {fileID: 11400000, guid: 4373766a29ed6eb4dadbb1d3b446c738, type: 2}
+    Count: 0
+    price: 0
+  - Card: {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
+    Count: 0
+    price: 0
+  - Card: {fileID: 11400000, guid: c50e2472748c98b44bd38d2f9c94c920, type: 2}
+    Count: 0
+    price: 0
+  - Card: {fileID: 11400000, guid: 776bc480146832349bc5c5d924231ab2, type: 2}
+    Count: 0
+    price: 0
+  - Card: {fileID: 11400000, guid: b937317e92d7bd644b23eb682dfdf470, type: 2}
     Count: 0
     price: 0
   - Card: {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
@@ -821,6 +908,81 @@ MonoBehaviour:
   rightButton: {fileID: 892094009}
   downButton: {fileID: 1605239913}
   nextDayButton: {fileID: 1023198886}
+--- !u!1 &786756648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 786756649}
+  - component: {fileID: 786756651}
+  - component: {fileID: 786756650}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &786756649
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786756648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 349305855}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 2}
+  m_SizeDelta: {x: 960, y: 540}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &786756650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786756648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5d99610bc72126c43b6b3ac61f0ccd47, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &786756651
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786756648}
+  m_CullTransparentMesh: 1
 --- !u!1 &892094007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1343,7 @@ RectTransform:
   m_Children:
   - {fileID: 571963265}
   - {fileID: 349305855}
+  - {fileID: 656939118}
   - {fileID: 716895684}
   - {fileID: 95588547}
   - {fileID: 346311391}
@@ -1766,7 +1929,7 @@ GameObject:
   - component: {fileID: 1814428673}
   - component: {fileID: 1814428672}
   m_Layer: 5
-  m_Name: CutScene Image
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1788,8 +1951,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0001, y: -10.7187}
-  m_SizeDelta: {x: 785.9945, y: 412.985}
+  m_AnchoredPosition: {x: 20, y: 10}
+  m_SizeDelta: {x: 1440, y: 810}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814428672
 MonoBehaviour:
@@ -1811,7 +1974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5775143000185782248, guid: a9c136f9dcfd3954fa0f3fab6260607f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7fd185d429646743b7ac2076bc99432, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1954,9 +2117,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   cutsceneImage: {fileID: 1814428672}
   cutsceneSprites:
-  - {fileID: 5775143000185782248, guid: a9c136f9dcfd3954fa0f3fab6260607f, type: 3}
-  - {fileID: 21300000, guid: 8120f573dcfe0db4ea4ed69bc2495a0f, type: 3}
-  - {fileID: 21300000, guid: d3a2bc992242246139bc03639a0db6d0, type: 3}
+  - {fileID: 21300000, guid: d7fd185d429646743b7ac2076bc99432, type: 3}
+  - {fileID: 21300000, guid: f40ba9a47b5e54948acdf0aecff9b0a0, type: 3}
+  - {fileID: 21300000, guid: 9108323712ec0a34fb8c4e456849fcc4, type: 3}
+  - {fileID: 21300000, guid: a701f2d52cd6e0a4cba88e7fecd40b5c, type: 3}
+  - {fileID: 21300000, guid: c3e17e23c7ce02843a5194acb0472935, type: 3}
+  - {fileID: 21300000, guid: 99bae56785f425140aa6c43da082fe41, type: 3}
+  - {fileID: 21300000, guid: 6c117d553efadc94dbfecd908f7bb39a, type: 3}
   cardSubmit: {fileID: 95588547}
 --- !u!1 &2089389973
 GameObject:

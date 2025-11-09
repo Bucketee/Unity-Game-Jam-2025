@@ -5,17 +5,13 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
-    public float angleSpread;
-
-    
+    [SerializeField] private GameObject cardPrefab;
     [SerializeField] private List<Card> cardsInHand;
 
-    private GameObject cardDisplay;
     private Action DrawAction;
 
     private void Awake()
     {
-        cardDisplay = Resources.Load<GameObject>("CardDisplay");
         DrawAction += () =>
         {
             DrawCardFromDeck();
@@ -89,7 +85,7 @@ public class Hand : MonoBehaviour
 
     public void DisplayCardToHand(Card card)
     {
-        GameObject go = Instantiate(cardDisplay, transform.position, transform.rotation, transform);
+        GameObject go = Instantiate(cardPrefab, transform.position, transform.rotation, transform);
         go.TryGetComponent(out CardDisplay cd);
         if (cd)
         {
