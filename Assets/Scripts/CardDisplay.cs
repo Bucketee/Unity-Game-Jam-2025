@@ -15,6 +15,8 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private int originSiblingIndex;
     
+    private bool _canPointer;
+
     public void Init(Card card)
     {
         this.card = card.Clone();
@@ -26,14 +28,30 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         cardImage.sprite = card.cardImage;
         cardTextText.text = card.cardText;
     }
+    
+    public void Init(Card card, bool canPointer)
+    {
+        this.card = card.Clone();
+        cardNameText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        cardImage = transform.GetChild(1).GetComponent<Image>();
+        cardTextText = transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
+        
+        cardNameText.text = card.cardName;
+        cardImage.sprite = card.cardImage;
+        cardTextText.text = card.cardText;
+
+        _canPointer = canPointer;
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (!_canPointer) return; 
         ToggleCard();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (!_canPointer) return;
         UnToggleCard();
     }
 
