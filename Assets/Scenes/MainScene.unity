@@ -1961,6 +1961,7 @@ RectTransform:
   - {fileID: 346311391}
   - {fileID: 136785153}
   - {fileID: 427337244}
+  - {fileID: 318092117}
   - {fileID: 1985155227}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3108,6 +3109,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c3e17e23c7ce02843a5194acb0472935, type: 3}
   - {fileID: 21300000, guid: 99bae56785f425140aa6c43da082fe41, type: 3}
   - {fileID: 21300000, guid: 6c117d553efadc94dbfecd908f7bb39a, type: 3}
+  eventText: {fileID: 318092119}
   cardSubmit: {fileID: 95588547}
 --- !u!1 &2083971834
 GameObject:
