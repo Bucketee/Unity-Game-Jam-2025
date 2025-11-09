@@ -2873,6 +2873,10 @@ PrefabInstance:
       propertyPath: startScene
       value: 
       objectReference: {fileID: 136785157}
+    - target: {fileID: 1833592573471989397, guid: b6dffaeb5157b83459527f3669ba0a18, type: 3}
+      propertyPath: endingScene
+      value: 
+      objectReference: {fileID: 1985155228}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3988,6 +3992,11 @@ PrefabInstance:
 --- !u!224 &1985155227 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4273785747683757876, guid: 18d2bf72ef463674388630ea67f06d32, type: 3}
+  m_PrefabInstance: {fileID: 1985155226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1985155228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5029809271794578464, guid: 18d2bf72ef463674388630ea67f06d32, type: 3}
   m_PrefabInstance: {fileID: 1985155226}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2011533190
