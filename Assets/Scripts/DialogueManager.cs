@@ -190,8 +190,8 @@ public class DialogueManager : MonoBehaviour
             test = true;
         }
         
-        dayText.text       = "DAY:              " + HeroStat.Instance.Date;
-        likablityText.text = "LIKABILITY:       " + HeroStat.Instance.Likeability;
+        dayText.text = HeroStat.Instance.Date.ToString();
+
     }
 
     private int currentGroupId = -1;
@@ -262,52 +262,52 @@ public class DialogueManager : MonoBehaviour
         try
         {
             if (HeroStat.Instance.dungeunCount == 3 &&
-                HeroStat.Instance.questionAnswers[0].id == 12 &&
-                HeroStat.Instance.questionAnswers[1].id == 15 &&
-                HeroStat.Instance.questionAnswers[2].id == 8 &&
-                HeroStat.Instance.questionAnswers[3].id == 18)
+                HeroStat.Instance.today.place == HeroPlace.Dungeon &&
+                HeroStat.Instance.today.monster == HeroMonster.Zombie &&
+                HeroStat.Instance.today.weapon == HeroWeapon.MorningStar &&
+                HeroStat.Instance.today.behavior == HeroBehavior.Careful)
             {
                 whichEvent = 0;
                 HeroStat.Instance.AttackPower += 3;
             }
-            else if (HeroStat.Instance.questionAnswers[0].id == 11 &&
-                     HeroStat.Instance.questionAnswers[1].id == 13)
+            else if (HeroStat.Instance.today.place == HeroPlace.Forest &&
+                     HeroStat.Instance.today.monster == HeroMonster.Slime)
             {
                 whichEvent = 1;
                 HeroStat.Instance.AttackPower += 1;
             }
-            else if (HeroStat.Instance.questionAnswers[0].id == 11 &&
-                     HeroStat.Instance.questionAnswers[1].id == 14)
+            else if (HeroStat.Instance.today.place == HeroPlace.Forest &&
+                     HeroStat.Instance.today.monster == HeroMonster.Goblin)
             {
                 whichEvent = 2;
                 HeroStat.Instance.AttackPower += 1;
             }
-            else if (HeroStat.Instance.questionAnswers[0].id == 12 &&
-                     HeroStat.Instance.questionAnswers[1].id == 16)
+            else if (HeroStat.Instance.today.place == HeroPlace.Dungeon &&
+                     HeroStat.Instance.today.monster == HeroMonster.Bat)
             {
                 whichEvent = 3;
                 HeroStat.Instance.AttackPower += 1;
             }
-            else if (HeroStat.Instance.questionAnswers[0].id == 10 &&
-                     HeroStat.Instance.questionAnswers[3].id == 19)
+            else if (HeroStat.Instance.today.place == HeroPlace.Village &&
+                     HeroStat.Instance.today.behavior == HeroBehavior.Farming)
             {
                 whichEvent = 4;
                 HeroStat.Instance.Likeability += 1;
             }
-            else if (HeroStat.Instance.questionAnswers[0].id == 10 &&
-                     HeroStat.Instance.questionAnswers[3].id == 21)
+            else if (HeroStat.Instance.today.place == HeroPlace.Village &&
+                     HeroStat.Instance.today.behavior == HeroBehavior.Rest)
             {
                 whichEvent = 5;
                 HeroStat.Instance.Likeability += 1;
             }
-            else if (HeroStat.Instance.questionAnswers[0].id == 10 &&
-                     HeroStat.Instance.questionAnswers[3].id == 20)
+            else if (HeroStat.Instance.today.place == HeroPlace.Village &&
+                     HeroStat.Instance.today.behavior == HeroBehavior.TeamMaking)
             {
                 whichEvent = 6;
                 HeroStat.Instance.Likeability += 1;
             }
-            else if (HeroStat.Instance.questionAnswers[0].id == 12 &&
-                     HeroStat.Instance.questionAnswers[1].id == 15)
+            else if (HeroStat.Instance.today.place == HeroPlace.Dungeon &&
+                     HeroStat.Instance.today.monster == HeroMonster.Zombie)
             {
                 whichEvent = 7;
                 HeroStat.Instance.AttackPower += 1;

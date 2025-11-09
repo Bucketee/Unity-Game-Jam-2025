@@ -74,6 +74,12 @@ public class HeroStat : MonoBehaviour
         questionAnswers = new List<Card>(5) { null, null, null, null, null };
     }
 
+    private void Update()
+    {
+        if (likeability > 10) likeability = 10;
+        if (likeability < 0) likeability = 0;
+    }
+
     private void InitHeroStat()
     {
         date = 0;
