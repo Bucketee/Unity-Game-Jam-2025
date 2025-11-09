@@ -5,8 +5,7 @@
             <Card id="2" nextGroup="16"/>
         </Dialogue>
         <Dialogue id="1" text="I like swimming"> 
-            <Card id="3" nextGroup="15"/>
-            <Card id="4" nextGroup="16"/>
+            <Card id="1" nextGroup="16"/>
         </Dialogue>
         <Dialogue id="2" text="What is your hobby?"> 
             <Card id="5" nextGroup="15"/>
@@ -47,11 +46,11 @@
     </DialogueGroup>
 
     <DialogueGroup id="16" type="2"> <!-- 분기 대사 -->
-        <Dialogue id="0" text="Branch 16, Dialogue 1"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+        <Dialogue id="0" text="Yes Yes Yes"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
             <Card id="1" nextGroup="15"/>
             <Card id="2" nextGroup="16"/>
         </Dialogue>
-        <Dialogue id="1" text="Branch 16, Dialogue 2"> 
+        <Dialogue id="1" text="Good Good"> 
             <Card id="3" nextGroup="15"/>
             <Card id="4" nextGroup="16"/>
         </Dialogue>

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum DialogueType
 {
@@ -101,7 +102,6 @@ public class DialogueManager : MonoBehaviour
         if (!test && Input.GetKeyDown(KeyCode.B))
         {
             SetDialogueGroup(0);
-            SetDialogue(0);
             test = true;
         }
     }
@@ -113,11 +113,15 @@ public class DialogueManager : MonoBehaviour
 
     public event Action OnGroupChanged, OnDialogueChanged;
     
-    private void SetDialogueGroup(int groupId)
+    private void SetDialogueGroup(int groupId, int dialogueId = 0)
     {
         currentGroupId = groupId;
         currentGroup = dialogueGroups[currentGroupId];
         OnGroupChanged?.Invoke();
+
+        currentDialogueId = dialogueId;
+        currentDialogue = currentGroup.dialogues[currentDialogueId];
+        OnDialogueChanged?.Invoke();
     }
     private void SetDialogue(int dialogueId)
     {
@@ -158,14 +162,31 @@ public class DialogueManager : MonoBehaviour
     // 마지막에 있었던 (groupId, dialogueId) 쌍을 스택에 저장함
     private Stack<(int, int)> groupHistory = new();
 
+    [SerializeField] private RectTransform cardSubmit;
+    public bool SubmitCheck(PointerEventData eventData)
+    {
+        if (RectTransformUtility.RectangleContainsScreenPoint(
+            cardSubmit,
+            eventData.position,
+            eventData.pressEventCamera))
+        {
+            return true;
+        }
+        return false;
+    }
+
     // cardId에 해당하는 카드를 제출했을 때의 처리
     public void SubmitCard(int cardId)
     {
+        Debug.Log($"Submitted card {cardId}");
+
         if (!currentDialogue.effects.ContainsKey(cardId))
         {
             // 엉뚱한 대답을 제출한 상황
             // 용사 호감도 내려감, 실망 이펙트 등
             // 엉뚱한 대답에 대한 (미리 정의된) dialogue group으로 점프함
+
+            Debug.Log("Wrong card");
             return;
         }
 
@@ -178,9 +199,9 @@ public class DialogueManager : MonoBehaviour
     // 현재 있었던 곳을 저장하고 점프한다
     public void PushGroup(int nextGroup)
     {
+        Debug.Log($"Jump to {nextGroup}");
         groupHistory.Push((currentGroupId, currentDialogueId));
         SetDialogueGroup(nextGroup);
-        SetDialogue(0);
     }
 
     // 이전의 그룹으로 돌아오기
@@ -188,7 +209,6 @@ public class DialogueManager : MonoBehaviour
     public void PopGroup() 
     {
         (int groupId, int dialogueId) = groupHistory.Pop();
-        SetDialogueGroup(groupId);
-        SetDialogue(dialogueId);
+        SetDialogueGroup(groupId, dialogueId);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Card card;
 
@@ -46,12 +46,14 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private void ToggleCard()
     {
+        if (isDragging) return;
         if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
         cardTransitionCo = StartCoroutine(CardTransition(true));
     }
 
     private void UntoggleCard()
     {
+        if (isDragging) return; 
         transform.SetSiblingIndex(originalSiblingIndex);
 
         if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
@@ -82,4 +84,39 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         if (isAppear) transform.SetAsLastSibling();
     }
+
+    #region Drag & Drop
+    private bool isDragging = false;
+    [SerializeField] private RectTransform cardSubmit;
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
+        cardTransitionCo = null;
+        transform.SetAsLastSibling();
+
+        isDragging = true;
+    }
+    public void OnDrag(PointerEventData eventData)
+    {
+        Vector2 pos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            cardRect.parent as RectTransform,
+            eventData.position,
+            eventData.pressEventCamera,
+            out pos);
+        cardRect.anchoredPosition = pos;
+    }
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (DialogueManager.Instance.SubmitCheck(eventData))
+        {
+            DialogueManager.Instance.SubmitCard(card.id);
+            Destroy(gameObject);
+        }
+        transform.SetSiblingIndex(originalSiblingIndex);
+        cardRect.anchoredPosition = originalPosition;
+
+        isDragging = false;
+    }
+    #endregion
 }
