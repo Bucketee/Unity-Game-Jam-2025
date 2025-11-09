@@ -44,7 +44,7 @@ public class DeckManagerUI : MonoBehaviour
             go.Init(card);
         }
 
-        int chcnt = (myDeckContainer.childCount + 1) / 2; 
+        int chcnt = DeckManager.Instance.deck.Count;
         float height =     deckLayoutGroup.padding.top 
                            + deckLayoutGroup.padding.bottom 
                            + minideckHeight * chcnt

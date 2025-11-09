@@ -69,7 +69,7 @@ public class BuyingUI : MonoBehaviour
     public void EquipCard()
     {
         var cardinfo = deckShopUI.GetCardInfo(currentSelectedCard);
-        if (cardinfo.Count <= 0) return;
+        if (cardinfo.Count <= 0 || DeckManager.Instance.deck.Count >= 25) return;
         
         cardinfo.Count -= 1;
         
