@@ -1540,64 +1540,64 @@ MonoBehaviour:
     price: 2
   - Card: {fileID: 11400000, guid: 4373766a29ed6eb4dadbb1d3b446c738, type: 2}
     Count: 0
-    price: 1
+    price: 2
   - Card: {fileID: 11400000, guid: c50e2472748c98b44bd38d2f9c94c920, type: 2}
     Count: 0
-    price: 1
+    price: 2
   - Card: {fileID: 11400000, guid: 9d77fa4ce9634b94282540649d0b55e9, type: 2}
     Count: 0
-    price: 1
+    price: 3
   - Card: {fileID: 11400000, guid: 69227305d1f88f645b1bb11508a4e333, type: 2}
     Count: 0
-    price: 1
+    price: 3
   - Card: {fileID: 11400000, guid: b937317e92d7bd644b23eb682dfdf470, type: 2}
     Count: 0
-    price: 1
+    price: 3
   - Card: {fileID: 11400000, guid: 91153e6312882ba4d9c331293eb56f1e, type: 2}
     Count: 0
-    price: 1
+    price: 3
   - Card: {fileID: 11400000, guid: 7dffc8acd818eb04eb3a461427267548, type: 2}
     Count: 0
-    price: 1
+    price: 4
   - Card: {fileID: 11400000, guid: f366fb4f91280a04ea708de189333f07, type: 2}
     Count: 0
-    price: 1
+    price: 4
   - Card: {fileID: 11400000, guid: 9886d95038f00594dab06bf8918580a4, type: 2}
     Count: 0
-    price: 2
+    price: 4
   - Card: {fileID: 11400000, guid: 9548dc78930733b4b8a3aa3428a902a4, type: 2}
     Count: 0
-    price: 1
+    price: 6
   - Card: {fileID: 11400000, guid: 8f6c68d584e4e7343a8bd40c78a85cb9, type: 2}
     Count: 0
-    price: 1
+    price: 6
   - Card: {fileID: 11400000, guid: 2cffd5ea103d90840b0423c97bee41c0, type: 2}
     Count: 0
-    price: 1
+    price: 6
   - Card: {fileID: 11400000, guid: 334a25fe42c405847b2e34bf8c3c00a8, type: 2}
     Count: 0
-    price: 1
+    price: 6
   - Card: {fileID: 11400000, guid: 7aa980b2dee8b6445b307d5cb182032d, type: 2}
     Count: 0
-    price: 1
+    price: 8
   - Card: {fileID: 11400000, guid: 90d9cda970f6fec43b88e9490c13e60f, type: 2}
     Count: 0
-    price: 2
+    price: 8
   - Card: {fileID: 11400000, guid: 1bfebe548d6314b428c08b581af6df0a, type: 2}
     Count: 0
-    price: 1
+    price: 8
   - Card: {fileID: 11400000, guid: ddc7acac7bbd3f246a054348c2f43e3a, type: 2}
     Count: 0
-    price: 0
+    price: 8
   - Card: {fileID: 11400000, guid: eb758ddffd3d8de4da0d9af9e2d6aa13, type: 2}
     Count: 0
-    price: 0
+    price: 8
   - Card: {fileID: 11400000, guid: 93707e589904ad445a0732e3691b38cb, type: 2}
     Count: 0
-    price: 0
+    price: 12
   - Card: {fileID: 11400000, guid: 11fb7acf5cd09fb45ad1abc46bb736f8, type: 2}
     Count: 0
-    price: 1
+    price: 12
   onDeckChange:
     m_PersistentCalls:
       m_Calls: []
