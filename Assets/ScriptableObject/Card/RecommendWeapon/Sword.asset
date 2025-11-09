@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c4639a6ce032f4b80614232a280f88, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: Assembly-CSharp::Card
-  id: 5
+  id: 6
   cardImage: {fileID: 0}
   cardType: 4
   cardText: Sword
