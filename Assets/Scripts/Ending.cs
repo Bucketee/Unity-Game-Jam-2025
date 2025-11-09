@@ -11,6 +11,7 @@ public class Ending : ScriptableObject
     
     public Sprite endingSprite;
     
+
     public EndingCondition condition;
 }
 
