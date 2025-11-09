@@ -59,13 +59,13 @@ public class DialogueEffect
         Debug.Log("ATTACK POWER INCREASED BY " + attackPower);
         Debug.Log("LIKABILTY INCREASED BY " + likablity);
 
-        if (heroPlace == -1) HeroStat.Instance.SetTodayPlace(HeroStat.Instance.RandomPlace());
+        if (heroPlace == -1) HeroStat.Instance.RandomPlace();
         else HeroStat.Instance.SetTodayPlace((HeroPlace)heroPlace);
-        if (heroMonster == -1) HeroStat.Instance.SetTodayMonster(HeroStat.Instance.RandomMonster());
+        if (heroMonster == -1) HeroStat.Instance.RandomPlace();
         else HeroStat.Instance.SetTodayMonster((HeroMonster)heroMonster);
-        if (heroWeapon == -1) HeroStat.Instance.SetTodayWeapon(HeroStat.Instance.RandomWeapon());
+        if (heroWeapon == -1) HeroStat.Instance.RandomPlace();
         else HeroStat.Instance.SetTodayWeapon((HeroWeapon)heroWeapon);
-        if (heroBehavior == -1) HeroStat.Instance.SetTodayBehavior(HeroStat.Instance.RandomBehavior());
+        if (heroBehavior == -1) HeroStat.Instance.RandomPlace();
         else HeroStat.Instance.SetTodayBehavior((HeroBehavior)heroBehavior);
     }
 }

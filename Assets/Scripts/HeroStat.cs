@@ -7,6 +7,8 @@ public enum HeroPlace { Village, Forest, Dungeon }
 public enum HeroMonster { Slime, Goblin, Bat, Zombie }
 public enum HeroWeapon { Sword, Bow, MorningStar, Dagger }
 public enum HeroBehavior { Aggressive, Careful, Farming, TeamMaking, Rest }
+
+[Serializable]
 public class HeroToday
 {
     public HeroPlace place;
