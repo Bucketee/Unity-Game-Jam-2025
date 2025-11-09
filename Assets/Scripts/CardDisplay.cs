@@ -58,6 +58,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         if (isDragging) return;
         if (!_canPointer) return;
+        originalSiblingIndex = transform.GetSiblingIndex();
         if (cardTransitionCo != null) StopCoroutine(cardTransitionCo);
         cardTransitionCo = StartCoroutine(CardTransition(true));
     }
