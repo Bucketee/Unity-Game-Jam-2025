@@ -27,26 +27,36 @@ public class Hand : MonoBehaviour
         }*/
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A)) Draw();
+    }
+
     [ContextMenu("Draw")]
     public void Draw()
     {
         DrawAction?.Invoke();
     }
-    
+
     [ContextMenu("Organize Cards")]
     public void OrganizeCards()
     {
-        StopAllCoroutines();
         float cardCount = transform.childCount;
+
+        float cardSpacing = Utils.CardSpacing;
+        if (Utils.CardSpacing * (cardCount - 1) > Utils.HandWidth)
+            cardSpacing = Utils.HandWidth / (cardCount - 1);
+        float cardStartX = -((cardCount - 1) * cardSpacing) / 2;
+
         for (int i = 0; i < cardCount; i++)
         {
-            Transform child = transform.GetChild(i);
-            StartCoroutine(OrganizeCardCo(child, new Vector3(0, -150, 0),
-                Quaternion.AngleAxis(-(i - (cardCount - 1) / 2) * angleSpread, Vector3.forward)));
+            RectTransform child = transform.GetChild(i).gameObject.GetComponent<RectTransform>();
+            child.anchoredPosition = new Vector3(cardStartX + i * cardSpacing, 0);
+            child.gameObject.GetComponent<CardDisplay>().SynchPosition();
         }
     }
 
-    public IEnumerator OrganizeCardCo(Transform child, Vector3 target, Quaternion rotation)
+    public IEnumerator OrganizeCardCo(RectTransform child, Vector3 target, Quaternion rotation)
     {
         float time = 0;
         float duration = 0.5f;
@@ -54,13 +64,13 @@ public class Hand : MonoBehaviour
         while (time < duration)
         {
             time += Time.deltaTime;
-            child.transform.localPosition = Vector3.Lerp(child.transform.localPosition, target, time / duration);
-            child.transform.localRotation = Quaternion.Lerp(child.transform.localRotation, rotation, time / duration);
+            child.anchoredPosition = Vector3.Lerp(child.anchoredPosition, target, time / duration);
+            child.rotation = Quaternion.Lerp(child.rotation, rotation, time / duration);
             yield return null;
         }
-        
-        
-        child.transform.SetLocalPositionAndRotation(target, rotation);
+
+        child.anchoredPosition = target;
+        child.rotation = rotation;
     }
 
     public void DrawCardFromDeck()

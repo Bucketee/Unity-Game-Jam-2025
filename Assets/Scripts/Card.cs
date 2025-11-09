@@ -16,6 +16,7 @@ public enum CardType
 [CreateAssetMenu(menuName = "Card", fileName = "New Card")]
 public class Card : ScriptableObject
 {
+    public int id;
     public string cardName => this.name;
     public Sprite cardImage;
     public CardType cardType;
@@ -29,6 +30,7 @@ public class Card : ScriptableObject
     public Card Clone()
     {
         Card card = ScriptableObject.CreateInstance<Card>();
+        card.id = this.id;
         card.name = this.cardName;
         card.cardImage = this.cardImage;
         card.cardType = this.cardType;
