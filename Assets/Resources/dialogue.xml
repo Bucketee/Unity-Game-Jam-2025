@@ -1,0 +1,58 @@
+<root>
+    <DialogueGroup id="0" type="1"> <!-- Day 1 -->
+        <Dialogue id="0" text="Hi my name is yong-sa"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+            <Card id="1" nextGroup="15"/>
+            <Card id="2" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="1" text="I like swimming"> 
+            <Card id="1" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="2" text="What is your hobby?"> 
+            <Card id="5" nextGroup="15"/>
+            <Card id="6" nextGroup="16"/>
+        </Dialogue>
+    </DialogueGroup>
+    <DialogueGroup id="1" type="1"> <!-- Day 1 -->
+        <Dialogue id="0" text="Day1, Dialogue 1"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+            <Card id="1" nextGroup="15"/>
+            <Card id="2" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="1" text="Day1, Dialogue 2"> 
+            <Card id="3" nextGroup="15"/>
+            <Card id="4" nextGroup="16"/>
+        </Dialogue>
+    </DialogueGroup>
+
+    <DialogueGroup id="2" type="1"> <!-- Day 2 -->
+        <Dialogue id="0" text="Day2, Dialogue 1"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+            <Card id="1" nextGroup="15"/>
+            <Card id="2" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="1" text="Day2, Dialogue 2"> 
+            <Card id="3" nextGroup="15"/>
+            <Card id="4" nextGroup="16"/>
+        </Dialogue>
+    </DialogueGroup>
+
+    <DialogueGroup id="15" type="2"> <!-- 분기 대사 -->
+        <Dialogue id="0" text="Branch 15, Dialogue 1"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+            <Card id="1" nextGroup="15"/>
+            <Card id="2" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="1" text="Branch 16, Dialogue 2"> 
+            <Card id="3" nextGroup="15"/>
+            <Card id="4" nextGroup="16"/>
+        </Dialogue>
+    </DialogueGroup>
+
+    <DialogueGroup id="16" type="2"> <!-- 분기 대사 -->
+        <Dialogue id="0" text="Yes Yes Yes"> <!-- 미 정의 card는 엉뚱한 대답으로 생각함 -->
+            <Card id="1" nextGroup="15"/>
+            <Card id="2" nextGroup="16"/>
+        </Dialogue>
+        <Dialogue id="1" text="Good Good"> 
+            <Card id="3" nextGroup="15"/>
+            <Card id="4" nextGroup="16"/>
+        </Dialogue>
+    </DialogueGroup>
+</root>
