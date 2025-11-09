@@ -1,25 +1,135 @@
 <root>
     <DialogueGroup id="0" type="1">
-        <Dialogue id="0" text="Good evening. Is this the Ternar Inn?" image="6" questionType="4">
-            <Card id="0" nextGroup="15"/>
+        <Dialogue id="0" text="Good evening. Is this the Ternar Inn?" 
+        image="1" questionType="4" wrongans="47">
+            <Card id="0" nextGroup="15" likability="1"/>
+            <Card id="2" nextGroup="15" likability="1"/>
+            <Card id="4" nextGroup="15" likability="1"/>
         </Dialogue>
-        <Dialogue id="1" text="I’m looking for a room to stay… and perhaps a bit of guidance, if you don’t mind. It’s my first time in this town, so… I’ll be in your care!" image="5" questionType="4">
-            <Card id="0" nextGroup="16"/>
+        <Dialogue id="1" text="I’m looking for a room to stay… and perhaps a bit of guidance, if you don’t mind." 
+        image="5" questionType="4" wrongans="47">
+            <Card id="0" nextGroup="16" likability="1"/>
         </Dialogue>
-        <Dialogue id="2" text="Where do you think I should go today? Perhaps Forest?" image="2" questionType="0" wrongans="999">
+        <Dialogue id="2" text=" It’s my first time in this town, so… I’ll be in your care!" 
+        image="3" questionType="4" wrongans="8282">
+            <Card id="0" nextGroup="15" likability="1"/>
+            <Card id="2" nextGroup="15" likability="1"/>
+            <Card id="4" nextGroup="15" likability="1"/>
+        </Dialogue>
+    </DialogueGroup>
+
+    <DialogueGroup id="1" type="1">
+        <Dialogue id="0" text="Good morning!" 
+        image="6" questionType="4" wrongans="44">
+            <Card id="0" nextGroup="42" likability="1"/>
+            <Card id="2" nextGroup="42" likability="1"/>
+            <Card id="4" nextGroup="42" likability="1"/>
+            <Card id="22" nextGroup="42" likability="1"/>
+            <Card id="1" nextGroup="43" likability="-1"/>
+            <Card id="3" nextGroup="43" likability="-1"/>
+            <Card id="5" nextGroup="43" likability="-1"/>
+            <Card id="23" nextGroup="43" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="1" text="Perhaps it would be good to visit the village today... maybe take a look around for a bit. What do you think about that?"
+        image="0" questionType="0" wrongans="999">
             <Card id="0" nextGroup="18" likability="1"/>
             <Card id="2" nextGroup="18" likability="1"/>
             <Card id="4" nextGroup="18" likability="1"/>
             <Card id="1" nextGroup="19" likability="1"/>
             <Card id="3" nextGroup="19" likability="1"/>
             <Card id="5" nextGroup="19" likability="1"/>
-            <Card id="10" nextGroup="20" likability="2"/>
+            <Card id="10" nextGroup="222" likability="2"/>
             <Card id="11" nextGroup="21" likability="2"/>
             <Card id="12" nextGroup="22" likability="2"/>
             <Card id="22" nextGroup="23" likability="2"/>
             <Card id="23" nextGroup="24" likability="-1"/>
         </Dialogue>
-        <Dialogue id="3" text="What do you think of my weapon? This Dagger! Looks pretty good, doesn’t it?" image="6" questionType="2" wrongans="9914">
+        <Dialogue id="2" text="By the way, what do you think of my weapon? I just got a new sword!"
+        image="6" questionType="2" wrongans="9914">
+            <Card id="0" nextGroup="25" likability="1"/>
+            <Card id="2" nextGroup="25" likability="1"/>
+            <Card id="4" nextGroup="25" likability="1"/>
+            <Card id="1" nextGroup="26" likability="1"/>
+            <Card id="3" nextGroup="26" likability="1"/>
+            <Card id="5" nextGroup="26" likability="1"/>
+            <Card id="6" nextGroup="25" likability="2"/>
+            <Card id="7" nextGroup="28" likability="2"/>
+            <Card id="8" nextGroup="29" likability="2"/>
+            <Card id="9" nextGroup="30" likability="2"/>
+            <Card id="22" nextGroup="31" likability="2"/>
+            <Card id="23" nextGroup="32" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="3" text="I heard there’ve been a lot of slimes around lately… is that true?"
+        image="1" questionType="1" wrongans="7777">
+            <Card id="0" nextGroup="51" likability="1"/>
+            <Card id="2" nextGroup="51" likability="1"/>
+            <Card id="4" nextGroup="51" likability="1"/>
+            <Card id="13" nextGroup="51" likability="1"/>
+
+            <Card id="1" nextGroup="53" likability="1"/>
+            <Card id="3" nextGroup="53" likability="1"/>
+            <Card id="5" nextGroup="53" likability="1"/>
+
+            <Card id="14" nextGroup="57" likability="1"/>
+            <Card id="15" nextGroup="58" likability="1"/>
+            <Card id="16" nextGroup="59" likability="1"/>
+
+            <Card id="17" nextGroup="60" likability="1"/>
+            <Card id="18" nextGroup="60" likability="1"/>
+            <Card id="20" nextGroup="60" likability="1"/>
+
+            <Card id="22" nextGroup="61" likability="2"/>
+            <Card id="23" nextGroup="62" likability="-1"/>
+        </Dialogue>
+
+        <Dialogue id="4" text="What should I do when I’m out there? Should I be much more careful?" 
+        image="1" questionType="3" wrongans="9912">
+            <Card id="0" nextGroup="33" likability="1"/>
+            <Card id="2" nextGroup="33" likability="1"/>
+            <Card id="4" nextGroup="33" likability="1"/>
+            <Card id="1" nextGroup="34" likability="1"/>
+            <Card id="3" nextGroup="34" likability="1"/>
+            <Card id="5" nextGroup="34" likability="1"/>
+            <Card id="17" nextGroup="35" likability="2"/>
+            <Card id="18" nextGroup="33" likability="2"/>
+            <Card id="19" nextGroup="37" likability="2"/>
+            <Card id="20" nextGroup="38" likability="2"/>
+            <Card id="21" nextGroup="39" likability="2"/>
+            <Card id="22" nextGroup="40" likability="2"/>
+            <Card id="23" nextGroup="41" likability="-1"/>
+        </Dialogue>
+    </DialogueGroup>
+
+    <DialogueGroup id="2" type="1">
+        <Dialogue id="0" text="Somehow, I have a feeling today’s going to be a good day." 
+        image="6" questionType="4" wrongans="50">
+            <Card id="0" nextGroup="42" likability="1"/>
+            <Card id="2" nextGroup="42" likability="1"/>
+            <Card id="4" nextGroup="42" likability="1"/>
+            <Card id="22" nextGroup="42" likability="1"/>
+            <Card id="1" nextGroup="43" likability="-1"/>
+            <Card id="3" nextGroup="43" likability="-1"/>
+            <Card id="5" nextGroup="43" likability="-1"/>
+            <Card id="23" nextGroup="43" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="1" text="Where do you think I should go today? Perhaps Forest?" 
+        image="0" questionType="0" wrongans="999">
+            <Card id="0" nextGroup="18" likability="1"/>
+            <Card id="2" nextGroup="18" likability="1"/>
+            <Card id="4" nextGroup="18" likability="1"/>
+
+            <Card id="1" nextGroup="19" likability="1"/>
+            <Card id="3" nextGroup="19" likability="1"/>
+            <Card id="5" nextGroup="19" likability="1"/>
+
+            <Card id="10" nextGroup="20" likability="2"/>
+            <Card id="11" nextGroup="222" likability="2"/>
+            <Card id="12" nextGroup="22" likability="2"/>
+            <Card id="22" nextGroup="23" likability="2"/>
+            <Card id="23" nextGroup="24" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="2" text="What do you think of my weapon? This Dagger! Looks pretty good, doesn’t it?" 
+        image="6" questionType="2" wrongans="9914">
             <Card id="0" nextGroup="25" likability="1"/>
             <Card id="2" nextGroup="25" likability="1"/>
             <Card id="4" nextGroup="25" likability="1"/>
@@ -29,11 +139,34 @@
             <Card id="6" nextGroup="27" likability="2"/>
             <Card id="7" nextGroup="28" likability="2"/>
             <Card id="8" nextGroup="29" likability="2"/>
-            <Card id="9" nextGroup="30" likability="2"/>
+            <Card id="9" nextGroup="25" likability="2"/>
             <Card id="22" nextGroup="31" likability="2"/>
             <Card id="23" nextGroup="32" likability="-1"/>
         </Dialogue>
-        <Dialogue id="4" text="What should I do when I’m out there? Should I be much more careful?" image="5" questionType="3" wrongans="9912">
+        <Dialogue id="3" text="I heard there’ve been a lot of goblins around lately… is that true?"
+        image="0" questionType="1" wrongans="7777">
+            <Card id="0" nextGroup="51" likability="1"/>
+            <Card id="2" nextGroup="51" likability="1"/>
+            <Card id="4" nextGroup="51" likability="1"/>
+            <Card id="14" nextGroup="51" likability="1"/>
+
+            <Card id="1" nextGroup="55" likability="1"/>
+            <Card id="3" nextGroup="55" likability="1"/>
+            <Card id="5" nextGroup="55" likability="1"/>
+
+            <Card id="13" nextGroup="56" likability="1"/>
+            <Card id="15" nextGroup="58" likability="1"/>
+            <Card id="16" nextGroup="59" likability="1"/>
+
+            <Card id="17" nextGroup="60" likability="1"/>
+            <Card id="18" nextGroup="60" likability="1"/>
+            <Card id="20" nextGroup="60" likability="1"/>
+
+            <Card id="22" nextGroup="61" likability="2"/>
+            <Card id="23" nextGroup="62" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="4" text="What should I do when I’m out there?" 
+        image="1" questionType="3" wrongans="9912">
             <Card id="0" nextGroup="33" likability="1"/>
             <Card id="2" nextGroup="33" likability="1"/>
             <Card id="4" nextGroup="33" likability="1"/>
@@ -49,155 +182,394 @@
             <Card id="23" nextGroup="41" likability="-1"/>
         </Dialogue>
     </DialogueGroup>
-    <DialogueGroup id="1" type="1">
-        <Dialogue id="5" text="Good morning!" image="6" questionType="4" wrongans="44">
+
+    <DialogueGroup id="3" type="1">
+        <Dialogue id="0" text="Good morning!" 
+        image="6" questionType="4" wrongans="44">
             <Card id="0" nextGroup="42" likability="1"/>
+            <Card id="2" nextGroup="42" likability="1"/>
+            <Card id="4" nextGroup="42" likability="1"/>
             <Card id="22" nextGroup="42" likability="1"/>
             <Card id="1" nextGroup="43" likability="-1"/>
+            <Card id="3" nextGroup="43" likability="-1"/>
+            <Card id="5" nextGroup="43" likability="-1"/>
             <Card id="23" nextGroup="43" likability="-1"/>
         </Dialogue>
-        <Dialogue id="6" text="The weather’s rather nice today, isn’t it?" image="1" questionType="4" wrongans="999">
+        <Dialogue id="1" text="Where do you think I should go today? Perhaps Forest?" 
+        image="0" questionType="0" wrongans="999">
+            <Card id="0" nextGroup="18" likability="1"/>
+            <Card id="2" nextGroup="18" likability="1"/>
+            <Card id="4" nextGroup="18" likability="1"/>
+
+            <Card id="1" nextGroup="19" likability="1"/>
+            <Card id="3" nextGroup="19" likability="1"/>
+            <Card id="5" nextGroup="19" likability="1"/>
+
+            <Card id="10" nextGroup="20" likability="2"/>
+            <Card id="11" nextGroup="222" likability="2"/>
+            <Card id="12" nextGroup="22" likability="2"/>
+            <Card id="22" nextGroup="23" likability="2"/>
+            <Card id="23" nextGroup="24" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="2" text="What do you think of my weapon? This MorningStar! Looks pretty good, doesn’t it?" 
+        image="6" questionType="2" wrongans="9914">
+            <Card id="0" nextGroup="25" likability="1"/>
+            <Card id="2" nextGroup="25" likability="1"/>
+            <Card id="4" nextGroup="25" likability="1"/>
+            <Card id="1" nextGroup="26" likability="1"/>
+            <Card id="3" nextGroup="26" likability="1"/>
+            <Card id="5" nextGroup="26" likability="1"/>
+            <Card id="6" nextGroup="27" likability="2"/>
+            <Card id="7" nextGroup="28" likability="2"/>
+            <Card id="8" nextGroup="25" likability="2"/>
+            <Card id="9" nextGroup="30" likability="2"/>
+            <Card id="22" nextGroup="31" likability="2"/>
+            <Card id="23" nextGroup="32" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="3" text="I heard there’ve been a lot of zombies around lately… is that true?"
+        image="1" questionType="1" wrongans="7777">
+            <Card id="0" nextGroup="51" likability="1"/>
+            <Card id="2" nextGroup="51" likability="1"/>
+            <Card id="4" nextGroup="51" likability="1"/>
+            <Card id="15" nextGroup="51" likability="1"/>
+
+            <Card id="1" nextGroup="52" likability="1"/>
+            <Card id="3" nextGroup="52" likability="1"/>
+            <Card id="5" nextGroup="52" likability="1"/>
+
+            <Card id="13" nextGroup="56" likability="1"/>
+            <Card id="14" nextGroup="57" likability="1"/>
+            <Card id="16" nextGroup="59" likability="1"/>
+
+            <Card id="17" nextGroup="60" likability="1"/>
+            <Card id="18" nextGroup="60" likability="1"/>
+            <Card id="20" nextGroup="60" likability="1"/>
+
+            <Card id="22" nextGroup="61" likability="2"/>
+            <Card id="23" nextGroup="62" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="4" text="What should I do when I’m out there?" 
+        image="4" questionType="3" wrongans="9912">
+            <Card id="0" nextGroup="33" likability="1"/>
+            <Card id="2" nextGroup="33" likability="1"/>
+            <Card id="4" nextGroup="33" likability="1"/>
+            <Card id="1" nextGroup="34" likability="1"/>
+            <Card id="3" nextGroup="34" likability="1"/>
+            <Card id="5" nextGroup="34" likability="1"/>
+            <Card id="17" nextGroup="35" likability="2"/>
+            <Card id="18" nextGroup="36" likability="2"/>
+            <Card id="19" nextGroup="37" likability="2"/>
+            <Card id="20" nextGroup="38" likability="2"/>
+            <Card id="21" nextGroup="39" likability="2"/>
+            <Card id="22" nextGroup="40" likability="2"/>
+            <Card id="23" nextGroup="41" likability="-1"/>
+        </Dialogue>
+    </DialogueGroup>
+
+    <DialogueGroup id="4" type="1">
+        <Dialogue id="0" text="The weather’s rather nice today, isn’t it?" 
+        image="6" questionType="4" wrongans="47">
             <Card id="0" nextGroup="45" likability="1"/>
+            <Card id="2" nextGroup="45" likability="1"/>
+            <Card id="4" nextGroup="45" likability="1"/>
             <Card id="22" nextGroup="45" likability="1"/>
             <Card id="1" nextGroup="46" likability="-1"/>
+            <Card id="3" nextGroup="46" likability="-1"/>
+            <Card id="5" nextGroup="46" likability="-1"/>
             <Card id="23" nextGroup="46" likability="-1"/>
-            <Card id="6" nextGroup="47" likability="-1"/>
-            <Card id="10" nextGroup="47" likability="-1"/>
-            <Card id="13" nextGroup="47" likability="-1"/>
-            <Card id="17" nextGroup="47" likability="-1"/>
         </Dialogue>
-        <Dialogue id="7" text="Somehow, I have a feeling today’s going to be a good day." image="6" questionType="4" wrongans="50">
-            <Card id="0" nextGroup="48" likability="1"/>
-            <Card id="22" nextGroup="48" likability="1"/>
-            <Card id="1" nextGroup="49" likability="-1"/>
-            <Card id="23" nextGroup="49" likability="-1"/>
+        <Dialogue id="1" text="Where do you think I should go today? Perhaps Dungeon?" 
+        image="0" questionType="0" wrongans="999">
+            <Card id="0" nextGroup="18" likability="1"/>
+            <Card id="2" nextGroup="18" likability="1"/>
+            <Card id="4" nextGroup="18" likability="1"/>
+
+            <Card id="1" nextGroup="19" likability="1"/>
+            <Card id="3" nextGroup="19" likability="1"/>
+            <Card id="5" nextGroup="19" likability="1"/>
+
+            <Card id="10" nextGroup="20" likability="2"/>
+            <Card id="11" nextGroup="21" likability="2"/>
+            <Card id="12" nextGroup="222" likability="2"/>
+            <Card id="22" nextGroup="23" likability="2"/>
+            <Card id="23" nextGroup="24" likability="-1"/>
         </Dialogue>
+        <Dialogue id="2" text="What do you think of my weapon? This Bow! Looks pretty good, doesn’t it?" 
+        image="6" questionType="2" wrongans="9914">
+            <Card id="0" nextGroup="25" likability="1"/>
+            <Card id="2" nextGroup="25" likability="1"/>
+            <Card id="4" nextGroup="25" likability="1"/>
+            <Card id="1" nextGroup="26" likability="1"/>
+            <Card id="3" nextGroup="26" likability="1"/>
+            <Card id="5" nextGroup="26" likability="1"/>
+            <Card id="6" nextGroup="27" likability="2"/>
+            <Card id="7" nextGroup="25" likability="2"/>
+            <Card id="8" nextGroup="29" likability="2"/>
+            <Card id="9" nextGroup="30" likability="2"/>
+            <Card id="22" nextGroup="31" likability="2"/>
+            <Card id="23" nextGroup="32" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="3" text="I heard there’ve been a lot of bats around lately… is that true?"
+        image="1" questionType="1" wrongans="7777">
+            <Card id="0" nextGroup="51" likability="1"/>
+            <Card id="2" nextGroup="51" likability="1"/>
+            <Card id="4" nextGroup="51" likability="1"/>
+            <Card id="16" nextGroup="51" likability="1"/>
+
+            <Card id="1" nextGroup="54" likability="1"/>
+            <Card id="3" nextGroup="54" likability="1"/>
+            <Card id="5" nextGroup="54" likability="1"/>
+
+            <Card id="13" nextGroup="56" likability="1"/>
+            <Card id="14" nextGroup="57" likability="1"/>
+            <Card id="15" nextGroup="58" likability="1"/>
+
+            <Card id="17" nextGroup="60" likability="1"/>
+            <Card id="18" nextGroup="60" likability="1"/>
+            <Card id="20" nextGroup="60" likability="1"/>
+
+            <Card id="22" nextGroup="61" likability="2"/>
+            <Card id="23" nextGroup="62" likability="-1"/>
+        </Dialogue>
+        <Dialogue id="4" text="What should I do when I’m out there?" 
+        image="4" questionType="3" wrongans="9912">
+            <Card id="0" nextGroup="33" likability="1"/>
+            <Card id="2" nextGroup="33" likability="1"/>
+            <Card id="4" nextGroup="33" likability="1"/>
+            <Card id="1" nextGroup="34" likability="1"/>
+            <Card id="3" nextGroup="34" likability="1"/>
+            <Card id="5" nextGroup="34" likability="1"/>
+            <Card id="17" nextGroup="35" likability="2"/>
+            <Card id="18" nextGroup="36" likability="2"/>
+            <Card id="19" nextGroup="37" likability="2"/>
+            <Card id="20" nextGroup="38" likability="2"/>
+            <Card id="21" nextGroup="39" likability="2"/>
+            <Card id="22" nextGroup="40" likability="2"/>
+            <Card id="23" nextGroup="41" likability="-1"/>
+        </Dialogue>
+
+        
     </DialogueGroup>
-    <DialogueGroup id="2" type="1">
-        <Dialogue id="0" text="Day2, Dialogue 1" image="1" questionType="0">
-            <Card id="1" nextGroup="15"/>
-            <Card id="2" nextGroup="16"/>
-        </Dialogue>
-        <Dialogue id="1" text="Day2, Dialogue 2" image="1" questionType="0">
-            <Card id="3" nextGroup="15"/>
-            <Card id="4" nextGroup="16"/>
-        </Dialogue>
-    </DialogueGroup>
+
+
+
     <DialogueGroup id="15" type="2">
-        <Dialogue id="0" text="Cool!" image="6" questionType="4"/>
+        <Dialogue id="0" text="Cool!" 
+        image="6" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="16" type="2">
-        <Dialogue id="0" text="Thank you!" image="6" questionType="4"/>
+        <Dialogue id="0" text="Thank you!" 
+        image="6" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="8282" type="2">
-        <Dialogue id="0" text="What are you talking about?" image="3" questionType="4"/>
+        <Dialogue id="0" text="What are you talking about?" 
+        image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="18" type="2">
-        <Dialogue id="0" text="Got it, I'll head there then!" image="6" questionType="4"/>
+        <Dialogue id="0" text="Got it, I'll head there then!" 
+        image="4" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="19" type="2">
-        <Dialogue id="0" text="Oh, not there? Hmm... maybe somewhere else then." image="2" questionType="4"/>
+        <Dialogue id="0" text="Oh, not there? Hmm... maybe somewhere else then." 
+        image="4" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="222" type="2">
+        <Dialogue id="0" text="Yeah, feels like the right place." 
+        image="6" questionType="0"/>
     </DialogueGroup>
     <DialogueGroup id="20" type="2">
-        <Dialogue id="0" text="Village? Sounds good. I'll get ready." image="6" questionType="4"/>
+        <Dialogue id="0" text="Village? Sounds good. I'll get ready." 
+        image="4" questionType="0"/>
     </DialogueGroup>
     <DialogueGroup id="21" type="2">
-        <Dialogue id="0" text="Forest? Sounds good. I'll get ready." image="6" questionType="4"/>
+        <Dialogue id="0" text="Forest? Sounds good. I'll get ready." 
+        image="4" questionType="0"/>
     </DialogueGroup>
     <DialogueGroup id="22" type="2">
-        <Dialogue id="0" text="Dungeon? Sounds good. I'll get ready." image="6" questionType="4"/>
+        <Dialogue id="0" text="Dungeon? Sounds good. I'll get ready." 
+        image="4" questionType="0"/>
     </DialogueGroup>
+
+
     <DialogueGroup id="23" type="2">
-        <Dialogue id="0" text="You like it too?" image="1" questionType="4"/>
+        <Dialogue id="0" text="You like it too?" 
+        image="6" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="24" type="2">
-        <Dialogue id="0" text="Hey, don't give me that look." image="0" questionType="4"/>
+        <Dialogue id="0" text="Hey, don't give me that look." 
+        image="5" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="999" type="2">
-        <Dialogue id="0" text="Uh... I was asking about where to go." image="3" questionType="4"/>
+        <Dialogue id="0" text="Uh... I was asking about where to go." 
+        image="3" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="25" type="2">
-        <Dialogue id="0" text="I knew it! I thought it looked great too." image="6" questionType="4"/>
+        <Dialogue id="0" text="I knew it! I thought it looked great too." 
+        image="4" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="26" type="2">
-        <Dialogue id="0" text="Ah, really? Maybe I should switch it out." image="2" questionType="4"/>
+        <Dialogue id="0" text="Ah, really? Maybe I should switch it out." 
+        image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="27" type="2">
-        <Dialogue id="0" text="Sword? Huh, maybe I'll try that next time." image="2" questionType="4"/>
+        <Dialogue id="0" text="Sword? Huh, maybe I'll try that next time." 
+        image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="28" type="2">
-        <Dialogue id="0" text="Bow? Huh, maybe I'll try that next time." image="2" questionType="4"/>
+        <Dialogue id="0" text="Bow? Huh, maybe I'll try that next time." 
+        image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="29" type="2">
-        <Dialogue id="0" text="MorningStar? Huh, maybe I'll try that next time." image="2" questionType="4"/>
+        <Dialogue id="0" text="MorningStar? Huh, maybe I'll try that next time." 
+        image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="30" type="2">
-        <Dialogue id="0" text="Dagger? Huh, maybe I'll try that next time." image="2" questionType="4"/>
+        <Dialogue id="0" text="Dagger? Huh, maybe I'll try that next time." 
+        image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="31" type="2">
-        <Dialogue id="0" text="You like this weapon too, huh? Guess my eye for gear isn’t so bad." image="3" questionType="4"/>
+        <Dialogue id="0" text="You like this weapon too, huh? Guess my eye for gear isn’t so bad." 
+        image="6" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="32" type="2">
-        <Dialogue id="0" text="That’s a bit harsh, don’t you think?" image="1" questionType="4"/>
+        <Dialogue id="0" text="That’s a bit harsh, don’t you think?" 
+        image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="9914" type="2">
-        <Dialogue id="0" text="Wait, we’re not talking about my weapon?" image="3" questionType="4"/>
+        <Dialogue id="0" text="Wait, we’re not talking about my weapon?" 
+        image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="33" type="2">
-        <Dialogue id="0" text="Got it, I’ll just follow my gut." image="6" questionType="4"/>
+        <Dialogue id="0" text="Got it, I’ll just follow my gut." 
+        image="4" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="34" type="2">
-        <Dialogue id="0" text="Hmm… maybe I should think it through first." image="2" questionType="4"/>
+        <Dialogue id="0" text="Hmm… maybe I should think it through first." 
+        image="1" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="35" type="2">
-        <Dialogue id="0" text="Aggressive? Okay, I’ll try that." image="4" questionType="4"/>
+        <Dialogue id="0" text="Aggressive? Okay, I’ll try that." 
+        image="0" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="36" type="2">
-        <Dialogue id="0" text="Careful? Okay, I’ll try that." image="5" questionType="4"/>
+        <Dialogue id="0" text="Careful? Okay, I’ll try that." 
+        image="0" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="37" type="2">
-        <Dialogue id="0" text="Farming? Okay, I’ll try that." image="4" questionType="4"/>
+        <Dialogue id="0" text="Farming? Okay, I’ll try that." 
+        image="0" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="38" type="2">
-        <Dialogue id="0" text="Team-making? Okay, I’ll try that." image="4" questionType="4"/>
+        <Dialogue id="0" text="Team-making? Okay, I’ll try that." 
+        image="0" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="39" type="2">
-        <Dialogue id="0" text="Rest? Okay, I’ll try that." image="4" questionType="4"/>
+        <Dialogue id="0" text="Rest? Okay, I’ll try that." 
+        image="0" questionType="4"/>
     </DialogueGroup>
+
     <DialogueGroup id="40" type="2">
-        <Dialogue id="0" text="You make it sound simple. I’ll take your word for it." image="1" questionType="4"/>
+        <Dialogue id="0" text="You make it sound simple. I’ll take your word for it." 
+        image="4" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="41" type="2">
-        <Dialogue id="0" text="You always act like it’s easy for you." image="1" questionType="4"/>
+        <Dialogue id="0" text="You always act like it’s easy for you." 
+        image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="9912" type="2">
-        <Dialogue id="0" text="I’m asking what I should do, not what you are saying right now." image="2" questionType="4"/>
+        <Dialogue id="0" text="I’m asking what I should do, not what you are saying right now." 
+        image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="42" type="2">
-        <Dialogue id="0" text="Morning! You look alive for once." image="0" questionType="4"/>
+        <Dialogue id="0" text="Morning! You look alive for once." 
+        image="6" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="43" type="2">
-        <Dialogue id="0" text="You’re grumpier than usual today." image="1" questionType="4"/>
+        <Dialogue id="0" text="You’re grumpier than usual today." 
+        image="3" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="44" type="2">
-        <Dialogue id="0" text="...Not even a 'morning' back? Rude." image="1" questionType="4"/>
+        <Dialogue id="0" text="...Not even a 'morning' back? Rude." 
+        image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="45" type="2">
-        <Dialogue id="0" text="Clear skies, good mood. Let’s keep it that way." image="6" questionType="4"/>
+        <Dialogue id="0" text="Clear skies, good mood. Let’s keep it that way." 
+        image="4" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="46" type="2">
-        <Dialogue id="0" text="Nice weather usually means trouble later." image="2" questionType="4"/>
+        <Dialogue id="0" text="Nice weather usually means trouble later." 
+        image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="47" type="2">
-        <Dialogue id="0" text="Were you even listening to me?" image="1" questionType="4"/>
+        <Dialogue id="0" text="Were you even listening to me?" 
+        image="3" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="48" type="2">
-        <Dialogue id="0" text="Yeah, maybe something good’ll happen for once." image="6" questionType="4"/>
+        <Dialogue id="0" text="Yeah, maybe something good’ll happen for once." 
+        image="6" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="49" type="2">
-        <Dialogue id="0" text="You just jinxed it. Thanks a lot." image="6" questionType="4"/>
+        <Dialogue id="0" text="You just jinxed it. Thanks a lot." 
+        image="2" questionType="4"/>
     </DialogueGroup>
     <DialogueGroup id="50" type="2">
-        <Dialogue id="0" text="Were you even listening to me?" image="1" questionType="4"/>
+        <Dialogue id="0" text="Were you even listening to me?" 
+        image="2" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="51" type="2">
+        <Dialogue id="0" text="So it's true then. I'll be careful out there."
+        image="1" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="52" type="2">
+        <Dialogue id="0" text="Ah, then maybe they were Slimes after all."
+        image="1" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="53" type="2">
+        <Dialogue id="0" text="Ah, then maybe they were Goblins after all."
+        image="1" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="54" type="2">
+        <Dialogue id="0" text="Ah, then maybe they were Zombies after all."
+        image="1" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="55" type="2">
+        <Dialogue id="0" text="Ah, then maybe they were Bats after all."
+        image="1" questionType="4"/>
+    </DialogueGroup>
+
+    <DialogueGroup id="56" type="2">
+        <Dialogue id="0" text="Slimes? Yeah, I ran into one before. Creepy little things"
+        image="0" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="57" type="2">
+        <Dialogue id="0" text="Goblins? Yeah, I ran into one before. Creepy little things"
+        image="0" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="58" type="2">
+        <Dialogue id="0" text="Zombies? Yeah, I ran into one before. Creepy little things"
+        image="0" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="59" type="2">
+        <Dialogue id="0" text="Bats? Yeah, I ran into one before. Creepy little things"
+        image="0" questionType="4"/>
+    </DialogueGroup>
+
+    <DialogueGroup id="60" type="2">
+        <Dialogue id="0" text="So it's true... oh no."
+        image="1" questionType="4"/>
+    </DialogueGroup>
+
+    <DialogueGroup id="61" type="2">
+        <Dialogue id="0" text="You always warn me at the right time, huh?"
+        image="5" questionType="4"/>
+    </DialogueGroup>
+    <DialogueGroup id="62" type="2">
+        <Dialogue id="0" text="You keep saying that, but fine… I’ll stay alert."
+        image="2" questionType="4"/>
+    </DialogueGroup>
+
+    <DialogueGroup id="7777" type="2">
+        <Dialogue id="0" text="Wait, what? I'm talking abount monsters here."
+        image="3" questionType="4"/>
     </DialogueGroup>
 </root>
