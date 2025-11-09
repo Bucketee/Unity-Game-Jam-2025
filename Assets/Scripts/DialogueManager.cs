@@ -42,7 +42,12 @@ public class DialogueEffect
 
     public int likablity;
     public int attackPower;
-    
+
+    // -1은 랜덤 선택
+    public int heroPlace;
+    public int heroMonster;
+    public int heroWeapon;
+    public int heroBehavior;
     
 
     public void ApplyEffect()
@@ -53,6 +58,15 @@ public class DialogueEffect
         
         Debug.Log("ATTACK POWER INCREASED BY " + attackPower);
         Debug.Log("LIKABILTY INCREASED BY " + likablity);
+
+        if (heroPlace == -1) HeroStat.Instance.SetTodayPlace(HeroStat.Instance.RandomPlace());
+        else HeroStat.Instance.SetTodayPlace((HeroPlace)heroPlace);
+        if (heroMonster == -1) HeroStat.Instance.SetTodayMonster(HeroStat.Instance.RandomMonster());
+        else HeroStat.Instance.SetTodayMonster((HeroMonster)heroMonster);
+        if (heroWeapon == -1) HeroStat.Instance.SetTodayWeapon(HeroStat.Instance.RandomWeapon());
+        else HeroStat.Instance.SetTodayWeapon((HeroWeapon)heroWeapon);
+        if (heroBehavior == -1) HeroStat.Instance.SetTodayBehavior(HeroStat.Instance.RandomBehavior());
+        else HeroStat.Instance.SetTodayBehavior((HeroBehavior)heroBehavior);
     }
 }
 
@@ -129,6 +143,19 @@ public class DialogueManager : MonoBehaviour
                     effect.attackPower = cardNode.Attributes["attackPower"] != null
                         ? int.Parse(cardNode.Attributes["attackPower"].Value)
                         : 0;
+
+                    effect.heroPlace = cardNode.Attributes["heroPlace"] != null
+                        ? int.Parse(cardNode.Attributes["heroPlace"].Value)
+                        : -1;
+                    effect.heroMonster = cardNode.Attributes["heroMonster"] != null
+                        ? int.Parse(cardNode.Attributes["heroMonster"].Value)
+                        : -1;
+                    effect.heroWeapon = cardNode.Attributes["heroWeapon"] != null
+                        ? int.Parse(cardNode.Attributes["heroWeapon"].Value)
+                        : -1;
+                    effect.heroBehavior = cardNode.Attributes["heroBehavior"] != null
+                        ? int.Parse(cardNode.Attributes["heroBehavior"].Value)
+                        : -1;
 
                     dialogue.effects.Add(cardId, effect);
                 }
