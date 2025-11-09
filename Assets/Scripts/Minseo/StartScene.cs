@@ -20,6 +20,10 @@ public class StartScene : MonoBehaviour
         SoundManager.Instance.PlaySFX(ESfx.SFX_START_BUTTON);
         
         DeckManager.Instance.runCount++;
+        DeckManager.Instance.InitDeck();
+        Hand.Instance.InitHand();
+        DialogueManager.Instance.OnStartAction?.Invoke();
+        
         foreach (var button in buttons)
         {
             button.SetActive(false);

@@ -11,6 +11,7 @@ public class DeckManager : MonoBehaviour
 
     public int runCount = 1;
     public List<Card> deck = new List<Card>();
+    public List<Card> usingDeck = new List<Card>();
 
     public int money = 0;
     
@@ -34,6 +35,14 @@ public class DeckManager : MonoBehaviour
         LoadCardSprites();
     }
 
+    public void InitDeck()
+    {
+        foreach (Card card in deck)
+        {
+            usingDeck.Add(card.Clone());
+        }
+    }
+
     private Dictionary<int, Sprite> cardSprites = new();
     private void LoadCardSprites()
     {
@@ -54,13 +63,13 @@ public class DeckManager : MonoBehaviour
 
     public Card DrawCard()
     {
-        if (deck.Count == 0) return null;
+        if ( usingDeck.Count == 0) return null;
         
         SoundManager.Instance.PlaySFX(ESfx.SFX_DRAW_CARD);
-        int r = Random.Range(0, deck.Count);
+        int r = Random.Range(0,  usingDeck.Count);
         
-        Card card = deck[r];
-        deck.RemoveAt(r);
+        Card card =  usingDeck[r];
+         usingDeck.RemoveAt(r);
         return card;
     }
     
@@ -76,19 +85,19 @@ public class DeckManager : MonoBehaviour
 
     public void AddCard(Card card)
     {
-        if (deck.Count >= 25) return;
-        deck.Add(card);
+        if ( usingDeck.Count >= 25) return;
+         usingDeck.Add(card);
         onDeckChange.Invoke();
     }
     
 
     public void RemoveCard(Card card)
     {
-        for (int i = 0; i < deck.Count; i++)
+        for (int i = 0; i <  usingDeck.Count; i++)
         {
-            if (deck[i].cardName == card.cardName)
+            if ( usingDeck[i].cardName == card.cardName)
             {
-                deck.RemoveAt(i);
+                 usingDeck.RemoveAt(i);
                 onDeckChange.Invoke();
                 GetCardInfo(card).Count += 1;
                 break;

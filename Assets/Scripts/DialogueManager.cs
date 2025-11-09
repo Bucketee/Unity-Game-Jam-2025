@@ -85,12 +85,13 @@ public class DialogueManager : MonoBehaviour
 
     public TextMeshProUGUI dayText;
     public TextMeshProUGUI likablityText;
+
+    public Action OnStartAction = () => { }; 
+        
     void Awake()
     {
         if (Instance != null) DestroyImmediate(this);
         Instance = this;
-        drawAmounts = DeckManager.Instance.deck.Count / 5;
-        totalDrawsWillbe = DeckManager.Instance.deck.Count;
 
         LoadDialogue();
     }
@@ -174,6 +175,18 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         SetDialogueGroup(0);
+        OnStartAction += () =>
+        {
+            StartCoroutine(sco());
+        };
+    }
+
+    private IEnumerator sco()
+    {
+        yield return null;
+        drawAmounts = DeckManager.Instance.deck.Count / 5;
+        totalDrawsWillbe = DeckManager.Instance.deck.Count;
+        draws = 0;
         Hand.Instance.DrawCards(drawAmounts);
         draws += drawAmounts;
     }

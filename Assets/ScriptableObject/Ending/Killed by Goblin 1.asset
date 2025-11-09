@@ -15,7 +15,7 @@ MonoBehaviour:
   endingName: "The Goblin\u2019s Ambush in the Thicket"
   endingDescription: "Hero\u2019s morning star sang once, then fell silent in the
     woods."
-  endPrice: 15
+  endPrice: 30
   isClearedOnce: 0
   endingSprite: {fileID: 21300000, guid: c1d23971a269a0945b2d96dfebee4198, type: 3}
   condition:

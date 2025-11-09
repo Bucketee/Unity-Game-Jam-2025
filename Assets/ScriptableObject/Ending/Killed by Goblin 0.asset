@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ending
   endingName: "The Goblin\u2019s Ambush in the Thicket"
   endingDescription: "Arrows missed, laughter followed\u2014the Goblins were faster."
-  endPrice: 15
+  endPrice: 30
   isClearedOnce: 0
   endingSprite: {fileID: 21300000, guid: c1d23971a269a0945b2d96dfebee4198, type: 3}
   condition:

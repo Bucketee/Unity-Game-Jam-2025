@@ -15,7 +15,7 @@ MonoBehaviour:
   endingName: "The Slime\u2019s Quiet Feast"
   endingDescription: "Hero swung a short dagger\u2026 and vanished into the Slime\u2019s
     hiss."
-  endPrice: 15
+  endPrice: 30
   isClearedOnce: 1
   endingSprite: {fileID: 21300000, guid: b0370bed63728294a9fbbf59f8c3b9be, type: 3}
   condition:

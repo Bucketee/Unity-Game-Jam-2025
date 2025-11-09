@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ending
   endingName: Echoes Beneath the Cave
   endingDescription: Hero moved too carefully, lost between heartbeats.
-  endPrice: 15
+  endPrice: 30
   isClearedOnce: 0
   endingSprite: {fileID: 21300000, guid: 3ec7ac1982a383747a17ac49d6b17f28, type: 3}
   condition:

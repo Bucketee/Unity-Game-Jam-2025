@@ -41,7 +41,7 @@ public class DeckManagerUI : MonoBehaviour
         {
             var go = Instantiate(miniDeckPrefab, myDeckContainer).GetComponent<MiniCardUI>();
             miniDeckGameObjects.Add(go.gameObject);
-            go.Init(card);
+            go.Init(card.Clone());
         }
 
         int chcnt = DeckManager.Instance.deck.Count;

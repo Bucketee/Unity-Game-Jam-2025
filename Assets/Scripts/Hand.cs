@@ -38,6 +38,15 @@ public class Hand : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A)) Draw();
     }
 
+    public void InitHand()
+    {
+        cardsInHand = new List<Card>();
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
     public void DrawCards(int amount = 5)
     {
         for (int i = 0; i < amount; i++)
