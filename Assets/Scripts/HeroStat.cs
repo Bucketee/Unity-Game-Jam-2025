@@ -28,7 +28,7 @@ public class HeroStat : MonoBehaviour
     private int attackPower = 0;
 
     [Header("Question Answers")]
-    private List<Card> questionAnswers;
+    public List<Card> questionAnswers;
     [SerializeField] private Card placeRcm = null;
     [SerializeField] private Card monsterRcm = null;
     [SerializeField] private Card weaponRcm = null;
@@ -44,7 +44,6 @@ public class HeroStat : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null) DestroyImmediate(this);
         Instance = this;
         
         questionAnswers = new List<Card>()
@@ -68,6 +67,26 @@ public class HeroStat : MonoBehaviour
         weaponRcm = null;
         behaviorRcm = null;
         randomQuestion = null;
+    }
+    
+    public void InitRCMs()
+    {
+        date++; 
+        
+        placeRcm = null;
+        monsterRcm = null;
+        weaponRcm = null;
+        behaviorRcm = null;
+        randomQuestion = null;
+        
+        questionAnswers = new List<Card>()
+        {
+            placeRcm,
+            monsterRcm,
+            weaponRcm,
+            behaviorRcm,
+            randomQuestion
+        };
     }
     
     /// <param name="card"></param>
