@@ -32,6 +32,7 @@ public class DialogueControl : MonoBehaviour
     {
         dialogueTmp.text = DialogueManager.Instance.GetDialogue();
 
+        if (DialogueManager.Instance.GetDialogueType() != DialogueType.Normal) return;
         if (DialogueManager.Instance.IsLastDialogue())
         {
             nextDayButton.gameObject.SetActive(true);
