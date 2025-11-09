@@ -34,45 +34,47 @@ public class EndingManager : MonoBehaviour
             {
                 if (condition.monsterCard.Length == 0 || condition.monsterCard.Contains(heroStat.GetAnswer(1)))
                 {
-                    if (condition.weaponCard.Length == 0 || condition.weaponCard.Contains(heroStat.GetAnswer(2)))
+                    if ((condition.weaponCard.Length == 0 || condition.weaponCard.Contains(heroStat.GetAnswer(2))) && (condition.behaviorCard.Length == 0 || condition.behaviorCard.Contains(heroStat.GetAnswer(3))))
                     {
-                        if (condition.behaviorCard.Length == 0 || condition.behaviorCard.Contains(heroStat.GetAnswer(3)))
+                        if (condition.emotionCard.Length == 0 || condition.emotionCard.Contains(heroStat.GetAnswer(4)))
                         {
-                            if (condition.emotionCard.Length == 0 || condition.emotionCard.Contains(heroStat.GetAnswer(4)))
+                            if (condition.likabilityMin <= heroStat.Likeability &&
+                                heroStat.Likeability <= condition.likabilityMax)
                             {
-                                if (condition.likabilityMin <= heroStat.Likeability &&
-                                    heroStat.Likeability <= condition.likabilityMax)
+                                if (condition.attackPowerMin <= heroStat.AttackPower &&
+                                    heroStat.AttackPower <= condition.attackPowerMax)
                                 {
-                                    if (condition.attackPowerMin <= heroStat.AttackPower &&
-                                        heroStat.AttackPower <= condition.attackPowerMax)
+                                    switch (ending.EndingName)
                                     {
-                                        switch (ending.EndingName)
-                                        {
-                                            case "Killed by Dragon":
-                                                if (heroStat.dungeunCount == 3)
-                                                {
-                                                    return true;
-                                                }
-                                                break;
-                                            case "Kill The Diablo With Dragon":
-                                                if (heroStat.dungeunCount == 4)
-                                                {
-                                                    return true;
-                                                }
-                                                break;
-                                            case "Bad Innkeeper":
-                                                if (heroStat.IsRandomPlace)
-                                                {
-                                                    return true;
-                                                }
-                                                break;
-                                        }
-
-                                        return true;
+                                        case "Killed by Dragon":
+                                            if (heroStat.dungeunCount == 3)
+                                            {
+                                                return true;
+                                            }
+                                            return false;
+                                        case "Kill The Diablo With Dragon":
+                                            if (heroStat.dungeunCount == 4)
+                                            {
+                                                return true;
+                                            }
+                                            return false;
+                                        case "Bad Innkeeper":
+                                            if (heroStat.IsRandomPlace)
+                                            {
+                                                return true;
+                                            }
+                                            return false;
                                     }
+                                    return true;
                                 }
                             }
                         }
+                    }
+
+                    switch (ending.EndingName)
+                    {
+                        case "Killed by Slime":
+                            break;
                     }
                 }
             }
